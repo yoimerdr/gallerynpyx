@@ -1,3 +1,6 @@
+from ..helpers import isdefine
+
+
 def classname(target, **kwargs):
     if not isinstance(target, type):
         target = type(target)
@@ -16,7 +19,7 @@ def representation(cls, **kwargs):
         classname(cls),
         ", ".join(
             "{}={!r}".format(k, v)
-            for k, v in kwargs.items() if v is not None
+            for k, v in kwargs.items() if isdefine(v)
         )
     )
 

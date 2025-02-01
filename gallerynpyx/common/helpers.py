@@ -18,3 +18,6 @@ def cast(obj, caster, default=None, allowed_exceptions=None, **kwargs):
         return caster(obj, **kwargs)
     except allowed_exceptions:
         return default
+
+def isdefine(obj):
+    return obj is not None

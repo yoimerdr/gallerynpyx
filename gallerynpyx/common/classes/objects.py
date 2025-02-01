@@ -1,11 +1,11 @@
 from .helpers import add_metaclass, not_instantiable
-from .meta import SingletonMeta, RegistryMeta, NotInstantiableMeta, NotExtensibleMeta
+from .meta import SingletonMeta, RegistryMeta, NotInstantiableMeta, NotExtensibleMeta, AbstractClassMeta
 from .meta import StaticsMeta, SingletonRegistryMeta, SimpleEnumMeta
 
 __all__ = (
     'Singleton', 'SingletonRegistry', 'Registry',
     'NotInstantiable', 'NotExtensible', 'Statics',
-    'SimpleEnum'
+    'SimpleEnum', 'AbstractClass'
 )
 
 
@@ -44,6 +44,11 @@ class NotInstantiable(object):
 class NotExtensible(object):
     __slots__ = ()
     __init__ = not_instantiable
+
+
+@add_metaclass(AbstractClassMeta)
+class AbstractClass(object):
+    __slots__ = ()
 
 
 @add_metaclass(StaticsMeta)

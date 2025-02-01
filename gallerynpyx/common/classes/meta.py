@@ -1,11 +1,11 @@
-from .exceptions import NotExtensibleError, NotSubclassOfError
+from .exceptions import NotExtensibleError, NotSubclassOfError, NotInstantiableError
 from .helpers import not_instantiable
 from ..iters import first
 
 __all__ = (
     'SingletonMeta', 'RegistryMeta', 'SingletonRegistryMeta',
     'NotInstantiableMeta', 'NotExtensibleMeta', 'StaticsMeta',
-    'SimpleEnumMeta'
+    'SimpleEnumMeta', 'AbstractClassMeta'
 )
 
 
@@ -70,6 +70,26 @@ class NotExtensibleMeta(type):
             from .objects import NotExtensible, Statics, SimpleEnum
             if not meta in (NotExtensible, Statics, SimpleEnum):
                 raise NotExtensibleError(meta)
+
+    @classmethod
+    def __issubclass__(cls, it):
+        return issubclass(it.__class__, cls)
+
+
+class AbstractClassMeta(type):
+    def __init__(cls, name, bases=None, dict=None):
+        super(AbstractClassMeta, cls).__init__(name, bases, dict)
+        meta = first(bases or (), key=AbstractClassMeta.__issubclass__)
+        is_abstract = True
+        if meta:
+            from .objects import AbstractClass
+            is_abstract = meta is AbstractClass
+        setattr(cls, '__isabstractclass__', is_abstract)
+
+    def __call__(cls, *args, **kwargs):
+        if getattr(cls, '__isabstractclass__', False):
+            raise NotInstantiableError(cls)
+        return super(AbstractClassMeta, cls).__call__(*args, **kwargs)
 
     @classmethod
     def __issubclass__(cls, it):
