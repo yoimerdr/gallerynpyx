@@ -19,5 +19,10 @@ def cast(obj, caster, default=None, allowed_exceptions=None, **kwargs):
     except allowed_exceptions:
         return default
 
+
 def isdefine(obj):
     return obj is not None
+
+
+def coerce(value, minimum, maximum):
+    return min(max(value, minimum), maximum)

@@ -1,3 +1,8 @@
+from .common.helpers import coerce, isdefine
+from .common.iters import imap
+
+__all__ = ('ishex', 'normhex', 'rgb2hex', 'rgba2hex', 'hex2rgb', 'hex2rgba')
+
 def ishex(color, alpha=False):
     if not color or not color[0] == "#":
         return False
@@ -44,17 +49,23 @@ def normhex(color, alpha=False):
     return None
 
 
-def rgba2hex(red, green, blue, alpha=1.0):
+def rgba2hex(red, green, blue, alpha=None):
     try:
-        values = list(min(max(c, 0), 255) for c in (red, green, blue))
-        values.append(255 * alpha)
-        return '#{:02x}{:02x}{:02x}{:02x}'.format(*values)
-    except (TypeError, ValueError):
+        max_alpha = 1.0
+        if not isdefine(alpha):
+            alpha = max_alpha
+        alpha = coerce(float(alpha), 0.0, max_alpha)
+
+        values = [coerce(int(c), 0, 255) for c in (red, green, blue)]
+        values.append(int(255 * alpha))
+        return '#' + ''.join(imap('{:02x}'.format, values))
+    except (TypeError, ValueError) as e:
         return None
 
 
 def rgb2hex(red, green, blue):
-    return rgba2hex(red, green, blue, 0)[:-2]
+    color = rgba2hex(red, green, blue, 0)
+    return color[:-2] if isdefine(color) else None
 
 
 def hex2rgba(color):
@@ -69,4 +80,5 @@ def hex2rgba(color):
 
 
 def hex2rgb(color):
-    return hex2rgba(color)[:-1]
+    color = hex2rgba(color)
+    return color[:-1] if isdefine(color) else None
