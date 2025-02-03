@@ -1,4 +1,4 @@
-from renpy.display.im import Scale, FactorScale
+from renpy.display.layout import Composite
 from .resource import Resource
 from ..sizes.size_int import SizeInt
 
@@ -8,6 +8,7 @@ except ImportError:
     from renpy.display.core import Displayable
 
 __all__ = ('DisplayableResource',)
+
 
 class DisplayableResource(Resource):
     __slots__ = ()
@@ -24,10 +25,4 @@ class DisplayableResource(Resource):
     def scale(self, size):
         width, height = SizeInt.of(size)
         image = self.load(True)
-        if isinstance(image, Scale):
-            image.width = width
-            image.height = height
-            return image
-        elif isinstance(image, FactorScale):
-            image = image.image
-        return Scale(image, width, height)
+        return Composite((width, height), (0, 0), image)

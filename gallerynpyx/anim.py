@@ -20,19 +20,19 @@ def set_speed(animation, speed=None):
     if not animation:
         return animation
 
-    current = getattr(animation, '__gxspeed__', None)
+    current = getattr(animation, '__gxspeed__', 1)
     if current == speed or speed is None:
         return animation
 
     speed = float(max(speed, 1))
-    current = speed if current is None else current / speed
+    current = current / speed
 
     for statement in ifilter(is_pause_statement, get_statements(animation, False)):
         duration = getattr(statement, 'duration', None)
-        if not duration:
+        if duration is None:
             continue
 
-        setattr(animation, 'duration', duration * current)
+        setattr(statement, 'duration', duration * current)
 
     setattr(animation, '__gxspeed__', speed)
     return animation
