@@ -16,3 +16,5 @@ def music_start(filename, loops=True, fadeout=None, fadein=0): pass
 def music_stop(fadeout=None): pass
 
 def restart_interaction(): pass
+
+def transition(trans, layer=None, always=False, force=False): pass
