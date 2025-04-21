@@ -18,6 +18,9 @@ class Resource(AbstractClass):
     )
 
     def __init__(self, source):
+        self._init(source)
+
+    def _init(self, source):
         if isinstance(source, Resource):
             if source.__class__ is self.__class__:
                 self._init_from_self(source)
@@ -47,7 +50,7 @@ class Resource(AbstractClass):
 
     @source.setter
     def source(self, value):
-        self.__init__(value)
+        self._init(value)
 
     def __repr__(self):
         return representation(self, source=self.source)
@@ -58,6 +61,7 @@ class Resource(AbstractClass):
             return None
         return cls(resource.source)
 
+    dispose = noact
     _load = not_implemented
     _force_load_init = noact
     _init_from_self = _init_from_res

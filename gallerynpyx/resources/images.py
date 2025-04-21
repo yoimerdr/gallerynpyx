@@ -6,6 +6,7 @@ from .displayable import DisplayableResource
 from .exceptions import UnsupportedSourceError, UnloadableSourceError
 from .resource import IMAGES
 from ..common.compat import basestring
+from ..common.memoized import Memoized
 from ..path import isloadable, normpath
 from ..sizes.size_int import SizeInt
 
@@ -14,8 +15,12 @@ __all__ = ('ImageResource',)
 
 class ImageResource(DisplayableResource):
     __slots__ = (
-        '_ext',
+        '_ext', '_cmem'
     )
+
+    def __init__(self, source):
+        self._cmem = Memoized(self._composite)
+        super(ImageResource, self).__init__(source)
 
     def _is_supported_source(self, source):
         if not source:
@@ -39,6 +44,10 @@ class ImageResource(DisplayableResource):
             ext = os.path.splitext(source)[1] or None
         self._ext = ext
         super(ImageResource, self)._init_from_raw(source)
+
+    def _init(self, source):
+        self._cmem.dispose()
+        super(ImageResource, self)._init(source)
 
     def _load(self, force):
         source = self.source
@@ -68,7 +77,6 @@ class ImageResource(DisplayableResource):
         return not self.ext and isinstance(self.source, basestring)
 
     def _scales(self, size):
-        size = SizeInt.of(size)
         image = self.load(True)
 
         source = SizeInt.of(image.load().get_size())
@@ -76,11 +84,18 @@ class ImageResource(DisplayableResource):
 
         return Scale(image, xsize.width, xsize.height), xsize, size
 
-    def scale(self, size):
-        return self._scales(size)[0]
+    def _scale(self, size, *args):
+        return self._scales(SizeInt.of(size))[0]
 
-    def composite(self, size):
+    def _composite(self, size, *args):
         image, xsize, size = self._scales(size)
         x = int(size.width / 2.0 - xsize.width / 2.0)
         y = int(size.height / 2.0 - xsize.height / 2.0)
         return Composite(tuple(size), (x, y), image)
+
+    def dispose(self):
+        self._cmem.dispose()
+        super(ImageResource, self).dispose()
+
+    def composite(self, size):
+        return self._cmem.evaluate(SizeInt.of(size), self.source)
