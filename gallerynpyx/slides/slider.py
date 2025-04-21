@@ -127,4 +127,4 @@ class Slider(SlideBase):
         return (k for k in self._items)
 
     def __contains__(self, item):
-        return isdefine(item) and item.name in self._items
+        return isdefine(item) and item == self._items.get(item.name, None)
