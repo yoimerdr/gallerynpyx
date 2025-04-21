@@ -1,7 +1,10 @@
 import copy
 import os
 
-from renpy.display.displayable import Displayable
+try:
+    from renpy.display.displayable import Displayable
+except ImportError:
+    from renpy.display.core import Displayable
 from renpy.display.im import Image
 from renpy.display.image import Solid
 from renpy.display.transform import ATLTransform
