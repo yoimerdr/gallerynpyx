@@ -16,8 +16,15 @@ __all__ = ('Thumbnail', 'creates')
 
 
 def creates(resource, size):
-    return Thumbnail(resource).create(size)
+    if isinstance(resource, ImageResource):
+        return resource.composite(size)
+    elif isinstance(resource, DisplayableResource):
+        return resource.scale(size)
 
+    raise IncompatibleResourceError(resource)
+
+def creates_raw(resource, size):
+    return Thumbnail(resource).create(size)
 
 class Thumbnail(object):
     __slots__ = (
@@ -38,14 +45,11 @@ class Thumbnail(object):
             return
         self._cus = guess(resource)
 
-    def create(self, size, allow_animation_thumbnail=False, video_thumbnails_folder=None):
+    def prepare(self, allow_animation_thumbnail=False, video_thumbnails_folder=None):
         resource = self.resource
         custom = None
-
-        if isinstance(resource, ImageResource):
-            return resource.composite(size)
-        elif isinstance(resource, DisplayableResource):
-            return resource.scale(size)
+        if isinstance(resource, (ImageResource, DisplayableResource)):
+            return resource
 
         if video_thumbnails_folder and isinstance(resource, VideoResource):
             path = os.path.splitext(resource.load(True))[0]
@@ -58,7 +62,12 @@ class Thumbnail(object):
             raise IncompatibleResourceError(resource)
 
         self.set_custom(custom)
-        return self.create(size)
+        return self._cus
+
+    def create(self, size, allow_animation_thumbnail=False, video_thumbnails_folder=None):
+        resource = self.prepare(allow_animation_thumbnail, video_thumbnails_folder)
+
+        return creates(resource, size)
 
     def __repr__(self):
         return representation(
