@@ -20,7 +20,7 @@ def slide(name, *names, **kwargs):
 
 
 def slider(name, *names, **kwargs):
-    slider = Slider.chain((name, ) + names, creates=True)
+    slider = Slider.chain((name,) + names, creates=True)
     slider.label = kwargs.get('label', None)
     return slider
 
@@ -29,3 +29,13 @@ def has_animation(slide):
     if not isslide(slide):
         return False
     return any(isinstance(it.resource, AnimationResource) for it in slide)
+
+
+def eachitem(slider):
+    for slide in slider.values():
+        if isslide(slide):
+            for item in slide:
+                yield item
+        else:
+            for item in eachitem(slide):
+                yield item
