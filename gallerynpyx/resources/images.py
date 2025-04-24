@@ -1,5 +1,6 @@
 import os
 
+from renpy.display import im
 from renpy.display.im import Image, Composite, Scale
 from renpy.display.image import get_registered_image
 from .displayable import DisplayableResource
@@ -78,8 +79,9 @@ class ImageResource(DisplayableResource):
 
     def _scales(self, size):
         image = self.load(True)
+        surfer = im.cache.get(image)
 
-        source = SizeInt.of(image.load().get_size())
+        source = SizeInt.of(surfer.get_size())
         xsize = size.scale(source.aspect_ratio)
 
         return Scale(image, xsize.width, xsize.height), xsize, size
