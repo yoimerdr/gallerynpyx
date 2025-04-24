@@ -32,6 +32,6 @@ def first(iterable, default=None, key=None):
 
 def last(iterable, default=None, key=None):
     try:
-        first(reversed(iterable), default, key)
+        return first(reversed(iterable), default, key)
     except TypeError:
         return last(tuple(iterable), default, key)
