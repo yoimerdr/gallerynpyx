@@ -21,3 +21,6 @@ class Memoized(object):
             setattr(self, '_res', self._fn(*args))
 
         return self._res
+
+    def __call__(self, *args, ):
+        return self.evaluate(*args)
