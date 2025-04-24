@@ -8,30 +8,30 @@ screen gallerynpyx():
     add gx_config.background.create(gx_size)
     add gx_config.foreground.create(gx_size)
 
-    $ gx_config = gallerynpyx.config.get_styles()
+    use expression gx_config.root_screen
 
-    style_prefix gx_config.root
+    $ gx_config = gallerynpyx.config.get_styles()
 
     text _("gallerynpyx v[gallerynpyx.version]"):
         style "gx_version"
 
-    use gx_root()
 
 screen gx_root():
     $ gx_config = gallerynpyx.config.get_styles()
-    
-    style_prefix gx_config.root
 
     hbox:
         style gx_config.root
         style_prefix gx_config.root_prefix
-        use gx_navigation()
-        use gx_items()
 
-    use gx_tooltip(GetTooltip())
+        $ gx_config = gallerynpyx.config.get_screens()
+
+        use expression gx_config.navigation_screen
+        use expression gx_config.items_screen
+
+    use expression gx_config.tooltip_screen pass (GetTooltip(),)
 
 
-screen gx_navigation()
+screen gx_navigation():
     python:
         gx_handler = gallerynpyx.get_handler()
         gx_config = gallerynpyx.config.get_styles()
@@ -44,13 +44,15 @@ screen gx_navigation()
         $ gx_config = gallerynpyx.config.get_resources()
 
         if gx_config.allow_animation_speeds and gx_handler.has_animation:
-            use gx_animations()
-            use gx_controls(True)
+            $ gx_config = gallerynpyx.config.get_screens()
+            use expression gx_config.animations_screen
+            use expression gx_config.controls_screen pass (True,)
         else:
-            use gx_slides()
-            use gx_controls()
+            $ gx_config = gallerynpyx.config.get_screens()
+            use expression gx_config.slides_screen
+            use expression gx_config.controls_screen pass (False,)
 
-screen gx_items()
+screen gx_items():
     python:
         gx_handler = gallerynpyx.get_handler()
         gx_config = gallerynpyx.config.get_styles()
