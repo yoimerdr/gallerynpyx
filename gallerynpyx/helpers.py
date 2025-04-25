@@ -36,7 +36,7 @@ def create_buttons(items, size):
 
         yield Button(
             child=dis, selected_child=locked,
-            action=ShowItem(item, ),
+            action=ShowItem(item),
             idle_foreground=idle, hover_foreground=hover,
             yalign=0.5, xalign=0.5,
             xysize=size, padding=(0, 0)

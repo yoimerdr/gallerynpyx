@@ -17,7 +17,7 @@ class Slider(SlideBase):
         self._items = OrderedDict()
 
     @classmethod
-    def chain(cls, key, source=None, creates=False, ):
+    def chain(cls, key, source=None, creates=False):
         target = None
         routes = route(key)
 
@@ -52,7 +52,7 @@ class Slider(SlideBase):
         source = self
 
         if routes:
-            source = self.chain(routes, self, True, )
+            source = self.chain(routes, self, True)
             source = self if source is None else source
             items = source.items
 
@@ -66,13 +66,13 @@ class Slider(SlideBase):
         return True
 
     def _get(self, key):
-        return self.chain(key, self, False, )
+        return self.chain(key, self, False)
 
     def _set(self, key, value):
         if not isinstance(value, SlideBase):
             return False
 
-        target = self.chain(key, self, False, )
+        target = self.chain(key, self, False)
         if target is None:
             return False
         elif value is target:
@@ -99,7 +99,7 @@ class Slider(SlideBase):
         return self._add(item, routes)
 
     def slider(self, *routes, **kwargs):
-        slider = self.chain(routes, self, True, )
+        slider = self.chain(routes, self, True)
         slider.label = kwargs.get("label", None)
         return slider
 

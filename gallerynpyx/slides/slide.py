@@ -37,7 +37,7 @@ class Slide(SlideBase):
         try:
             if isinstance(index, slice):
                 self._items[index] = ifilter(isitem, value)
-            elif not isitem(value, ):
+            elif not isitem(value):
                 return False
             else:
                 self._items[index] = value

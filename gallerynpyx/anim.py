@@ -40,7 +40,7 @@ def set_speed(animation, speed=None):
     return animation
 
 
-def get_images(animation, ):
+def get_images(animation):
     for statement in get_statements(animation):
         expressions = getattr(statement, 'expressions', ())
         for expression in expressions:

@@ -22,5 +22,5 @@ class Memoized(object):
 
         return self._res
 
-    def __call__(self, *args, ):
+    def __call__(self, *args):
         return self.evaluate(*args)

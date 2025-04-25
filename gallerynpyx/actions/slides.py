@@ -9,7 +9,7 @@ __all__ = ('NextPage', 'PreviousPage', 'ChangeSlide', 'ReturnSlide')
 
 @add_metaclass(SingletonMeta)
 class NextPage(HandlerInteractive):
-    def __init__(self, ):
+    def __init__(self):
         super(NextPage, self).__init__()
 
     def get_sensitive(self):

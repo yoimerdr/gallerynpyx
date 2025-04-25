@@ -14,7 +14,7 @@ class ScreensConfig(SingletonRegistry):
         '_s_sld', '_s_ctr'
     )
 
-    def __init__(self, ):
+    def __init__(self):
         self.images_screen = self.show_scrollbar = self.root_screen = None
         self.slides_screen = self.navigation_screen = self.items_screen = None
         self.animations_screen = self.controls_screen = self.tooltip_screen = None

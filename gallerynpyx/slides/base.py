@@ -25,7 +25,7 @@ def route(source, relative=None):
     elif isinstance(source, basestring):
         return (source,)
     try:
-        return tuple(imap(tostring, ifilter(isdefine, source), ))
+        return tuple(imap(tostring, ifilter(isdefine, source)))
     except TypeError:
         return (tostring(source),)
 
@@ -36,7 +36,7 @@ class SlideBase(AbstractClass):
         '_name', '_label'
     )
 
-    def __init__(self, name, parent=None, label=None, ):
+    def __init__(self, name, parent=None, label=None):
         self._name = tostring(name)
         self.label = label
         self._parent = self._items = None

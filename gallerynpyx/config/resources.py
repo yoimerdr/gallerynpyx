@@ -75,7 +75,7 @@ class ResourcesConfig(SingletonRegistry):
     @video_thumbnails_folder.setter
     def video_thumbnails_folder(self, value):
         if value is None:
-            value = join("gallerynpyx", "thumbnails", )
+            value = join("gallerynpyx", "thumbnails")
         self._vdo_thumbs_folds = value
 
     @property

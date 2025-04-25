@@ -39,7 +39,7 @@ class DisplayableResource(Resource):
         return Composite((width, height), (0, 0), image)
 
     def scale(self, size):
-        return self._smem.evaluate(SizeInt.of(size), self.source, )
+        return self._smem.evaluate(SizeInt.of(size), self.source)
 
     def dispose(self):
         self._smem.dispose()
