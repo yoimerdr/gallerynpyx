@@ -19,3 +19,9 @@ class Composite:
     def __init__(self, size, positions, displayable): pass
 
 
+class Cache:
+    pass
+
+    def get(self, image, predict=False, texture=False, render=False): return Surfer()
+
+cache = Cache()

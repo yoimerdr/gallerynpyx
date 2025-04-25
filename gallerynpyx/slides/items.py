@@ -35,7 +35,7 @@ class Item(object):
 
     @property
     def locked(self):
-        return not eval(self.condition) if self.condition else False
+        return not self.condition() if self.condition else False
 
     @property
     def song(self):
@@ -51,7 +51,7 @@ class Item(object):
 
     @condition.setter
     def condition(self, condition):
-        self._cond = tostring(condition) if condition else None
+        self._cond = condition if callable(condition) else None
 
     @property
     def tooltip(self):
