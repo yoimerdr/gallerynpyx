@@ -20,6 +20,10 @@ class VideoResource(Resource):
         self._dmem = Memoized(self._displayable)
         super(VideoResource, self).__init__(source)
 
+    @property
+    def ext(self):
+        return self._ext
+
     def _is_supported_source(self, source):
         if not source:
             return False
@@ -51,6 +55,5 @@ class VideoResource(Resource):
     def displayable(self, *args):
         return self._dmem.evaluate(self.source)
 
-    @property
-    def ext(self):
-        return self._ext
+    def dispose(self):
+        self._dmem.dispose()
