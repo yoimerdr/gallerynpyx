@@ -51,3 +51,4 @@ class DisplayableResource(Resource):
 
     def dispose(self):
         self._smem.dispose()
+        self._dmem.dispose()
