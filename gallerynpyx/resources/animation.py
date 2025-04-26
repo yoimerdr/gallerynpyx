@@ -17,7 +17,7 @@ class AnimationResource(Resource):
     def _is_supported_resource(self, resource):
         return isinstance(resource, AnimationResource)
 
-    def _load(self, force, ):
+    def _load(self, force):
         animation = source = self.source
 
         if not isinstance(source, ATLTransform):
@@ -29,3 +29,6 @@ class AnimationResource(Resource):
                 raise UnloadableSourceError(source)
 
         return animation
+
+    def displayable(self, *args):
+        return self.load(True)

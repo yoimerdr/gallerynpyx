@@ -1,5 +1,6 @@
 import os
 
+from renpy.display import im
 from renpy.display.im import Image, Composite, Scale
 from renpy.display.image import get_registered_image
 from .displayable import DisplayableResource
@@ -78,8 +79,9 @@ class ImageResource(DisplayableResource):
 
     def _scales(self, size):
         image = self.load(True)
+        surfer = im.cache.get(image)
 
-        source = SizeInt.of(image.load().get_size())
+        source = SizeInt.of(surfer.get_size())
         xsize = size.scale(source.aspect_ratio)
 
         return Scale(image, xsize.width, xsize.height), xsize, size
@@ -92,6 +94,9 @@ class ImageResource(DisplayableResource):
         x = int(size.width / 2.0 - xsize.width / 2.0)
         y = int(size.height / 2.0 - xsize.height / 2.0)
         return Composite(tuple(size), (x, y), image)
+
+    def _displayable(self, size, *args):
+        return self._load(True) if size is None else self._composite(size)
 
     def dispose(self):
         self._cmem.dispose()
