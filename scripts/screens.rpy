@@ -5,8 +5,8 @@ screen gallerynpyx():
         gx_size = (config.screen_width, config.screen_height)
         gx_config = gallerynpyx.config.get_screens()
 
-    add gx_config.background.create(gx_size)
-    add gx_config.foreground.create(gx_size)
+    add gx_config.background.resource.displayable(gx_size)
+    add gx_config.foreground.resource.displayable(gx_size)
 
     use expression gx_config.root_screen
 

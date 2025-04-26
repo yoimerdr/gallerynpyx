@@ -41,14 +41,14 @@ class ShowItem(Action):
         if song:
             music_start(song)
 
-        saybehavior()
         cfg = ResourcesConfig.get_instance()
-        transition(cfg.transition)
         if isinstance(resource, VideoResource):
             return movie_cutscene(resource.load(True), loops=-1, stop_music=isdefine(song))
         else:
+            saybehavior()
+            transition(cfg.transition)
             if isinstance(resource, DisplayableResource):
-                res = creates(resource, (screen_width, screen_height))
+                res = resource.displayable((screen_width, screen_height))
             else:
                 res = resource.load(True)
                 if cfg.allow_animation_speeds:
