@@ -62,7 +62,7 @@ class SlideBase(AbstractClass):
 
         if self is value:
             raise AssignmentError("Cannot assign parent as itself.")
-        if self in value:
+        if isdefine(value._items.get(self.name, None)):
             raise NameAlreadyExistsError(self.name, value)
 
         self.removeself()
@@ -83,11 +83,10 @@ class SlideBase(AbstractClass):
 
     @property
     def root_parent(self):
-        if not self.has_parent:
-            return None
-        parent = self.parent
-        while parent.has_parent:
-            parent = parent.parent
+        parent = None
+        if self.has_parent:
+            for parent in self.parents:
+                pass
         return parent
 
     @property

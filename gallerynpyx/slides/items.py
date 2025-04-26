@@ -35,7 +35,7 @@ class Item(object):
 
     @property
     def locked(self):
-        return not self.condition() if self.condition else False
+        return not self.condition(self) if self.condition else False
 
     @property
     def song(self):

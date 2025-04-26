@@ -8,7 +8,6 @@ from ..common.helpers import isdefine
 __all__ = ('Slider',)
 
 
-
 class Slider(SlideBase):
     __slots__ = ()
 
@@ -92,8 +91,9 @@ class Slider(SlideBase):
         return True
 
     def _clear(self):
-        for _, value in self.items():
-            value.removeself()
+        while len(self):
+            k, value = self._items.popitem()
+            value.parent = None
 
     def add(self, item, routes=None):
         return self._add(item, routes)
@@ -127,4 +127,4 @@ class Slider(SlideBase):
         return (k for k in self._items)
 
     def __contains__(self, item):
-        return isdefine(item) and item == self._items.get(item.name, None)
+        return isdefine(item) and item is self._items.get(item.name, None)
