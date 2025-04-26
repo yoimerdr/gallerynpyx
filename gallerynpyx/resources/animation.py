@@ -30,5 +30,5 @@ class AnimationResource(Resource):
 
         return animation
 
-    def displayable(self):
+    def displayable(self, *args):
         return self.load(True)
