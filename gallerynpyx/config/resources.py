@@ -1,4 +1,3 @@
-from renpy.display.transition import Transition
 from store import dissolve
 from ..common.classes.objects import SingletonRegistry
 from ..common.helpers import coerce, cast
@@ -9,7 +8,7 @@ __all__ = ('ResourcesConfig',)
 
 
 class ResourcesConfig(SingletonRegistry):
-    _slots_ = (
+    __slots__ = (
         '_not_found', '_idle',
         '_play_hover', '_play_idle',
         '_locked', '_vdo_thumbs_folds',
