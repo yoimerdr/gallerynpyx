@@ -13,11 +13,13 @@ __all__ = ('DisplayableResource',)
 
 class DisplayableResource(Resource):
     __slots__ = (
-        '_smem'
+        '_smem',
+        '_dmem',
     )
 
     def __init__(self, source):
         self._smem = Memoized(self._scale)
+        self._dmem = Memoized(self._displayable)
         super(DisplayableResource, self).__init__(source)
 
     def _is_supported_source(self, source):
@@ -40,6 +42,12 @@ class DisplayableResource(Resource):
 
     def scale(self, size):
         return self._smem.evaluate(SizeInt.of(size), self.source)
+
+    def _displayable(self, size, *args):
+        return self.load(True) if size is None else self._scale(size)
+
+    def displayable(self, size=None):
+        return self._dmem.evaluate(size if size is None else SizeInt.of(size), self.source)
 
     def dispose(self):
         self._smem.dispose()

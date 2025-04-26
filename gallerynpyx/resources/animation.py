@@ -29,3 +29,6 @@ class AnimationResource(Resource):
                 raise UnloadableSourceError(source)
 
         return animation
+
+    def displayable(self, *args):
+        return self.load(True)
