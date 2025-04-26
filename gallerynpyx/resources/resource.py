@@ -62,7 +62,7 @@ class Resource(AbstractClass):
         return cls(resource.source)
 
     dispose = noact
-    _load = not_implemented
+    _load = displayable = not_implemented
     _force_load_init = noact
     _init_from_self = _init_from_res
     _is_supported_source = _is_compatible_resource = bool
