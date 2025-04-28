@@ -6,6 +6,7 @@ from ..common.helpers import isdefine
 from ..common.compat import basestring
 from ..common.memoized import Memoized
 from ..path import isloadable, normpath
+from ..sizes.size_int import SizeInt
 
 __all__ = ('VideoResource',)
 
@@ -49,11 +50,12 @@ class VideoResource(Resource):
         source = self.source
         return getattr(source, '_original_play', source)
 
-    def _displayable(self, source):
-        return source if not isinstance(source, basestring) else Movie(play=source)
+    def _displayable(self, size, *args):
+        source = self.load(True)
+        return Movie(play=source, size=size)
 
-    def displayable(self, *args):
-        return self._dmem.evaluate(self.source)
+    def displayable(self, size=None):
+        return self._dmem.evaluate(size if size is None else SizeInt.of(size), self.source)
 
     def dispose(self):
         self._dmem.dispose()
