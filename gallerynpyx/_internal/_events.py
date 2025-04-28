@@ -5,7 +5,7 @@ __evts = {
 
 
 def on(event, callback):
-    if not callable(callback) or not event in __evts:
+    if not callable(callback):
         return
 
     listeners = __evts.get(event, None)
@@ -17,7 +17,7 @@ def on(event, callback):
 
 
 def off(event, callback):
-    if not callable(callback) or not event in __evts:
+    if not callable(callback):
         return
 
     listeners = __evts.get(event, None)
