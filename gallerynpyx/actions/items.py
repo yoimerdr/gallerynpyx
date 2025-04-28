@@ -9,6 +9,7 @@ from ..config import ScreensConfig, ResourcesConfig
 from ..resources.displayable import DisplayableResource
 from ..resources.video import VideoResource
 from ..slides.items import isitem
+from .._internal import _events
 
 __all__ = ('ShowItem', 'prepare_resource')
 
@@ -42,14 +43,17 @@ class ShowItem(Action):
     def _show_displayable(self, resource, ):
         item = self._item
         cfg = ResourcesConfig.get_instance()
+
         saybehavior()
         transition(cfg.transition)
+
         res = prepare_resource(resource)
         show_screen(ScreensConfig.get_instance().images_screen, res, item)
         interact()
-        if not isinstance(resource, VideoResource):
+
+        if not isinstance(item.resource, VideoResource):
             transition(cfg.transition)
-        elif item.song:
+        if item.song:
             music_stop()
 
     def show(self):
@@ -57,18 +61,21 @@ class ShowItem(Action):
         if item.locked:
             return
 
+        _events._emit("gx-item-show", item)
         song, resource = item.song, item.resource
         if song:
             music_start(song)
 
         if isinstance(resource, VideoResource):
             self._show_movie(resource)
+            _events._emit("gx-item-hide", item)
             return
         else:
             self._show_displayable(resource)
 
         if song:
             music_stop()
+        _events._emit("gx-item-hide", item)
 
     def __call__(self, *args, **kwargs):
         if self._item.locked:
