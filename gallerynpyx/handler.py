@@ -2,16 +2,17 @@ from math import ceil
 
 from renpy.config import screen_width, screen_height
 from renpy.display.layout import Null
-from .common.memoized import Memoized
-from .helpers import create_buttons
-from .common.classes.objects import SingletonRegistry, Singleton
+from .common.classes.objects import SingletonRegistry
 from .common.helpers import isdefine
 from .common.iters import first
+from .common.memoized import Memoized
+from .helpers import create_buttons
 from .sizes.size_int import SizeInt
 from .slides.base import route, isslide
 from .slides.helpers import has_animation, eachitem
 from .slides.items import Item
 from .slides.slider import Slider
+from ._internal import _events
 
 __all__ = ('Handler',)
 
@@ -166,7 +167,12 @@ class Handler(SingletonRegistry):
         elif isslide(target):
             self._sld, self._pg = target, 0
             self._crt = target.parent
+            _events._emit("gx-slide-change", "slide", target)
             return
+
+        if target is not self._crt:
+            _events._emit("gx-slide-change", "slider", target)
+
         self._crt = target
         self.to_first()
 
@@ -174,6 +180,8 @@ class Handler(SingletonRegistry):
         self._sld = first(self.slides, key=isslide)
         if self.has_animation:
             self._sld = None
+        else:
+            _events._emit("gx-slide-change", "slide", self._sld)
         self._pg = 0
         self._bmem.dispose()
 
@@ -184,7 +192,9 @@ class Handler(SingletonRegistry):
         if self.end >= len(self._sld):
             return False
 
-        self._pg += 1
+        nxt = self._pg + 1
+        _events._emit("gx-page-change", nxt, self._pg, )
+        self._pg = nxt
         return True
 
     def previous(self):
@@ -196,7 +206,9 @@ class Handler(SingletonRegistry):
         if prev_index < 0:
             return False
 
-        self._pg -= 1
+        prev = self._pg - 1
+        _events._emit("gx-page-change", prev, self._pg, )
+        self._pg = prev
         return True
 
     def clear(self):
