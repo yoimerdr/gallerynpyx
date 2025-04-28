@@ -114,5 +114,5 @@ screen gx_tooltip(text):
             style_prefix gx_config.tooltip_prefix
             text _("[text!t]")
 
-screen gx_images(displayable, *args):
+screen gx_images(displayable, item, *args):
     add displayable
