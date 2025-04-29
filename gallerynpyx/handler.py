@@ -211,7 +211,7 @@ class Handler(SingletonRegistry):
         self._pg = prev
         return True
 
-    def clear(self):
+    def reset(self):
         self._bmem.dispose()
         for item in eachitem(self.root):
             item.resource.dispose()
