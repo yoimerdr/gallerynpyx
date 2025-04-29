@@ -66,14 +66,14 @@ class ReturnSlide(HandlerInteractive):
         if slide is None:
             current = handler.current
             if root is current:
-                handler.clear()
+                handler.reset()
                 return Return()()
             target = current
         else:
             target = slide.parent
 
         if not self._has_animations and target is root:
-            handler.clear()
+            handler.reset()
             return Return()()
 
         if not self._has_animations:
