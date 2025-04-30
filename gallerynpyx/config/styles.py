@@ -5,17 +5,20 @@ __all__ = (
     'StylesConfig',
 )
 
+
 class StylesConfig(SingletonRegistry):
     __slots__ = (
-        '_root', '_root_pr', '_tip', '_tip_pr',
-        '_nav', '_nav_box', '_vs', '_it',
-        '_sld', '_ctrl',
+        '_root', '_tip',
+        '_nav', '_vs', '_it',
+        '_sld_crt', '_ctrl',
+        '_anim_crt'
     )
 
     def __init__(self):
-        self.root = self.root_prefix = self.tooltip = self.tooltip_prefix = None
-        self.navigation = self.scrollbar = self.navigation_box = self.items = None
-        self.slides = self.controls = None
+        self.root = self.tooltip = None
+        self.navigation = self.scrollbar = self.items = None
+        self.slide_controls = self.controls = None
+        self.animation_controls = None
 
     @property
     def root(self):
@@ -26,14 +29,6 @@ class StylesConfig(SingletonRegistry):
         self._root = tostring(value, "gx")
 
     @property
-    def root_prefix(self):
-        return self._root_pr
-
-    @root_prefix.setter
-    def root_prefix(self, value):
-        self._root_pr = tostring(value, "gx")
-
-    @property
     def tooltip(self):
         return self._tip
 
@@ -42,28 +37,12 @@ class StylesConfig(SingletonRegistry):
         self._tip = tostring(value, "gx_tooltip")
 
     @property
-    def tooltip_prefix(self):
-        return self._tip_pr
-
-    @tooltip_prefix.setter
-    def tooltip_prefix(self, value):
-        self._tip_pr = tostring(value, "gx_tooltip")
-
-    @property
     def navigation(self):
         return self._nav
 
     @navigation.setter
     def navigation(self, value):
         self._nav = tostring(value, "gx_navigation")
-
-    @property
-    def navigation_box(self):
-        return self._nav_box
-
-    @navigation_box.setter
-    def navigation_box(self, value):
-        self._nav_box = tostring(value, "gx_navigation_box")
 
     @property
     def scrollbar(self):
@@ -82,12 +61,20 @@ class StylesConfig(SingletonRegistry):
         self._it = tostring(value, "gx_items")
 
     @property
-    def slides(self):
-        return self._sld
+    def slide_controls(self):
+        return self._sld_crt
 
-    @slides.setter
-    def slides(self, value):
-        self._sld = tostring(value, "gx_slides")
+    @slide_controls.setter
+    def slide_controls(self, value):
+        self._sld_crt = tostring(value, "gx_slide_controls")
+
+    @property
+    def animation_controls(self):
+        return self._anim_crt
+
+    @animation_controls.setter
+    def animation_controls(self, value):
+        self._anim_crt = tostring(value, "gx_animation_controls")
 
     @property
     def controls(self):

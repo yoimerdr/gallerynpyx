@@ -10,15 +10,15 @@ class ScreensConfig(SingletonRegistry):
     __slots__ = (
         '_s_img', '_fg', '_bg',
         '_sw_sv', '_s_rt',
-        '_s_nav', '_s_it', '_s_tip', '_s_ani',
+        '_s_nav', '_s_it', '_s_tip', '_s_ani_crt',
         '_s_sld', '_s_ctr'
     )
 
     def __init__(self, ):
         self.images_screen = self.show_scrollbar = self.root_screen = None
-        self.slides_screen = self.navigation_screen = self.items_screen = None
-        self.animations_screen = self.controls_screen = self.tooltip_screen = None
-        self._bg = Thumbnail("#fff5")
+        self.slide_controls_screen = self.navigation_screen = self.items_screen = None
+        self.animation_controls_screen = self.controls_screen = self.tooltip_screen = None
+        self._bg = Thumbnail("#fff2")
         self._fg = Thumbnail(join("gallerynpyx", "images", "menu.png"))
 
     @property
@@ -54,12 +54,12 @@ class ScreensConfig(SingletonRegistry):
         self._s_it = tostring(value, default='gx_items')
 
     @property
-    def animations_screen(self):
-        return self._s_ani
+    def animation_controls_screen(self):
+        return self._s_ani_crt
 
-    @animations_screen.setter
-    def animations_screen(self, value):
-        self._s_ani = tostring(value, default='gx_animations')
+    @animation_controls_screen.setter
+    def animation_controls_screen(self, value):
+        self._s_ani_crt = tostring(value, default='gx_animation_controls')
 
     @property
     def controls_screen(self):
@@ -70,12 +70,12 @@ class ScreensConfig(SingletonRegistry):
         self._s_ctr = tostring(value, default='gx_controls')
 
     @property
-    def slides_screen(self):
+    def slide_controls_screen(self):
         return self._s_sld
 
-    @slides_screen.setter
-    def slides_screen(self, value):
-        self._s_sld = tostring(value, default='gx_slides')
+    @slide_controls_screen.setter
+    def slide_controls_screen(self, value):
+        self._s_sld = tostring(value, default='gx_slide_controls')
 
     @property
     def tooltip_screen(self):
