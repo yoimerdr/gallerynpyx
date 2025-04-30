@@ -9,7 +9,13 @@ __all__ = ('AnimationResource',)
 
 
 class AnimationResource(Resource):
-    __slots__ = ()
+    __slots__ = (
+        '_sz',
+    )
+
+    def __init__(self, source):
+        self._sz = None
+        super(AnimationResource, self).__init__(source)
 
     def _is_supported_source(self, source):
         return source and isinstance(source, (basestring, ATLTransform))
@@ -30,5 +36,17 @@ class AnimationResource(Resource):
 
         return animation
 
-    def displayable(self, *args):
-        return self.load(True)
+    def _displayable(self, size, *args):
+        atl = self.load(True)
+        if self._sz is None:
+            self._sz = atl.state.size
+        atl.state.set_size(size)
+        return atl
+
+    def dispose(self):
+        if self._sz is not None and self._dmem._res:
+            value = self._dmem._res
+            value.state.set_size(self._sz)
+
+        self._sz = None
+        super(AnimationResource, self).dispose()
