@@ -18,7 +18,7 @@ class ScreensConfig(SingletonRegistry):
         self.images_screen = self.show_scrollbar = self.root_screen = None
         self.slide_controls_screen = self.navigation_screen = self.items_screen = None
         self.animation_controls_screen = self.controls_screen = self.tooltip_screen = None
-        self._bg = Thumbnail("#fff5")
+        self._bg = Thumbnail("#fff2")
         self._fg = Thumbnail(join("gallerynpyx", "images", "menu.png"))
 
     @property
