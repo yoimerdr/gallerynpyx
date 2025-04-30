@@ -7,14 +7,10 @@ style gx_navigation:
     yalign 1.0
     padding (10, 10)
 
-style gx_navigation_box:
+style gx_navigation_vbox:
     spacing 12
 
 style gx_text is text
-
-style gx_text:
-    size 18
-    color "#ffffff"
 
 style gx_tooltip is gx_text
 style gx_tooltip_text is gx_text
@@ -42,12 +38,6 @@ style gx:
 
 style gx_button_text is gui_button_text
 
-style gx_button_text:
-    color "#bababa"
-    hover_color "#fff"
-    selected_color "#fff"
-    insensitive_color "#999"
-
 style gx_scrollbar is vscrollbar
 
 style gx_scrollbar:
@@ -55,9 +45,9 @@ style gx_scrollbar:
 
 style gx_items is gx_fill
 
-style gx_slides:
+style gx_slide_controls:
     xfill True
-    ysize 220
+    ysize 180
 
 style gx_controls:
     xfill True
