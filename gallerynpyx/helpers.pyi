@@ -5,6 +5,42 @@ from .sizes.size import Size
 from .slides.items import Item
 
 
+def isvideo(source) -> bool:
+    """
+    Checks if value is an instance of ``VideoResource``
+
+    :param source: The value to check
+    """
+    ...
+
+
+def isimage(source) -> bool:
+    """
+    Checks if value is an instance of ``ImageResource``
+
+    :param source: The value to check
+    """
+    ...
+
+
+def isdisplayable(source) -> bool:
+    """
+    Checks if value is an instance of ``DisplayableResource``
+
+    :param source: The value to check
+    """
+    ...
+
+
+def isanimation(source) -> bool:
+    """
+    Checks if value is an instance of ``AnimationResource``
+
+    :param source: The value to check
+    """
+    ...
+
+
 def create_buttons(items: Iterable[Item], size: Union[Iterable, Size]) -> Iterable[Button]:
     """
     Creates an iterable with ``Buttons`` for the given items.

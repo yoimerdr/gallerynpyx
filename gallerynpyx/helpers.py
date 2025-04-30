@@ -2,12 +2,34 @@ from renpy.display.behavior import Button
 from .actions.items import ShowItem
 from .config.resources import ResourcesConfig
 from .resources.animation import AnimationResource
+from .resources.displayable import DisplayableResource
 from .resources.exceptions import IncompatibleResourceError
+from .resources.images import ImageResource
 from .resources.thumbnail import creates
 from .resources.video import VideoResource
 from .sizes.size_int import SizeInt
 
-__all__ = ('create_buttons',)
+__all__ = (
+    'create_buttons', 'isvideo',
+    'isimage', 'isdisplayable', 'isanimation'
+)
+
+
+def isvideo(source):
+    return isinstance(source, VideoResource)
+
+
+def isimage(source):
+    return isinstance(source, ImageResource)
+
+
+def isdisplayable(source):
+    return isinstance(source, DisplayableResource)
+
+
+def isanimation(source):
+    return isinstance(source, AnimationResource)
+
 
 def create_buttons(items, size):
     size = tuple(SizeInt.of(size))
