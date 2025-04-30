@@ -13,7 +13,7 @@ class ResourcesConfig(SingletonRegistry):
         '_play_hover', '_play_idle',
         '_locked', '_vdo_thumbs_folds',
         '_al_anim_thumbs', '_al_anim_speeds',
-        '_anim_speed', '_tran',
+        '_anim_speed', '_tran', '_al_anim_sz',
     )
 
     def __init__(self):
@@ -26,6 +26,7 @@ class ResourcesConfig(SingletonRegistry):
 
         self.video_thumbnails_folder = self.allow_animation_thumbnail = self.allow_animation_speeds = None
         self.animation_speed = self.transition = None
+        self.allow_animation_size = True
 
     @property
     def not_found(self):
@@ -103,6 +104,14 @@ class ResourcesConfig(SingletonRegistry):
         self._anim_speed = value
 
     @property
+    def allow_animation_size(self):
+        return self._al_anim_sz
+
+    @allow_animation_size.setter
+    def allow_animation_size(self, value):
+        self._al_anim_sz = bool(value)
+
+    @property
     def transition(self):
         return self._tran
 
@@ -117,4 +126,3 @@ class ResourcesConfig(SingletonRegistry):
             return
 
         self._tran = value
-
