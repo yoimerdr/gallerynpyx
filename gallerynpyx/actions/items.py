@@ -1,4 +1,5 @@
 from renpy.config import screen_width, screen_height
+from renpy.display.transform import ATLTransform
 from renpy.exports import music_start, show_screen, music_stop, invoke_in_new_context, transition
 from renpy.ui import Action, saybehavior, interact
 from ..anim import set_speed
@@ -11,7 +12,7 @@ from ..resources.video import VideoResource
 from ..slides.items import isitem
 from .._internal import _events
 
-__all__ = ('ShowItem', 'prepare_resource')
+__all__ = ('ShowItem', 'prepare_resource', 'reset_resource')
 
 
 def prepare_resource(resource):
@@ -19,9 +20,18 @@ def prepare_resource(resource):
     if isinstance(resource, (DisplayableResource, VideoResource)):
         return resource.displayable((screen_width, screen_height))
     res = resource.load(True)
-    if cfg.allow_animation_speeds:
+    if cfg.allow_animation_speeds and isinstance(res, ATLTransform):
         set_speed(res, cfg.animation_speed)
     return res
+
+
+def reset_resource(resource):
+    cfg = ResourcesConfig.get_instance()
+
+    if cfg.allow_animation_speeds:
+        res = resource.load(True)
+        if isinstance(res, ATLTransform):
+            set_speed(res, 1)
 
 
 @add_metaclass(RegistryMeta)
@@ -51,7 +61,14 @@ class ShowItem(Action):
         show_screen(ScreensConfig.get_instance().images_screen, res, item)
         interact()
 
-        if not isinstance(item.resource, VideoResource):
+        reset_resource(resource)
+
+        other = item.resource
+        if other is not resource:
+            reset_resource(other)
+            resource = other
+
+        if not isinstance(resource, VideoResource):
             transition(cfg.transition)
         if item.song:
             music_stop()
