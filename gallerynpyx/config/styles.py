@@ -5,17 +5,20 @@ __all__ = (
     'StylesConfig',
 )
 
+
 class StylesConfig(SingletonRegistry):
     __slots__ = (
         '_root', '_tip',
         '_nav', '_vs', '_it',
-        '_sld', '_ctrl',
+        '_sld_crt', '_ctrl',
+        '_anim_crt'
     )
 
     def __init__(self):
         self.root = self.tooltip = None
         self.navigation = self.scrollbar = self.items = None
-        self.slides = self.controls = None
+        self.slide_controls = self.controls = None
+        self.animation_controls = None
 
     @property
     def root(self):
@@ -58,12 +61,20 @@ class StylesConfig(SingletonRegistry):
         self._it = tostring(value, "gx_items")
 
     @property
-    def slides(self):
-        return self._sld
+    def slide_controls(self):
+        return self._sld_crt
 
-    @slides.setter
-    def slides(self, value):
-        self._sld = tostring(value, "gx_slides")
+    @slide_controls.setter
+    def slide_controls(self, value):
+        self._sld_crt = tostring(value, "gx_slide_controls")
+
+    @property
+    def animation_controls(self):
+        return self._anim_crt
+
+    @animation_controls.setter
+    def animation_controls(self, value):
+        self._anim_crt = tostring(value, "gx_animation_controls")
 
     @property
     def controls(self):
