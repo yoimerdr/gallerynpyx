@@ -87,7 +87,7 @@ class Slider(SlideBase):
             return False
 
         target.parent._items.pop(target.name)
-        target.parent = None
+        target._parent = None
         return True
 
     def _clear(self):
@@ -100,7 +100,7 @@ class Slider(SlideBase):
 
     def slider(self, *routes, **kwargs):
         slider = self.chain(routes, self, True)
-        slider.label = kwargs.get("label", None)
+        slider.label = slider._label or kwargs.get("label", None)
         return slider
 
     def slide(self, *routes, **kwargs):
