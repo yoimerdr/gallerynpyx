@@ -7,6 +7,7 @@ from ..common.classes.helpers import add_metaclass
 from ..common.classes.meta import RegistryMeta
 from ..common.exceptions import AssignmentError
 from ..config import ScreensConfig, ResourcesConfig
+from ..resources import AnimationResource
 from ..resources.displayable import DisplayableResource
 from ..resources.video import VideoResource
 from ..slides.items import isitem
@@ -19,7 +20,12 @@ def prepare_resource(resource):
     cfg = ResourcesConfig.get_instance()
     if isinstance(resource, (DisplayableResource, VideoResource)):
         return resource.displayable((screen_width, screen_height))
-    res = resource.load(True)
+
+    if isinstance(resource, AnimationResource) and cfg.allow_animation_size:
+        res = resource.displayable((screen_width, screen_height))
+    else:
+        res = resource.load(True)
+
     if cfg.allow_animation_speeds and isinstance(res, ATLTransform):
         set_speed(res, cfg.animation_speed)
     return res
