@@ -46,13 +46,13 @@ class ChangeSlide(HandlerInteractive, Registry):
     def __init__(self: Any, slide: Slide):
         ...
 
-    def get_selected(self: Any):
+    def get_selected(self: Any) -> bool:
         """
         Method used internally by renpy
         """
         ...
 
-    def get_sensitive(self: Any):
+    def get_sensitive(self: Any) -> bool:
         """
         Method used internally by renpy
         """

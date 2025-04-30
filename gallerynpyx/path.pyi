@@ -5,7 +5,7 @@ sep: str
 The path separator for renpy.
 """
 
-def isloadable(path: AnyStr, normalized: bool = False, extensions: tuple[AnyStr, ...] = None):
+def isloadable(path: AnyStr, normalized: bool = False, extensions: tuple[AnyStr, ...] = None) -> bool:
     """
     Checks if the path is loadable.
 
@@ -17,7 +17,7 @@ def isloadable(path: AnyStr, normalized: bool = False, extensions: tuple[AnyStr,
     ...
 
 
-def normpath(path: AnyStr):
+def normpath(path: AnyStr) -> str:
     """
     Normalizes the path for renpy.
 
@@ -26,7 +26,7 @@ def normpath(path: AnyStr):
     ...
 
 
-def join(path: AnyStr, *paths: AnyStr):
+def join(path: AnyStr, *paths: AnyStr) -> str:
     """
     Joins the given paths.
 

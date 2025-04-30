@@ -54,7 +54,7 @@ class Slider(SlideBase):
         """
         ...
 
-    def add(self: Any, item: Union[AnyStr, SlideBase], routes: Union[AnyStr, Iterable[AnyStr], SlideBase] = None):
+    def add(self: Any, item: Union[AnyStr, SlideBase], routes: Union[AnyStr, Iterable[AnyStr], SlideBase] = None) -> bool:
         """
         Adds an slide/slider.
 
