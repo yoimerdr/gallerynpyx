@@ -14,12 +14,7 @@ __all__ = ('VideoResource',)
 class VideoResource(Resource):
     __slots__ = (
         '_ext',
-        '_dmem',
     )
-
-    def __init__(self, source):
-        self._dmem = Memoized(self._displayable)
-        super(VideoResource, self).__init__(source)
 
     @property
     def ext(self):
@@ -53,9 +48,3 @@ class VideoResource(Resource):
     def _displayable(self, size, *args):
         source = self.load(True)
         return Movie(play=source, size=size)
-
-    def displayable(self, size=None):
-        return self._dmem.evaluate(size if size is None else SizeInt.of(size), self.source)
-
-    def dispose(self):
-        self._dmem.dispose()

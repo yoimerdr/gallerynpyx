@@ -46,10 +46,6 @@ class ImageResource(DisplayableResource):
         self._ext = ext
         super(ImageResource, self)._init_from_raw(source)
 
-    def _init(self, source):
-        self._cmem.dispose()
-        super(ImageResource, self)._init(source)
-
     def _load(self, force):
         source = self.source
         if isinstance(source, Image):
