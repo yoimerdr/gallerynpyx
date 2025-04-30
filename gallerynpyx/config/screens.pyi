@@ -77,9 +77,9 @@ class ScreensConfig(SingletonRegistry):
         ...
 
     @property
-    def animations_screen(self: Any) -> str:
+    def animation_controls_screen(self: Any) -> str:
         """
-        The screen name for the items (thumbnails).
+        The screen name for the speed controls.
 
         :notes: This is a special screen, it is used to display the speed controls if it's allowed.
         :notes: It is used only when there is any animation in the active slide.
@@ -88,8 +88,8 @@ class ScreensConfig(SingletonRegistry):
         """
         ...
 
-    @animations_screen.setter
-    def animations_screen(self: Any, value: AnyStr):
+    @animation_controls_screen.setter
+    def animation_controls_screen(self: Any, value: AnyStr):
         ...
 
     @property
@@ -107,7 +107,7 @@ class ScreensConfig(SingletonRegistry):
         ...
 
     @property
-    def slides_screen(self: Any) -> str:
+    def slide_controls_screen(self: Any) -> str:
         """
         The screen name for the slide/slider (actions)
 
@@ -116,8 +116,8 @@ class ScreensConfig(SingletonRegistry):
         """
         ...
 
-    @slides_screen.setter
-    def slides_screen(self: Any, value: AnyStr):
+    @slide_controls_screen.setter
+    def slide_controls_screen(self: Any, value: AnyStr):
         ...
 
     @property
@@ -167,9 +167,9 @@ class ScreensConfig(SingletonRegistry):
     @property
     def show_scrollbar(self: Any) -> bool:
         """
-        Whether to show the scrollbar on the ``slides_screen``.
+        Whether to show the scrollbar on the ``slide_controls_screen``.
 
-        :notes: It is only used in the default ``slides_screen``, unless this value is used in the new screen.
+        :notes: It is only used in the default ``slide_controls_screen``, unless this value is used in the new screen.
         :getter: Gets the scrollbar state.
         :setter: Sets a new scrollbar state.
         """

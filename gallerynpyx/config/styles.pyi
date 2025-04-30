@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, AnyStr
 
 from ..common.classes.objects import SingletonRegistry
 
@@ -9,7 +9,7 @@ class StylesConfig(SingletonRegistry):
         ...
 
     @property
-    def root(self: Any):
+    def root(self: Any) -> str:
         """
         The style name for the root screen.
 
@@ -19,25 +19,11 @@ class StylesConfig(SingletonRegistry):
         ...
 
     @root.setter
-    def root(self: Any, value):
+    def root(self: Any, value: AnyStr):
         ...
 
     @property
-    def root_prefix(self: Any):
-        """
-        The prefix name for each element of the root screen.
-
-        :getter: Gets the style name.
-        :setter: Sets a new style name.
-        """
-        ...
-
-    @root_prefix.setter
-    def root_prefix(self: Any, value):
-        ...
-
-    @property
-    def tooltip(self: Any):
+    def tooltip(self: Any) -> str:
         """
         The style name for the tooltip screen.
 
@@ -47,25 +33,11 @@ class StylesConfig(SingletonRegistry):
         ...
 
     @tooltip.setter
-    def tooltip(self: Any, value):
+    def tooltip(self: Any, value: AnyStr):
         ...
 
     @property
-    def tooltip_prefix(self: Any):
-        """
-        The prefix name for each element of the tooltip screen.
-
-        :getter: Gets the style name.
-        :setter: Sets a new style name.
-        """
-        ...
-
-    @tooltip_prefix.setter
-    def tooltip_prefix(self: Any, value):
-        ...
-
-    @property
-    def navigation(self: Any):
+    def navigation(self: Any) -> str:
         """
         The style name for the navigation ``frame``.
 
@@ -75,25 +47,11 @@ class StylesConfig(SingletonRegistry):
         ...
 
     @navigation.setter
-    def navigation(self: Any, value):
+    def navigation(self: Any, value: AnyStr):
         ...
 
     @property
-    def navigation_box(self: Any):
-        """
-        The style name for the navigation ``vbox``.
-
-        :getter: Gets the style name.
-        :setter: Sets a new style name.
-        """
-        ...
-
-    @navigation_box.setter
-    def navigation_box(self: Any, value):
-        ...
-
-    @property
-    def scrollbar(self: Any):
+    def scrollbar(self: Any) -> str:
         """
         The style name for the ``scrollbar`` on slides.
 
@@ -107,7 +65,7 @@ class StylesConfig(SingletonRegistry):
         ...
 
     @property
-    def items(self: Any):
+    def items(self: Any) -> str:
         """
         The style name for the ``grid`` of items.
 
@@ -117,11 +75,11 @@ class StylesConfig(SingletonRegistry):
         ...
 
     @items.setter
-    def items(self: Any, value):
+    def items(self: Any, value: AnyStr):
         ...
 
     @property
-    def slides(self: Any):
+    def slide_controls(self: Any) -> str:
         """
         The style name for the ``viewport`` of slides.
 
@@ -130,12 +88,20 @@ class StylesConfig(SingletonRegistry):
         """
         ...
 
-    @slides.setter
-    def slides(self: Any, value):
+    @slide_controls.setter
+    def slide_controls(self: Any, value: AnyStr):
         ...
 
     @property
-    def controls(self: Any):
+    def animation_controls(self: Any) -> str:
+        ...
+
+    @animation_controls.setter
+    def animation_controls(self: Any, value: AnyStr):
+        ...
+
+    @property
+    def controls(self: Any) -> str:
         """
         The style name for the ``vbox`` of the controls.
 
@@ -145,5 +111,5 @@ class StylesConfig(SingletonRegistry):
         ...
 
     @controls.setter
-    def controls(self: Any, value):
+    def controls(self: Any, value: AnyStr):
         ...
