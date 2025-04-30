@@ -21,7 +21,7 @@ screen gx_root():
 
     hbox:
         style gx_config.root
-        style_prefix gx_config.root_prefix
+        style_prefix gx_config.root
 
         $ gx_config = gallerynpyx.config.get_screens()
 
@@ -38,18 +38,18 @@ screen gx_navigation():
 
     frame:
         style gx_config.navigation
+        style_prefix gx_config.navigation
         has vbox
-        style gx_config.navigation_box
 
         $ gx_config = gallerynpyx.config.get_resources()
 
         if gx_config.allow_animation_speeds and gx_handler.has_animation:
             $ gx_config = gallerynpyx.config.get_screens()
-            use expression gx_config.animations_screen
+            use expression gx_config.animation_controls_screen
             use expression gx_config.controls_screen pass (True,)
         else:
             $ gx_config = gallerynpyx.config.get_screens()
-            use expression gx_config.slides_screen
+            use expression gx_config.slide_controls_screen
             use expression gx_config.controls_screen pass (False,)
 
 screen gx_items():
@@ -59,35 +59,40 @@ screen gx_items():
 
     grid gx_handler.cols gx_handler.rows:
         style gx_config.items
+        style_prefix gx_config.items
         for gx_button in gx_handler.buttons:
             add gx_button
 
-screen gx_slides():
+screen gx_slide_controls():
     python:
         gx_handler = gallerynpyx.get_handler()
         gx_config = gallerynpyx.config.get_styles()
 
     side "c r":
-        viewport id "gx_slides":
-            style gx_config.slides
+        viewport id "gx_slide_controls":
+            style gx_config.slide_controls
+            style_prefix gx_config.slide_controls
             mousewheel True
             draggable True
             vbox:
                 for gx_slide in gx_handler.slides:
                     textbutton _("[gx_slide.label!t]"):
                         action gallerynpyx.actions.ChangeSlide(gx_slide)
-        
+
         $ gx_config = gallerynpyx.config.get_screens()
         if gx_config.show_scrollbar:
             $ gx_config = gallerynpyx.config.get_styles()
             vbar:
                 style gx_config.scrollbar
-                value YScrollValue("gx_slides")
+                value YScrollValue("gx_slide_controls")
         else:
             null
 
-screen gx_animations():
+screen gx_animation_controls():
+    $ gx_config = gallerynpyx.config.get_styles()
     hbox:
+        style gx_config.animation_controls
+        style_prefix gx_config.animation_controls
         for speed in range(1, 5):
             textbutton _("x[speed]"):
                 action gallerynpyx.actions.ChangeAnimationSpeed(speed)
@@ -96,22 +101,24 @@ screen gx_controls(has_animations=False):
     $ gx_config = gallerynpyx.config.get_styles()
     vbox:
         style gx_config.controls
+        style_prefix gx_config.controls
+
         textbutton _("Previous"):
             action gallerynpyx.actions.PreviousPage()
-        
+
         textbutton _("Next"):
             action gallerynpyx.actions.NextPage()
 
         textbutton _("Return"):
             action gallerynpyx.actions.ReturnSlide(has_animations)
-        
+
 screen gx_tooltip(text):
     if text:
         $ gx_config = gallerynpyx.config.get_styles()
 
         frame:
             style gx_config.tooltip
-            style_prefix gx_config.tooltip_prefix
+            style_prefix gx_config.tooltip
             text _("[text!t]")
 
 screen gx_images(displayable, item, *args):
