@@ -43,6 +43,12 @@ def add_metaclass(*args):
     return wrapper
 
 
+def classof(cls):
+    if not isinstance(cls, type):
+        raise TypeError("The class {!r} is not a class.".format(cls))
+    return getattr(cls, "__cls__", cls)
+
+
 def not_instantiable(self, *args, **kwargs):
     from .exceptions import NotInstantiableError
 

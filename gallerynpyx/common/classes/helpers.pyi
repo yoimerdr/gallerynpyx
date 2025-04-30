@@ -9,6 +9,7 @@ def classname(target, *, fully: bool = False) -> str:
     """
     ...
 
+
 def representation(target, **kwargs: Any) -> str:
     """
     Creates a representation of the target object.
@@ -17,6 +18,7 @@ def representation(target, **kwargs: Any) -> str:
     :param kwargs: The arguments into the representation.
     """
     ...
+
 
 def with_metaclass(cls: type, metaclass: type) -> type:
     """
@@ -27,6 +29,7 @@ def with_metaclass(cls: type, metaclass: type) -> type:
     """
     ...
 
+
 def add_metaclass(metaclass: type) -> Callable[[type], type]:
     """
     Adds a metaclass to a class.
@@ -34,6 +37,18 @@ def add_metaclass(metaclass: type) -> Callable[[type], type]:
     :param metaclass: The metaclass to add.
     """
     ...
+
+
+def classof(cls: type) -> type:
+    """
+    Gets the active class.
+
+    :notes: The active class is the ``__cls__`` class attribute.
+    :param cls: A class type
+    :returns: The active class or itself if it doesn't have one.
+    """
+    ...
+
 
 @override
 def add_metaclass(cls: type, metaclass: type) -> type:
@@ -45,6 +60,7 @@ def add_metaclass(cls: type, metaclass: type) -> type:
     """
     ...
 
+
 def not_instantiable(self, *args, **kwargs):
     """
     :raises NotInstantiableError: When the function is called.
@@ -53,6 +69,7 @@ def not_instantiable(self, *args, **kwargs):
     :param kwargs: Method keyword arguments.
     """
     ...
+
 
 def not_implemented(self, *args, **kwargs):
     """
