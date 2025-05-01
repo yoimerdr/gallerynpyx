@@ -2,6 +2,7 @@ import pathlib
 import shutil
 from py2ren import create_config
 from py2ren.cli import main, Args
+from py2ren.config.config import dump_config
 
 # checking paths
 root = pathlib.Path(__file__).parent
@@ -21,6 +22,7 @@ events = internal.modules["_events.py"]
 events._name = "_events"
 
 # Build
+dump_config(root, cfg)
 main(
     Args(
         "./gallerynpyx",

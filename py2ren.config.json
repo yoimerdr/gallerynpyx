@@ -1,0 +1,196 @@
+{
+  "name": "gallerynpyx",
+  "initLevel": -1,
+  "classBases": {
+    "object": "python_object",
+    "list": "python_list",
+    "tuple": "python_tuple",
+    "dict": "python_dict"
+  },
+  "storedModules": [
+    "gallerynpyx"
+  ],
+  "modules": {
+    "anim.py": {
+      "initLevel": -11
+    },
+    "color.py": {
+      "initLevel": -16
+    },
+    "events.py": {
+      "initLevel": -17
+    },
+    "exports.py": {
+      "initLevel": -2
+    },
+    "handler.py": {
+      "initLevel": -3
+    },
+    "helpers.py": {
+      "initLevel": -4
+    },
+    "path.py": {
+      "initLevel": -18
+    },
+    "__init__.py": {
+      "initLevel": -1
+    },
+    "actions": {
+      "modules": {
+        "base.py": {
+          "initLevel": -18
+        },
+        "items.py": {
+          "initLevel": -5
+        },
+        "resources.py": {
+          "initLevel": -6
+        },
+        "slides.py": {
+          "initLevel": -6
+        },
+        "__init__.py": {
+          "initLevel": -4
+        }
+      }
+    },
+    "common": {
+      "modules": {
+        "compat.py": {
+          "initLevel": -18
+        },
+        "exceptions.py": {
+          "initLevel": -18
+        },
+        "helpers.py": {
+          "initLevel": -17
+        },
+        "iters.py": {
+          "initLevel": -18
+        },
+        "memoized.py": {
+          "initLevel": -18
+        },
+        "__init__.py": {
+          "initLevel": -16
+        },
+        "classes": {
+          "modules": {
+            "exceptions.py": {
+              "initLevel": -15
+            },
+            "helpers.py": {
+              "initLevel": -16
+            },
+            "meta.py": {
+              "initLevel": -14
+            },
+            "objects.py": {
+              "initLevel": -13
+            },
+            "__init__.py": {
+              "initLevel": -12
+            }
+          }
+        }
+      }
+    },
+    "config": {
+      "modules": {
+        "resources.py": {
+          "initLevel": -7
+        },
+        "screens.py": {
+          "initLevel": -7
+        },
+        "styles.py": {
+          "initLevel": -12
+        },
+        "__init__.py": {
+          "initLevel": -6
+        }
+      }
+    },
+    "resources": {
+      "modules": {
+        "animation.py": {
+          "initLevel": -11
+        },
+        "displayable.py": {
+          "initLevel": -11
+        },
+        "exceptions.py": {
+          "initLevel": -15
+        },
+        "helpers.py": {
+          "initLevel": -9
+        },
+        "images.py": {
+          "initLevel": -10
+        },
+        "resource.py": {
+          "initLevel": -12
+        },
+        "thumbnail.py": {
+          "initLevel": -8
+        },
+        "video.py": {
+          "initLevel": -11
+        },
+        "__init__.py": {
+          "initLevel": -8
+        }
+      }
+    },
+    "sizes": {
+      "modules": {
+        "size.py": {
+          "initLevel": -15
+        },
+        "size_int.py": {
+          "initLevel": -14
+        },
+        "__init__.py": {
+          "initLevel": -13
+        }
+      }
+    },
+    "slides": {
+      "modules": {
+        "base.py": {
+          "initLevel": -12
+        },
+        "exceptions.py": {
+          "initLevel": -18
+        },
+        "helpers.py": {
+          "initLevel": -4
+        },
+        "items.py": {
+          "initLevel": -7
+        },
+        "slide.py": {
+          "initLevel": -6
+        },
+        "slider.py": {
+          "initLevel": -5
+        },
+        "__init__.py": {
+          "initLevel": -3
+        }
+      }
+    },
+    "_internal": {
+      "name": "_internal",
+      "modules": {
+        "_events.py": {
+          "name": "_events",
+          "initLevel": -18
+        },
+        "__init__.py": {
+          "initLevel": -18
+        }
+      }
+    }
+  }
+}
