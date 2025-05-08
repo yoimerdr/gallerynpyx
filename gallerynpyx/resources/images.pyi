@@ -70,8 +70,9 @@ class ImageResource(DisplayableResource):
         """
         Loads the source and composites it.
 
-        :notes: The load is make it with the force flag.
-        :notes: This method is an alternative to scale if you want to maintain the aspect ratio of the image.
+        :notes:
+            * The load is make it with the force flag.
+            * This method is an alternative to scale if you want to maintain the aspect ratio of the image.
         :see: load
         :param size: The iterable object with width and height dimensions.
         :return: The Composite object.

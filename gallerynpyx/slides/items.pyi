@@ -11,6 +11,7 @@ from ..resources.thumbnail import Thumbnail
 def isitem(value) -> bool:
     """
     Checks if value is an instance of ``Item``
+
     :param value: The value to check
     """
     ...

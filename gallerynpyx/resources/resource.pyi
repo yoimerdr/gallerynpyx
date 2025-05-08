@@ -1,21 +1,21 @@
-from typing import Any, TypeVar, Tuple
+from typing import Any, TypeVar, Tuple, Iterable
 
 from gallerynpyx.common.classes import AbstractClass
 from renpy.display.displayable import Displayable
 
 _T = TypeVar("_T")
 
-IMAGES: Tuple[str, ...] = ...
+IMAGES: Tuple[str, ...]
 """
 List of image extensions that renpy can load.
 """
 
-VIDEOS: Tuple[str, ...] = ...
+VIDEOS: Tuple[str, ...]
 """
 List of video extensions that renpy can load.
 """
 
-AUDIO: Tuple[str, ...] = ...
+AUDIO: Tuple[str, ...]
 """
 List of audio extensions that renpy can load.
 """
@@ -25,6 +25,7 @@ class Resource(AbstractClass):
     """
     The base class for resources.
     """
+
     def __init__(self: Any, source):
         """
         :param source: The source.
@@ -53,9 +54,11 @@ class Resource(AbstractClass):
         """
         ...
 
-    def displayable(self: Any, *args, **kwargs) -> Displayable:
+    def displayable(self: Any, size: Iterable[int] = None, ) -> Displayable:
         """
         Creates a displayable from the source.
+
+        :param size: Optional iterable object with width and height dimensions.
         """
         ...
 

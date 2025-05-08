@@ -13,13 +13,13 @@ class ChangeAnimationSpeed(Interactive):
         """
         ...
 
-    def get_sensitive(self: Any):
+    def get_sensitive(self: Any) -> bool:
         """
         Method used internally by renpy
         """
         ...
 
-    def get_selected(self: Any):
+    def get_selected(self: Any) -> bool:
         """
         Method used internally by renpy
         """

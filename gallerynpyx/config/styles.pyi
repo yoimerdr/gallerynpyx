@@ -4,8 +4,34 @@ from ..common.classes.objects import SingletonRegistry
 
 
 class StylesConfig(SingletonRegistry):
+    """
+    Common configuration for screens-related properties.
+
+    :notes:
+        * There will be only one instance
+        * You can register a custom configuration by using the ``register`` class method before the first use of the class.
+    """
 
     def __init__(self: Any):
+        ...
+
+    @classmethod
+    def register(cls: Any, target: type[StylesConfig]):
+        """
+        Registers a target class in the registry.
+
+        :param target: The class to register.
+        """
+        ...
+
+    @classmethod
+    def get_instance(cls: Any, *args, **kwargs) -> StylesConfig:
+        """
+        Creates or returns the singleton instance.
+
+        :param args: Init class arguments.
+        :param kwargs: Init class keyword arguments.
+        """
         ...
 
     @property

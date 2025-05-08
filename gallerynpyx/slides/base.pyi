@@ -26,9 +26,10 @@ def route(source: Union[AnyStr, Iterable[AnyStr], SlideBase], relative=None) -> 
     """
     Creates a route from the source.
 
-    :notes: Only the defined values are converted to strings.
-    :notes: If the source is a ``SlideBase``, use the ``route`` method.
-    :notes: The ``relative`` parameter is ignored if the source is not a ``SlideBase``.
+    :notes:
+        * Only the defined values are converted to strings.
+        * If the source is a ``SlideBase``, use the ``route`` method.
+        * The ``relative`` parameter is ignored if the source is not a ``SlideBase``.
 
     :param source: The source object.
     :param relative: The slider to which the route will be relative to.

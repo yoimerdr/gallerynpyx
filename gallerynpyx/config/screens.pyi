@@ -4,7 +4,7 @@ from renpy.display.displayable import Displayable
 from renpy.display.im import Image
 from renpy.display.transform import ATLTransform
 from renpy.display.video import Movie
-from ..common.classes.objects import SingletonRegistry
+from ..common.classes.objects import SingletonRegistry, _T
 from ..resources.resource import Resource
 from ..resources.thumbnail import Thumbnail
 
@@ -13,11 +13,31 @@ class ScreensConfig(SingletonRegistry):
     """
     Common configuration for screens-related properties.
 
-    :notes: There will be only one instance
-    :notes: You can register a custom configuration by using the ``register`` class method before the first use of the class.
+    :notes:
+        * There will be only one instance
+        * You can register a custom configuration by using the ``register`` class method before the first use of the class.
     """
 
     def __init__(self: Any):
+        ...
+
+    @classmethod
+    def register(cls: Any, target: type[ScreensConfig]):
+        """
+        Registers a target class in the registry.
+
+        :param target: The class to register.
+        """
+        ...
+
+    @classmethod
+    def get_instance(cls: Any, *args, **kwargs) -> ScreensConfig:
+        """
+        Creates or returns the singleton instance.
+
+        :param args: Init class arguments.
+        :param kwargs: Init class keyword arguments.
+        """
         ...
 
     @property
@@ -81,8 +101,9 @@ class ScreensConfig(SingletonRegistry):
         """
         The screen name for the speed controls.
 
-        :notes: This is a special screen, it is used to display the speed controls if it's allowed.
-        :notes: It is used only when there is any animation in the active slide.
+        :notes:
+            * This is a special screen, it is used to display the speed controls if it's allowed.
+            * It is used only when there is any animation in the active slide.
         :getter: Gets the screen name.
         :setter: Sets a new screen name.
         """

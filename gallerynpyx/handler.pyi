@@ -19,11 +19,31 @@ class Handler(SingletonRegistry):
     """
     Basic handler for a gallery.
 
-    :notes: There will be only one instance
-    :notes: You can register a custom handler by using the ``register`` class method before the first use of the class.
+    :notes:
+        * There will be only one instance
+        * You can register a custom handler by using the ``register`` class method before the first use of the class.
     """
 
     def __init__(self: Any):
+        ...
+
+    @classmethod
+    def register(cls: Any, target: type[Handler]):
+        """
+        Registers a target class in the registry.
+
+        :param target: The class to register.
+        """
+        ...
+
+    @classmethod
+    def get_instance(cls: Any, *args, **kwargs) -> Handler:
+        """
+        Creates or returns the singleton instance.
+
+        :param args: Init class arguments.
+        :param kwargs: Init class keyword arguments.
+        """
         ...
 
     @property
@@ -152,8 +172,9 @@ class Handler(SingletonRegistry):
         """
         The thumbnail size.
 
-        :notes: This value is set on each change of the distribution.
-        :notes: You can set the size properties directly, but it's not recommended.
+        :notes:
+            * This value is set on each change of the distribution.
+            * You can set the size properties directly, but it's not recommended.
         :getter: Gets the thumbnail size
         """
         ...
@@ -163,8 +184,9 @@ class Handler(SingletonRegistry):
         """
         An iterator of the buttons in the active ``slide``.
 
-        :notes: The order of the buttons is the same as the order of the items in the active ``slide``.
-        :notes: If the total number of items is not enough to fill the current page, then the remaining buttons are ``Null`` displayables.
+        :notes:
+            * The order of the buttons is the same as the order of the items in the active ``slide``.
+            * If the total number of items is not enough to fill the current page, then the remaining buttons are ``Null`` displayables.
         """
         ...
 
@@ -173,8 +195,9 @@ class Handler(SingletonRegistry):
         """
         A tuple of the buttons in the active ``slide``.
 
-        :notes: The order of the buttons is the same as the order of the items in the active ``slide``.
-        :notes: If the total number of items is not enough to fill the current page, then the remaining buttons are ``Null`` displayables.
+        :notes:
+            * The order of the buttons is the same as the order of the items in the active ``slide``.
+            * If the total number of items is not enough to fill the current page, then the remaining buttons are ``Null`` displayables.
         """
         ...
 

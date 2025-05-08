@@ -11,11 +11,31 @@ class ResourcesConfig(SingletonRegistry):
     """
     Common configuration for resource-related properties.
 
-    :notes: There will be only one instance
-    :notes: You can register a custom configuration by using the ``register`` class method before the first use of the class.
+    :notes:
+        * There will be only one instance
+        * You can register a custom configuration by using the ``register`` class method before the first use of the class.
     """
 
     def __init__(self: Any):
+        ...
+
+    @classmethod
+    def register(cls: Any, target: type[ResourcesConfig]):
+        """
+        Registers a target class in the registry.
+
+        :param target: The class to register.
+        """
+        ...
+
+    @classmethod
+    def get_instance(cls: Any, *args, **kwargs) -> ResourcesConfig:
+        """
+        Creates or returns the singleton instance.
+
+        :param args: Init class arguments.
+        :param kwargs: Init class keyword arguments.
+        """
         ...
 
     @property
@@ -142,6 +162,20 @@ class ResourcesConfig(SingletonRegistry):
 
     @animation_speed.setter
     def animation_speed(self: Any, value: SupportsInt):
+        ...
+
+    @property
+    def allow_animation_size(self: Any) -> bool:
+        """
+        Whether to allow the dynamic changes of size in animation objects.
+
+        :getter: Gets the value.
+        :setter: Sets a new value.
+        """
+        ...
+
+    @allow_animation_size.setter
+    def allow_animation_size(self: Any, value):
         ...
 
     @property

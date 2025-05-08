@@ -4,6 +4,7 @@ from typing import override, Any, Callable
 def classname(target, *, fully: bool = False) -> str:
     """
     Gets the class name of the target object.
+
     :param target: An instance or a class.
     :param fully: Whether to return the fully qualified name.
     """

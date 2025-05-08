@@ -1,6 +1,8 @@
 # gallerynpyx
 
-The next gallerynpy. A library to create and display a gallery in renpy games.
+The next gallerynpy. A library to create and display a gallery in renpy games. 
+gallerynpyx is a new improved, modularized and optimized version of gallerynpy (v2.0).
+It improves usability and customization, adds events and aims to allow the integration of gallery extensions without much difficulty.
 
 The gallery screen displays all images, animations and videos that have been inserted
 into gallerynpyx handler.

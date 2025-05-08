@@ -17,8 +17,9 @@ class Slider(SlideBase):
         """
         Iterates over the route and returns the slider at the end.
 
-        :notes: If any slider in the route does not exist and the ``creates`` flag is not specified, returns None.
-        :notes: If any item in the route is not a slider and the ``creates`` flag is not specified, returns None.
+        :notes:
+            * If any slider in the route does not exist and the ``creates`` flag is not specified, returns None.
+            * If any item in the route is not a slider and the ``creates`` flag is not specified, returns None.
         :raises NameAlreadyExistsError: If any item in the route is not a slider and the ``creates`` flag is specified.
         :param key: The slider routes.
         :param source: The slider source.

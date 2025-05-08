@@ -27,8 +27,9 @@ def rgba2hex(red: SupportsIndex, green: SupportsIndex,
     """
     Converts RGBA color values to hexadecimal color string.
 
-    :notes: If the alpha value is not given, use 1.
-    :notes: If the conversion raises an exception (``TypeError``, ``ValueError``), returns None.
+    :notes:
+        * If the alpha value is not given, use 1.
+        * If the conversion raises an exception (``TypeError``, ``ValueError``), returns None.
     :param red: Red component value (0-255)
     :param green: Green component value (0-255)
     :param blue: Blue component value (0-255)
@@ -53,8 +54,9 @@ def hex2rgba(color: AnyStr) -> Union[None, tuple[int, int, int, int]]:
     """
     Converts a hexadecimal color string to RGBA values.
 
-    :notes: If the given string is not a valid hexadecimal color value, returns None.
-    :notes: If the conversion raises an exception (``TypeError``, ``ValueError``), returns None.
+    :notes:
+        * If the given string is not a valid hexadecimal color value, returns None.
+        * If the conversion raises an exception (``TypeError``, ``ValueError``), returns None.
     :param color: The hexadecimal color string.
     """
     ...
@@ -64,8 +66,9 @@ def hex2rgb(color: AnyStr) -> Union[None, tuple[int, int, int]]:
     """
     Converts a hexadecimal color string to RGB values.
 
-    :notes: If the given string is not a valid hexadecimal color value, returns None.
-    :notes: If the conversion raises an exception (``TypeError``, ``ValueError``), returns None.
+    :notes:
+        * If the given string is not a valid hexadecimal color value, returns None.
+        * If the conversion raises an exception (``TypeError``, ``ValueError``), returns None.
     :param color: The hexadecimal color string.
     """
     ...

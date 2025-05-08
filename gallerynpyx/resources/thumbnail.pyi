@@ -15,8 +15,9 @@ def creates(resource: Union[DisplayableResource, ImageResource], size: Iterable[
     """
     Scales o composites the resource to the given size.
 
-    :notes: Use scale() method for displayable resources.
-    :notes: Use composite() method for image resources.
+    :notes:
+        * Use scale() method for displayable resources.
+        * Use composite() method for image resources.
     :raises IncompatibleResourceError: If the resource is not displayable or image.
     :param resource: The displayable or image resource.
     :param size: The iterable object with width and height dimensions.

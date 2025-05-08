@@ -24,7 +24,7 @@ def ifilter(fn: Callable[[_T], bool], iterable: Iterable[_T]) -> Iterable[_T]:
     ...
 
 
-def irange(start: SupportsIndex, stop: SupportsIndex = None, step: SupportsIndex = 1) -> Iterable[tuple[SupportsIndex]]:
+def irange(start: SupportsIndex, stop: SupportsIndex = None, step: SupportsIndex = 1) -> Iterable[int]:
     """
     Create an iterator that generates a sequence of numbers.
     """

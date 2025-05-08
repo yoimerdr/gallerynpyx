@@ -1,4 +1,4 @@
-from typing import Union, Any, AnyStr
+from typing import Union, Any, AnyStr, Iterable
 
 from renpy.display.transform import ATLTransform
 from .resource import Resource
@@ -27,11 +27,13 @@ class AnimationResource(Resource):
     @source.setter
     def source(self: Any, value: Union[AnyStr, ATLTransform, AnimationResource]): ...
 
-    def displayable(self: Any, *args: Any) -> ATLTransform:
+
+    def displayable(self: Any, size: Iterable[int] = None, ) -> ATLTransform:
         """
         Loads (force flag) the animation and returns it.
 
-        :param args: Ignored arguments.
+        :notes: Sets the size parameter to the animation state if it is provided.
+        :param size: Optional iterable object with width and height dimensions.
         """
         ...
 

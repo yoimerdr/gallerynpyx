@@ -12,15 +12,16 @@ def prepare_resource(resource: _R) -> _R:
     """
     Prepares the resource for display.
 
-    :notes: For non-animation resources, create a displayable with the same size as the screen.
-    :notes: For animation resources, assign the animation speed if it's allowed.
+    :notes:
+        * For non-animation resources, create a displayable with the same size as the screen.
+        * For animation resources, assign the animation speed if it's allowed.
     :param resource: Any resource
     :return: The prepared resource.
     """
     ...
 
 
-class ShowItem(Action, Registry):
+class ShowItem(Action):
     """
     An action to display the resource of an item.
     """
