@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customizing &mdash; Gallerynpyx Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/css/lunr-searchbox.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/fabup.css?v=592a04eb" />
+      <link rel="stylesheet" type="text/css" href="_static/css/code-syntax.css?v=c2901138" />
+      <link rel="stylesheet" type="text/css" href="_static/css/font-jb-sans.css?v=e3b0d0c7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/index.css?v=4ade695c" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="https://unpkg.com/lunr/lunr.min.js"></script>
+        <script src="_static/js/lunr-searchbox.js"></script>
+        <script src="_static/js/lunr-search-data.js"></script>
+        <script src="_static/js/fabup.js?v=0808abf6"></script>
+        <script src="_static/js/code-syntax.js?v=063008fa"></script>
+        <script src="_static/js/index.js?v=e210afa2"></script>
+        <script src="_static/js/icon-fixer.js?v=afd91005"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="anim" href="modules/anim.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            gallerynpyx
+              <img src="_static/navbar-logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0.0 Documentation
+              </div><form class="search" id="ls_search-form" action="javascript:;" onsubmit="onSubmitSearch(this)">
+  <div class="search-field-container">
+    <input class="search-field"
+           type="text" autocomplete="off" id="ls_search-field" name="q" placeholder="Search">
+
+
+    <button type="reset" class="search-reset-button" id="search-reset-button">
+      <svg class="search-reset-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+           width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18 17.94 6M18 18 6.06 6"/>
+      </svg>
+    </button>
+
+    <button type="submit" class="search-button">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+           viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+           width="512px" height="512px">
+            <path
+              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path>
+          </svg>
+    </button>
+  </div>
+
+  <ul class="search-results" id="ls_search-results"></ul>
+</form>
+
+
+<script>
+  var onSubmitSearch = (function () {
+    var field = $("#ls_search-field").first();
+    var results = $("#ls_search-results");
+    function listener(form) {
+      if (!field.val())
+        return;
+
+      var targetUrl = "search.html?q=" + field.val();
+
+      var relative = LunrDataSearch.relativeUrl
+
+      if (relative)
+        targetUrl = relative + targetUrl;
+
+      var selected = results.find(".search-result-ref.selected")
+        .first();
+      if (selected)
+        targetUrl = selected.attr('href');
+
+      location.replace(targetUrl)
+    }
+
+    return listener
+  })()
+</script>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customizing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#customization-reference">Customization reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-screen">Main screen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#foreground">Foreground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#root-screen">Root screen</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tooltip-screen">Tooltip screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#navigation-screen">Navigation screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#items-screen">Items screen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#images-screen">Images screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customized-gallery">Customized gallery</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Stored Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/anim.html">anim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/actions/index.html">actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/color.html">color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/common/index.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/config/index.html">config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/events.html">events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/exports.html">exports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/helpers.html">helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/path.html">path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/resources/index.html">resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/slides/index.html">slides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/sizes/index.html">sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/handler.html">handler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gallerynpyx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Customizing</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="customizing">
+<h1>Customizing<a class="headerlink" href="#customizing" title="Link to this heading"></a></h1>
+<p>gallerynpyx aims to allow flexible customization to adapt the interface and visual style according to your needs and preferences.
+With <a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig" title="gallerynpyx.config.styles.StylesConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">StylesConfig</span></code></a>, you can easily modify aspects such as colors, fonts, sizes and spacing using a set of predefined styles or creating your own custom styles.</p>
+<p>In addition, with <a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig" title="gallerynpyx.config.screens.ScreensConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScreensConfig</span></code></a>, it is possible to modify the structure of the elements in the different views of the gallery.</p>
+<p>With these options, you can create a gallery that suits your personal preferences.</p>
+<section id="customization-reference">
+<span id="customizing-reference"></span><h2>Customization reference<a class="headerlink" href="#customization-reference" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/reference.png"><img alt="_images/reference.png" src="_images/reference.png" style="width: 70em;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Reference of the sections in the gallery by default</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="main-screen">
+<h2>Main screen<a class="headerlink" href="#main-screen" title="Link to this heading"></a></h2>
+<p>The main screen is the default view displayed when accessing the <code class="docutils literal notranslate"><span class="pre">gallerynpyx</span></code> screen.
+This screen contains some elements that you can customize, such as the background, the foreground and the root screen.</p>
+<section id="background">
+<h3>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h3>
+<p>The background is the first visual element added to the main screen.
+It can be any valid resource: images, solid colors, animations, among others.</p>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.background" title="gallerynpyx.config.screens.ScreensConfig.background"><code class="xref py py-attr docutils literal notranslate"><span class="pre">background</span></code></a></p></li>
+</ul>
+</section>
+<section id="foreground">
+<h3>Foreground<a class="headerlink" href="#foreground" title="Link to this heading"></a></h3>
+<p>The foreground is the layer that overlays the background.
+It can also contain any valid resource.</p>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.foreground" title="gallerynpyx.config.screens.ScreensConfig.foreground"><code class="xref py py-attr docutils literal notranslate"><span class="pre">foreground</span></code></a></p></li>
+</ul>
+</section>
+<section id="root-screen">
+<h3>Root screen<a class="headerlink" href="#root-screen" title="Link to this heading"></a></h3>
+<p>The root screen acts as the main container of the interface.
+It defines the general structure and organizes the other screens or visual elements.</p>
+<p>This screen can be customized or replaced.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_root</span><span class="p">():</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.root_screen" title="gallerynpyx.config.screens.ScreensConfig.root_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">root_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.root" title="gallerynpyx.config.styles.StylesConfig.root"><code class="xref py py-attr docutils literal notranslate"><span class="pre">root</span></code></a></p></li>
+</ul>
+<section id="tooltip-screen">
+<h4>Tooltip screen<a class="headerlink" href="#tooltip-screen" title="Link to this heading"></a></h4>
+<p>The tooltip screen displays additional or contextual information about specific items.
+It is generally used to display brief explanations, instructions or details when hovering over an item.</p>
+<p>This screen can be customized or replaced.</p>
+<p>See section 1 in <a class="reference internal" href="#customizing-reference"><span class="std std-ref">Customization reference</span></a> for how and where this screen is displayed by default.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_tooltip</span><span class="p">(</span><span class="k">text</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.tooltip_screen" title="gallerynpyx.config.screens.ScreensConfig.tooltip_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tooltip_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.tooltip" title="gallerynpyx.config.styles.StylesConfig.tooltip"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tooltip</span></code></a></p></li>
+</ul>
+</section>
+<section id="navigation-screen">
+<h4>Navigation screen<a class="headerlink" href="#navigation-screen" title="Link to this heading"></a></h4>
+<p>The navigation screen groups the various controls available for interacting with the gallery.</p>
+<p>This screen can be customized or replaced.</p>
+<p>See section 2 in <a class="reference internal" href="#customizing-reference"><span class="std std-ref">Customization reference</span></a> for how and where this screen is displayed by default.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_navigation</span><span class="p">():</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.navigation_screen" title="gallerynpyx.config.screens.ScreensConfig.navigation_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">navigation_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.navigation" title="gallerynpyx.config.styles.StylesConfig.navigation"><code class="xref py py-attr docutils literal notranslate"><span class="pre">navigation</span></code></a></p></li>
+</ul>
+<section id="slides-controls-screen">
+<h5>Slides controls screen<a class="headerlink" href="#slides-controls-screen" title="Link to this heading"></a></h5>
+<p>The slide controls screen includes the buttons to navigate between the different slides.</p>
+<p>This screen can be customized or replaced.</p>
+<p>See section 4 in <a class="reference internal" href="#customizing-reference"><span class="std std-ref">Customization reference</span></a> for how and where this screen is displayed by default.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_slide_controls</span><span class="p">():</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.slide_controls_screen" title="gallerynpyx.config.screens.ScreensConfig.slide_controls_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">slide_controls_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.slide_controls" title="gallerynpyx.config.styles.StylesConfig.slide_controls"><code class="xref py py-attr docutils literal notranslate"><span class="pre">slide_controls</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.show_scrollbar" title="gallerynpyx.config.screens.ScreensConfig.show_scrollbar"><code class="xref py py-attr docutils literal notranslate"><span class="pre">show_scrollbar</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.scrollbar" title="gallerynpyx.config.styles.StylesConfig.scrollbar"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scrollbar</span></code></a></p></li>
+</ul>
+</section>
+<section id="animations-controls-screen">
+<h5>Animations controls screen<a class="headerlink" href="#animations-controls-screen" title="Link to this heading"></a></h5>
+<p>The animation control screen includes the buttons to modify the speed of the animations.</p>
+<p>This screen can be customized or replaced.</p>
+<p>See section 4 in <a class="reference internal" href="#customizing-reference"><span class="std std-ref">Customization reference</span></a> for how and where this screen is displayed by default.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_animation_controls</span><span class="p">():</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.animation_controls_screen" title="gallerynpyx.config.screens.ScreensConfig.animation_controls_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">animation_controls_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.animation_controls" title="gallerynpyx.config.styles.StylesConfig.animation_controls"><code class="xref py py-attr docutils literal notranslate"><span class="pre">animation_controls</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.allow_animation_speeds" title="gallerynpyx.config.resources.ResourcesConfig.allow_animation_speeds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">allow_animation_speeds</span></code></a></p></li>
+</ul>
+</section>
+<section id="controls-screen">
+<h5>Controls screen<a class="headerlink" href="#controls-screen" title="Link to this heading"></a></h5>
+<p>The controls screen includes the buttons to change pages within the current slide, or to return from the slides or the main gallery.</p>
+<p>See section 5 in <a class="reference internal" href="#customizing-reference"><span class="std std-ref">Customization reference</span></a> for how and where this screen is displayed by default.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_controls</span><span class="p">(</span><span class="n">has_animations</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.controls_screen" title="gallerynpyx.config.screens.ScreensConfig.controls_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">controls_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.controls" title="gallerynpyx.config.styles.StylesConfig.controls"><code class="xref py py-attr docutils literal notranslate"><span class="pre">controls</span></code></a></p></li>
+</ul>
+</section>
+</section>
+<section id="items-screen">
+<h4>Items screen<a class="headerlink" href="#items-screen" title="Link to this heading"></a></h4>
+<p>The items screen is used to display and manage the items within a specific page in a slide.</p>
+<p>This screen can be customized or replaced.</p>
+<p>See section 3 in <a class="reference internal" href="#customizing-reference"><span class="std std-ref">Customization reference</span></a> for how and where this screen is displayed by default.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_items</span><span class="p">():</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.items_screen" title="gallerynpyx.config.screens.ScreensConfig.items_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">items_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.items" title="gallerynpyx.config.styles.StylesConfig.items"><code class="xref py py-attr docutils literal notranslate"><span class="pre">items</span></code></a></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that, depending on the style or screen used as a replacement, some elements may overlap within the root screen.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="images-screen">
+<h2>Images screen<a class="headerlink" href="#images-screen" title="Link to this heading"></a></h2>
+<p>This screen is responsible for displaying the different items of the gallery.
+By default, it is invoked in a new context and overlaps the main screen.</p>
+<p>This screen can be replaced.</p>
+<p>Screen declaration:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span><span class="nc"> gx_images</span><span class="p">(</span><span class="n">displayable</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Related properties:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.images_screen" title="gallerynpyx.config.screens.ScreensConfig.images_screen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">images_screen</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.transition" title="gallerynpyx.config.resources.ResourcesConfig.transition"><code class="xref py py-attr docutils literal notranslate"><span class="pre">transition</span></code></a></p></li>
+</ul>
+</section>
+<section id="customized-gallery">
+<span id="id1"></span><h2>Customized gallery<a class="headerlink" href="#customized-gallery" title="Link to this heading"></a></h2>
+<p>An example of a customized gallery is shown below:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span><span class="nc"> gx_image </span><span class="o">=</span> <span class="s2">&quot;images/concert1.png&quot;</span>
+
+<span class="k">image</span><span class="nc"> gx_animation</span><span class="p">:</span>
+    <span class="s2">&quot;concert1&quot;</span> <span class="k">with</span> <span class="nf">Dissolve</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
+    <span class="k">pause</span> <span class="mf">.4</span>
+    <span class="s2">&quot;concert2&quot;</span> <span class="k">with</span> <span class="nf">Dissolve</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
+    <span class="k">pause</span> <span class="mf">.4</span>
+    <span class="s2">&quot;concert3&quot;</span> <span class="k">with</span> <span class="nf">Dissolve</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
+    <span class="k">pause</span> <span class="mf">.4</span>
+    <span class="s2">&quot;concert2&quot;</span> <span class="k">with</span> <span class="nf">Dissolve</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
+    <span class="k">pause</span> <span class="mf">.4</span>
+    <span class="k">repeat</span>
+
+<span class="c1"># gallerynpyx styles and screens starts with gx</span>
+<span class="k">style</span><span class="nc"> gx_controls_button_text</span><span class="p">:</span>
+    <span class="na">insensitive_color</span> <span class="s2">&quot;#d45555&quot;</span>
+
+<span class="k">style</span><span class="nc"> gx_slide_controls_button_text</span><span class="p">:</span>
+    <span class="na">color</span> <span class="s2">&quot;#0ff&quot;</span>
+    <span class="na">hover_color</span> <span class="s2">&quot;#fff&quot;</span>
+
+<span class="c1"># note that some screens receive parameters (check the docs references).</span>
+<span class="k">screen</span><span class="nc"> gx_controls_line</span><span class="p">(</span><span class="n">has_animations</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">$</span> <span class="n">gx_config</span> <span class="o">=</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class=" -Word">config</span><span class="o">.</span><span class="nf">get_styles</span><span class="p">()</span>
+    <span class="k">hbox</span><span class="p">:</span>
+        <span class="k">style</span> <span class="n">gx_config</span><span class="o">.</span><span class=" -Word">controls</span>
+        <span class="na">style_prefix</span> <span class="n">gx_config</span><span class="o">.</span><span class=" -Word">controls</span>
+
+        <span class="k">textbutton</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Previous&quot;</span><span class="p">):</span>
+            <span class="na">action</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class=" -Word">actions</span><span class="o">.</span><span class="nf">PreviousPage</span><span class="p">()</span>
+
+        <span class="k">textbutton</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Next&quot;</span><span class="p">):</span>
+            <span class="na">action</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class=" -Word">actions</span><span class="o">.</span><span class="nf">NextPage</span><span class="p">()</span>
+
+        <span class="k">textbutton</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Return&quot;</span><span class="p">):</span>
+            <span class="na">action</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class=" -Word">actions</span><span class="o">.</span><span class="nf">ReturnSlide</span><span class="p">(</span><span class="n">has_animations</span><span class="p">)</span>
+
+<span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="c1"># init handler</span>
+    <span class="n">gx_handler</span> <span class="o">=</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class="nf">get_handler</span><span class="p">()</span>
+
+    <span class="c1"># creating slides</span>
+    <span class="n">chapter1</span> <span class="o">=</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class="nf">create_slider</span><span class="p">(</span><span class="s2">&quot;ch1&quot;</span><span class="p">,</span> <span class=" -Word">label</span><span class="o">=</span><span class="s2">&quot;Chapter 1&quot;</span><span class="p">)</span>
+    <span class="n">gx_handler</span><span class="o">.</span><span class=" -Word">root</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">chapter1</span><span class="p">)</span>
+
+    <span class="n">gx_handler</span><span class="o">.</span><span class=" -Word">root</span><span class="o">.</span><span class="nf">slider</span><span class="p">(</span><span class="s2">&quot;ch2&quot;</span><span class="p">,</span> <span class=" -Word">label</span><span class="o">=</span><span class="s2">&quot;Chapter 2&quot;</span><span class="p">)</span>
+
+    <span class="c1"># adding elements</span>
+    <span class="n">gx_handler</span><span class="o">.</span><span class="nf">put</span><span class="p">((</span><span class="s2">&quot;ch1&quot;</span><span class="p">,</span> <span class="s2">&quot;images&quot;</span><span class="p">),</span> <span class="s2">&quot;gx_image&quot;</span><span class="p">,</span> <span class="na">tooltip</span><span class="o">=</span><span class="s2">&quot;Sample&quot;</span><span class="p">)</span>
+    <span class="n">gx_handler</span><span class="o">.</span><span class="nf">put</span><span class="p">(</span><span class="s2">&quot;anim&quot;</span><span class="p">,</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class=" -Word">resources</span><span class="o">.</span><span class="nf">AnimationResource</span><span class="p">(</span><span class="s2">&quot;gx_animation&quot;</span><span class="p">),</span> <span class="n">thumbnail</span><span class="o">=</span><span class="s2">&quot;concert1&quot;</span><span class="p">,</span> <span class=" -Word">label</span><span class="o">=</span><span class="s2">&quot;animations&quot;</span><span class="p">)</span>
+    <span class="n">gx_handler</span><span class="o">.</span><span class="nf">put</span><span class="p">((</span><span class="s2">&quot;ch2&quot;</span><span class="p">,</span> <span class="s2">&quot;videos&quot;</span><span class="p">),</span> <span class="s2">&quot;oa4_launch.webm&quot;</span><span class="p">,</span> <span class="n">thumbnail</span><span class="o">=</span><span class="s2">&quot;concert1&quot;</span><span class="p">)</span>
+
+    <span class="n">gx_handler</span><span class="o">.</span><span class="nf">to_first</span><span class="p">()</span>
+
+    <span class="c1"># resources config</span>
+    <span class="n">gx_config</span> <span class="o">=</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class=" -Word">config</span><span class="o">.</span><span class="nf">get_resources</span><span class="p">()</span>
+    <span class="n">gx_config</span><span class="o">.</span><span class=" -Word">allow_animation_speeds</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># screens config</span>
+    <span class="n">gx_config</span> <span class="o">=</span> <span class="na">gallerynpyx</span><span class="o">.</span><span class=" -Word">config</span><span class="o">.</span><span class="nf">get_screens</span><span class="p">()</span>
+    <span class="n">gx_config</span><span class="o">.</span><span class="na">background</span> <span class="o">=</span> <span class="s2">&quot;gui/main_menu.jpg&quot;</span>
+    <span class="n">gx_config</span><span class="o">.</span><span class="na">foreground</span> <span class="o">=</span> <span class="s2">&quot;gui/overlay/main_menu.png&quot;</span>
+    <span class="n">gx_config</span><span class="o">.</span><span class=" -Word">controls_screen</span> <span class="o">=</span> <span class="s2">&quot;gx_controls_line&quot;</span>
+</pre></div>
+</div>
+<p>And there you have it, an ugly but customized gallery.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/gallery.png"><img alt="_images/gallery.png" src="_images/gallery.png" style="width: 70em;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Customized gallery</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules/anim.html" class="btn btn-neutral float-right" title="anim" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024-2025, Yoimer Davila.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

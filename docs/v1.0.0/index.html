@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to gallerynpy’s documentation! &mdash; Gallerynpyx Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/css/lunr-searchbox.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/fabup.css?v=592a04eb" />
+      <link rel="stylesheet" type="text/css" href="_static/css/code-syntax.css?v=c2901138" />
+      <link rel="stylesheet" type="text/css" href="_static/css/font-jb-sans.css?v=e3b0d0c7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/index.css?v=4ade695c" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="https://unpkg.com/lunr/lunr.min.js"></script>
+        <script src="_static/js/lunr-searchbox.js"></script>
+        <script src="_static/js/lunr-search-data.js"></script>
+        <script src="_static/js/fabup.js?v=0808abf6"></script>
+        <script src="_static/js/code-syntax.js?v=063008fa"></script>
+        <script src="_static/js/index.js?v=e210afa2"></script>
+        <script src="_static/js/icon-fixer.js?v=afd91005"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quickstart" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            gallerynpyx
+              <img src="_static/navbar-logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0.0 Documentation
+              </div><form class="search" id="ls_search-form" action="javascript:;" onsubmit="onSubmitSearch(this)">
+  <div class="search-field-container">
+    <input class="search-field"
+           type="text" autocomplete="off" id="ls_search-field" name="q" placeholder="Search">
+
+
+    <button type="reset" class="search-reset-button" id="search-reset-button">
+      <svg class="search-reset-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+           width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18 17.94 6M18 18 6.06 6"/>
+      </svg>
+    </button>
+
+    <button type="submit" class="search-button">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+           viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+           width="512px" height="512px">
+            <path
+              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path>
+          </svg>
+    </button>
+  </div>
+
+  <ul class="search-results" id="ls_search-results"></ul>
+</form>
+
+
+<script>
+  var onSubmitSearch = (function () {
+    var field = $("#ls_search-field").first();
+    var results = $("#ls_search-results");
+    function listener(form) {
+      if (!field.val())
+        return;
+
+      var targetUrl = "search.html?q=" + field.val();
+
+      var relative = LunrDataSearch.relativeUrl
+
+      if (relative)
+        targetUrl = relative + targetUrl;
+
+      var selected = results.find(".search-result-ref.selected")
+        .first();
+      if (selected)
+        targetUrl = selected.attr('href');
+
+      location.replace(targetUrl)
+    }
+
+    return listener
+  })()
+</script>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customizing.html">Customizing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Stored Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/anim.html">anim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/actions/index.html">actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/color.html">color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/common/index.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/config/index.html">config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/events.html">events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/exports.html">exports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/helpers.html">helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/path.html">path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/resources/index.html">resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/slides/index.html">slides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/sizes/index.html">sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/handler.html">handler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">gallerynpyx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to gallerynpy’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-gallerynpy-s-documentation">
+<h1>Welcome to gallerynpy’s documentation!<a class="headerlink" href="#welcome-to-gallerynpy-s-documentation" title="Link to this heading"></a></h1>
+<p>gallerynpyx is a set of Ren’Py scripts that allows you to display a gallery screen in your visual novel.
+The gallery screen displays all images, animations and videos that have been inserted through the methods provided by the gallerynpyx handler.</p>
+<p>gallerynpyx is a new improved, modularized and optimized version of gallerynpy (v2.0).
+It improves usability and customization, adds events and aims to allow the integration of gallery extensions without much difficulty.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#the-gallerynpyx-scripts">The gallerynpyx scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#the-default-gallery">The default gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#the-gallery-with-sliders">The gallery with sliders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#gallery-items">Gallery Items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#animations-with-speed">Animations with speed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customizing.html">Customizing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html#customization-reference">Customization reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html#main-screen">Main screen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="customizing.html#background">Background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing.html#foreground">Foreground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing.html#root-screen">Root screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html#images-screen">Images screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html#customized-gallery">Customized gallery</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Stored Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/anim.html">anim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/anim.html#gallerynpyx.anim.SPEED_ATTRIBUTE"><code class="docutils literal notranslate"><span class="pre">SPEED_ATTRIBUTE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/anim.html#gallerynpyx.anim.get_images"><code class="docutils literal notranslate"><span class="pre">get_images</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/anim.html#gallerynpyx.anim.get_statements"><code class="docutils literal notranslate"><span class="pre">get_statements</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/anim.html#gallerynpyx.anim.is_pause_statement"><code class="docutils literal notranslate"><span class="pre">is_pause_statement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/anim.html#gallerynpyx.anim.set_speed"><code class="docutils literal notranslate"><span class="pre">set_speed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/actions/index.html">actions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/actions/base.html">base</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/base.html#gallerynpyx.actions.base.Interactive"><code class="docutils literal notranslate"><span class="pre">Interactive</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/base.html#gallerynpyx.actions.base.HandlerInteractive"><code class="docutils literal notranslate"><span class="pre">HandlerInteractive</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/actions/items.html">items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/items.html#gallerynpyx.actions.items.ShowItem"><code class="docutils literal notranslate"><span class="pre">ShowItem</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/actions/resources.html">resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/resources.html#gallerynpyx.actions.resources.ChangeAnimationSpeed"><code class="docutils literal notranslate"><span class="pre">ChangeAnimationSpeed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/actions/slides.html">slides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/slides.html#gallerynpyx.actions.slides.NextPage"><code class="docutils literal notranslate"><span class="pre">NextPage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/slides.html#gallerynpyx.actions.slides.PreviousPage"><code class="docutils literal notranslate"><span class="pre">PreviousPage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/slides.html#gallerynpyx.actions.slides.ChangeSlide"><code class="docutils literal notranslate"><span class="pre">ChangeSlide</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/actions/slides.html#gallerynpyx.actions.slides.ReturnSlide"><code class="docutils literal notranslate"><span class="pre">ReturnSlide</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/color.html">color</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/color.html#gallerynpyx.color.hex2rgb"><code class="docutils literal notranslate"><span class="pre">hex2rgb</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/color.html#gallerynpyx.color.hex2rgba"><code class="docutils literal notranslate"><span class="pre">hex2rgba</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/color.html#gallerynpyx.color.ishex"><code class="docutils literal notranslate"><span class="pre">ishex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/color.html#gallerynpyx.color.normhex"><code class="docutils literal notranslate"><span class="pre">normhex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/color.html#gallerynpyx.color.rgb2hex"><code class="docutils literal notranslate"><span class="pre">rgb2hex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/color.html#gallerynpyx.color.rgba2hex"><code class="docutils literal notranslate"><span class="pre">rgba2hex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/common/index.html">common</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/common/classes/index.html">classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/classes/meta.html">meta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/classes/objects.html">objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/classes/helpers.html">helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/classes/exceptions.html">exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/common/compat.html">compat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/compat.html#gallerynpyx.common.compat.basestring"><code class="docutils literal notranslate"><span class="pre">basestring</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/common/iters.html">iters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/iters.html#gallerynpyx.common.iters.first"><code class="docutils literal notranslate"><span class="pre">first</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/iters.html#gallerynpyx.common.iters.ifilter"><code class="docutils literal notranslate"><span class="pre">ifilter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/iters.html#gallerynpyx.common.iters.imap"><code class="docutils literal notranslate"><span class="pre">imap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/iters.html#gallerynpyx.common.iters.irange"><code class="docutils literal notranslate"><span class="pre">irange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/iters.html#gallerynpyx.common.iters.last"><code class="docutils literal notranslate"><span class="pre">last</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/common/memoized.html">memoized</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/memoized.html#gallerynpyx.common.memoized.Memoized"><code class="docutils literal notranslate"><span class="pre">Memoized</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/common/helpers.html">helpers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/helpers.html#gallerynpyx.common.helpers.cast"><code class="docutils literal notranslate"><span class="pre">cast</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/helpers.html#gallerynpyx.common.helpers.coerce"><code class="docutils literal notranslate"><span class="pre">coerce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/helpers.html#gallerynpyx.common.helpers.isdefine"><code class="docutils literal notranslate"><span class="pre">isdefine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/helpers.html#gallerynpyx.common.helpers.noact"><code class="docutils literal notranslate"><span class="pre">noact</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/helpers.html#gallerynpyx.common.helpers.tostring"><code class="docutils literal notranslate"><span class="pre">tostring</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/common/exceptions.html">exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/exceptions.html#gallerynpyx.common.exceptions.ArgumentError"><code class="docutils literal notranslate"><span class="pre">ArgumentError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/common/exceptions.html#gallerynpyx.common.exceptions.AssignmentError"><code class="docutils literal notranslate"><span class="pre">AssignmentError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/config/index.html">config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/config/screens.html">screens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig"><code class="docutils literal notranslate"><span class="pre">ScreensConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/config/styles.html">styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig"><code class="docutils literal notranslate"><span class="pre">StylesConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/config/resources.html">resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/events.html">events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/events.html#gallerynpyx.events.on"><code class="docutils literal notranslate"><span class="pre">on</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/events.html#gallerynpyx.events.off"><code class="docutils literal notranslate"><span class="pre">off</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/exports.html">exports</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/exports.html#gallerynpyx.exports.version"><code class="docutils literal notranslate"><span class="pre">version</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/helpers.html">helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/helpers.html#gallerynpyx.helpers.create_buttons"><code class="docutils literal notranslate"><span class="pre">create_buttons</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/helpers.html#gallerynpyx.helpers.isanimation"><code class="docutils literal notranslate"><span class="pre">isanimation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/helpers.html#gallerynpyx.helpers.isdisplayable"><code class="docutils literal notranslate"><span class="pre">isdisplayable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/helpers.html#gallerynpyx.helpers.isimage"><code class="docutils literal notranslate"><span class="pre">isimage</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/helpers.html#gallerynpyx.helpers.isvideo"><code class="docutils literal notranslate"><span class="pre">isvideo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/path.html">path</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/path.html#gallerynpyx.path.sep"><code class="docutils literal notranslate"><span class="pre">sep</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/path.html#gallerynpyx.path.isloadable"><code class="docutils literal notranslate"><span class="pre">isloadable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/path.html#gallerynpyx.path.join"><code class="docutils literal notranslate"><span class="pre">join</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/path.html#gallerynpyx.path.normpath"><code class="docutils literal notranslate"><span class="pre">normpath</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/resources/index.html">resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/resource.html">resource</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/resource.html#gallerynpyx.resources.resource.IMAGES"><code class="docutils literal notranslate"><span class="pre">IMAGES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/resource.html#gallerynpyx.resources.resource.VIDEOS"><code class="docutils literal notranslate"><span class="pre">VIDEOS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/resource.html#gallerynpyx.resources.resource.AUDIO"><code class="docutils literal notranslate"><span class="pre">AUDIO</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/resource.html#gallerynpyx.resources.resource.Resource"><code class="docutils literal notranslate"><span class="pre">Resource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/displayable.html">displayable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/displayable.html#gallerynpyx.resources.displayable.DisplayableResource"><code class="docutils literal notranslate"><span class="pre">DisplayableResource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/images.html">images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource"><code class="docutils literal notranslate"><span class="pre">ImageResource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/animation.html">animation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/animation.html#gallerynpyx.resources.animation.AnimationResource"><code class="docutils literal notranslate"><span class="pre">AnimationResource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/video.html">video</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/video.html#gallerynpyx.resources.video.VideoResource"><code class="docutils literal notranslate"><span class="pre">VideoResource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/thumbnail.html">thumbnail</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.creates"><code class="docutils literal notranslate"><span class="pre">creates</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.creates_raw"><code class="docutils literal notranslate"><span class="pre">creates_raw</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail"><code class="docutils literal notranslate"><span class="pre">Thumbnail</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/helpers.html">helpers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/helpers.html#gallerynpyx.resources.helpers.guess"><code class="docutils literal notranslate"><span class="pre">guess</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/resources/exceptions.html">exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/exceptions.html#gallerynpyx.resources.exceptions.IncompatibleResourceError"><code class="docutils literal notranslate"><span class="pre">IncompatibleResourceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/exceptions.html#gallerynpyx.resources.exceptions.UnloadableSourceError"><code class="docutils literal notranslate"><span class="pre">UnloadableSourceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/resources/exceptions.html#gallerynpyx.resources.exceptions.UnsupportedSourceError"><code class="docutils literal notranslate"><span class="pre">UnsupportedSourceError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/slides/index.html">slides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/slides/base.html">base</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase"><code class="docutils literal notranslate"><span class="pre">SlideBase</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/base.html#gallerynpyx.slides.base.isslide"><code class="docutils literal notranslate"><span class="pre">isslide</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/base.html#gallerynpyx.slides.base.isslider"><code class="docutils literal notranslate"><span class="pre">isslider</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/base.html#gallerynpyx.slides.base.route"><code class="docutils literal notranslate"><span class="pre">route</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/slides/slide.html">slide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide"><code class="docutils literal notranslate"><span class="pre">Slide</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/slides/slider.html">slider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider"><code class="docutils literal notranslate"><span class="pre">Slider</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/slides/items.html">items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/items.html#gallerynpyx.slides.items.isitem"><code class="docutils literal notranslate"><span class="pre">isitem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/items.html#gallerynpyx.slides.items.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/slides/helpers.html">helpers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/helpers.html#gallerynpyx.slides.helpers.eachitem"><code class="docutils literal notranslate"><span class="pre">eachitem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/helpers.html#gallerynpyx.slides.helpers.has_animation"><code class="docutils literal notranslate"><span class="pre">has_animation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/helpers.html#gallerynpyx.slides.helpers.slide"><code class="docutils literal notranslate"><span class="pre">slide</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/helpers.html#gallerynpyx.slides.helpers.slider"><code class="docutils literal notranslate"><span class="pre">slider</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/slides/exceptions.html">exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/exceptions.html#gallerynpyx.slides.exceptions.InvalidRouteError"><code class="docutils literal notranslate"><span class="pre">InvalidRouteError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/slides/exceptions.html#gallerynpyx.slides.exceptions.NameAlreadyExistsError"><code class="docutils literal notranslate"><span class="pre">NameAlreadyExistsError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/sizes/index.html">sizes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/sizes/size.html">size</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sizes/size.html#gallerynpyx.sizes.size.Size"><code class="docutils literal notranslate"><span class="pre">Size</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sizes/size_int.html">size_int</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sizes/size_int.html#gallerynpyx.sizes.size_int.SizeInt"><code class="docutils literal notranslate"><span class="pre">SizeInt</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/handler.html">handler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler"><code class="docutils literal notranslate"><span class="pre">Handler</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.get_instance"><code class="docutils literal notranslate"><span class="pre">Handler.get_instance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.register"><code class="docutils literal notranslate"><span class="pre">Handler.register</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.change"><code class="docutils literal notranslate"><span class="pre">Handler.change</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.change_distribution"><code class="docutils literal notranslate"><span class="pre">Handler.change_distribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.next"><code class="docutils literal notranslate"><span class="pre">Handler.next</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.previous"><code class="docutils literal notranslate"><span class="pre">Handler.previous</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.put"><code class="docutils literal notranslate"><span class="pre">Handler.put</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.put_item"><code class="docutils literal notranslate"><span class="pre">Handler.put_item</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.reset"><code class="docutils literal notranslate"><span class="pre">Handler.reset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.to_first"><code class="docutils literal notranslate"><span class="pre">Handler.to_first</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.available_items"><code class="docutils literal notranslate"><span class="pre">Handler.available_items</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.buttons"><code class="docutils literal notranslate"><span class="pre">Handler.buttons</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.cols"><code class="docutils literal notranslate"><span class="pre">Handler.cols</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.current"><code class="docutils literal notranslate"><span class="pre">Handler.current</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.end"><code class="docutils literal notranslate"><span class="pre">Handler.end</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.has_animation"><code class="docutils literal notranslate"><span class="pre">Handler.has_animation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.ibuttons"><code class="docutils literal notranslate"><span class="pre">Handler.ibuttons</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.items"><code class="docutils literal notranslate"><span class="pre">Handler.items</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.page"><code class="docutils literal notranslate"><span class="pre">Handler.page</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.pages"><code class="docutils literal notranslate"><span class="pre">Handler.pages</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.per_page"><code class="docutils literal notranslate"><span class="pre">Handler.per_page</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.root"><code class="docutils literal notranslate"><span class="pre">Handler.root</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.rows"><code class="docutils literal notranslate"><span class="pre">Handler.rows</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.slide"><code class="docutils literal notranslate"><span class="pre">Handler.slide</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.slides"><code class="docutils literal notranslate"><span class="pre">Handler.slides</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.start"><code class="docutils literal notranslate"><span class="pre">Handler.start</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.thumbnail_size"><code class="docutils literal notranslate"><span class="pre">Handler.thumbnail_size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/handler.html#gallerynpyx.handler.Handler.total"><code class="docutils literal notranslate"><span class="pre">Handler.total</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024-2025, Yoimer Davila.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

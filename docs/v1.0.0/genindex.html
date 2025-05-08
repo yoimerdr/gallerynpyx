@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Index &mdash; Gallerynpyx Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/css/lunr-searchbox.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/fabup.css?v=592a04eb" />
+      <link rel="stylesheet" type="text/css" href="_static/css/code-syntax.css?v=c2901138" />
+      <link rel="stylesheet" type="text/css" href="_static/css/font-jb-sans.css?v=e3b0d0c7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/index.css?v=4ade695c" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="https://unpkg.com/lunr/lunr.min.js"></script>
+        <script src="_static/js/lunr-searchbox.js"></script>
+        <script src="_static/js/lunr-search-data.js"></script>
+        <script src="_static/js/fabup.js?v=0808abf6"></script>
+        <script src="_static/js/code-syntax.js?v=063008fa"></script>
+        <script src="_static/js/index.js?v=e210afa2"></script>
+        <script src="_static/js/icon-fixer.js?v=afd91005"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            gallerynpyx
+              <img src="_static/navbar-logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0.0 Documentation
+              </div><form class="search" id="ls_search-form" action="javascript:;" onsubmit="onSubmitSearch(this)">
+  <div class="search-field-container">
+    <input class="search-field"
+           type="text" autocomplete="off" id="ls_search-field" name="q" placeholder="Search">
+
+
+    <button type="reset" class="search-reset-button" id="search-reset-button">
+      <svg class="search-reset-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+           width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18 17.94 6M18 18 6.06 6"/>
+      </svg>
+    </button>
+
+    <button type="submit" class="search-button">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+           viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+           width="512px" height="512px">
+            <path
+              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path>
+          </svg>
+    </button>
+  </div>
+
+  <ul class="search-results" id="ls_search-results"></ul>
+</form>
+
+
+<script>
+  var onSubmitSearch = (function () {
+    var field = $("#ls_search-field").first();
+    var results = $("#ls_search-results");
+    function listener(form) {
+      if (!field.val())
+        return;
+
+      var targetUrl = "search.html?q=" + field.val();
+
+      var relative = LunrDataSearch.relativeUrl
+
+      if (relative)
+        targetUrl = relative + targetUrl;
+
+      var selected = results.find(".search-result-ref.selected")
+        .first();
+      if (selected)
+        targetUrl = selected.attr('href');
+
+      location.replace(targetUrl)
+    }
+
+    return listener
+  })()
+</script>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customizing.html">Customizing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Stored Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/anim.html">anim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/actions/index.html">actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/color.html">color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/common/index.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/config/index.html">config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/events.html">events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/exports.html">exports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/helpers.html">helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/path.html">path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/resources/index.html">resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/slides/index.html">slides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/sizes/index.html">sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/handler.html">handler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gallerynpyx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Index</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.AbstractClass">AbstractClass (class in gallerynpyx.common.classes.objects)</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.AbstractClassMeta">AbstractClassMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide.add">add() (Slide method)</a>
+
+      <ul>
+        <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.add">(SlideBase method)</a>
+</li>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.add">(Slider method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/common/classes/helpers.html#gallerynpyx.common.classes.helpers.add_metaclass">add_metaclass() (in module gallerynpyx.common.classes.helpers)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.allow_animation_size">allow_animation_size (ResourcesConfig property)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.allow_animation_speeds">allow_animation_speeds (ResourcesConfig property)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.allow_animation_thumbnail">allow_animation_thumbnail (ResourcesConfig property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.animation_controls">animation_controls (StylesConfig property)</a>
+</li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.animation_controls_screen">animation_controls_screen (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.animation_speed">animation_speed (ResourcesConfig property)</a>
+</li>
+      <li><a href="modules/resources/animation.html#gallerynpyx.resources.animation.AnimationResource">AnimationResource (class in gallerynpyx.resources.animation)</a>
+</li>
+      <li><a href="modules/common/exceptions.html#gallerynpyx.common.exceptions.ArgumentError">ArgumentError</a>
+</li>
+      <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size.aspect_ratio">aspect_ratio (Size property)</a>
+</li>
+      <li><a href="modules/common/exceptions.html#gallerynpyx.common.exceptions.AssignmentError">AssignmentError</a>
+</li>
+      <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.AUDIO">AUDIO (in module gallerynpyx.resources.resource)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.available_items">available_items (Handler property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.background">background (ScreensConfig property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/compat.html#gallerynpyx.common.compat.basestring">basestring (in module gallerynpyx.common.compat)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.buttons">buttons (Handler property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/helpers.html#gallerynpyx.common.helpers.cast">cast() (in module gallerynpyx.common.helpers)</a>
+</li>
+      <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.chain">chain() (Slider class method)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.change">change() (Handler method)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.change_distribution">change_distribution() (Handler method)</a>
+</li>
+      <li><a href="modules/actions/resources.html#gallerynpyx.actions.resources.ChangeAnimationSpeed">ChangeAnimationSpeed (class in gallerynpyx.actions.resources)</a>
+</li>
+      <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.ChangeSlide">ChangeSlide (class in gallerynpyx.actions.slides)</a>
+</li>
+      <li><a href="modules/common/classes/helpers.html#gallerynpyx.common.classes.helpers.classname">classname() (in module gallerynpyx.common.classes.helpers)</a>
+</li>
+      <li><a href="modules/common/classes/helpers.html#gallerynpyx.common.classes.helpers.classof">classof() (in module gallerynpyx.common.classes.helpers)</a>
+</li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.clear">clear() (SlideBase method)</a>
+</li>
+      <li><a href="modules/common/helpers.html#gallerynpyx.common.helpers.coerce">coerce() (in module gallerynpyx.common.helpers)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.cols">cols (Handler property)</a>
+</li>
+      <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource.composite">composite() (ImageResource method)</a>
+</li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item.condition">condition (Item property)</a>
+</li>
+      <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.controls">controls (StylesConfig property)</a>
+</li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.controls_screen">controls_screen (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail.create">create() (Thumbnail method)</a>
+</li>
+      <li><a href="modules/helpers.html#gallerynpyx.helpers.create_buttons">create_buttons() (in module gallerynpyx.helpers)</a>
+</li>
+      <li><a href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.creates">creates() (in module gallerynpyx.resources.thumbnail)</a>
+</li>
+      <li><a href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.creates_raw">creates_raw() (in module gallerynpyx.resources.thumbnail)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.current">current (Handler property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/resources/animation.html#gallerynpyx.resources.animation.AnimationResource.displayable">displayable() (AnimationResource method)</a>
+
+      <ul>
+        <li><a href="modules/resources/displayable.html#gallerynpyx.resources.displayable.DisplayableResource.displayable">(DisplayableResource method)</a>
+</li>
+        <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource.displayable">(ImageResource method)</a>
+</li>
+        <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.Resource.displayable">(Resource method)</a>
+</li>
+        <li><a href="modules/resources/video.html#gallerynpyx.resources.video.VideoResource.displayable">(VideoResource method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/resources/displayable.html#gallerynpyx.resources.displayable.DisplayableResource">DisplayableResource (class in gallerynpyx.resources.displayable)</a>
+</li>
+      <li><a href="modules/common/memoized.html#gallerynpyx.common.memoized.Memoized.dispose">dispose() (Memoized method)</a>
+
+      <ul>
+        <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.Resource.dispose">(Resource method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/slides/helpers.html#gallerynpyx.slides.helpers.eachitem">eachitem() (in module gallerynpyx.slides.helpers)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.end">end (Handler property)</a>
+</li>
+      <li><a href="modules/common/memoized.html#gallerynpyx.common.memoized.Memoized.evaluate">evaluate() (Memoized method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource.ext">ext (ImageResource property)</a>
+
+      <ul>
+        <li><a href="modules/resources/video.html#gallerynpyx.resources.video.VideoResource.ext">(VideoResource property)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide.extend">extend() (Slide method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/iters.html#gallerynpyx.common.iters.first">first() (in module gallerynpyx.common.iters)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.foreground">foreground (ScreensConfig property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    gallerynpyx.anim
+
+      <ul>
+        <li><a href="modules/anim.html#module-gallerynpyx.anim">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.color
+
+      <ul>
+        <li><a href="modules/color.html#module-gallerynpyx.color">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.classes.exceptions
+
+      <ul>
+        <li><a href="modules/common/classes/exceptions.html#module-gallerynpyx.common.classes.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.classes.helpers
+
+      <ul>
+        <li><a href="modules/common/classes/helpers.html#module-gallerynpyx.common.classes.helpers">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.classes.meta
+
+      <ul>
+        <li><a href="modules/common/classes/meta.html#module-gallerynpyx.common.classes.meta">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.compat
+
+      <ul>
+        <li><a href="modules/common/compat.html#module-gallerynpyx.common.compat">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.exceptions
+
+      <ul>
+        <li><a href="modules/common/exceptions.html#module-gallerynpyx.common.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.helpers
+
+      <ul>
+        <li><a href="modules/common/helpers.html#module-gallerynpyx.common.helpers">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.iters
+
+      <ul>
+        <li><a href="modules/common/iters.html#module-gallerynpyx.common.iters">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.common.memoized
+
+      <ul>
+        <li><a href="modules/common/memoized.html#module-gallerynpyx.common.memoized">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.exports
+
+      <ul>
+        <li><a href="modules/exports.html#module-gallerynpyx.exports">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.helpers
+
+      <ul>
+        <li><a href="modules/helpers.html#module-gallerynpyx.helpers">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.path
+
+      <ul>
+        <li><a href="modules/path.html#module-gallerynpyx.path">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.resources.exceptions
+
+      <ul>
+        <li><a href="modules/resources/exceptions.html#module-gallerynpyx.resources.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.sizes.size
+
+      <ul>
+        <li><a href="modules/sizes/size.html#module-gallerynpyx.sizes.size">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    gallerynpyx.slides.base
+
+      <ul>
+        <li><a href="modules/slides/base.html#module-gallerynpyx.slides.base">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.slides.exceptions
+
+      <ul>
+        <li><a href="modules/slides/exceptions.html#module-gallerynpyx.slides.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    gallerynpyx.slides.helpers
+
+      <ul>
+        <li><a href="modules/slides/helpers.html#module-gallerynpyx.slides.helpers">module</a>
+</li>
+      </ul></li>
+      <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide.get">get() (Slide method)</a>
+
+      <ul>
+        <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.get">(SlideBase method)</a>
+</li>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.get">(Slider method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/anim.html#gallerynpyx.anim.get_images">get_images() (in module gallerynpyx.anim)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.get_instance">get_instance() (Handler class method)</a>
+
+      <ul>
+        <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.NextPage.get_instance">(NextPage class method)</a>
+</li>
+        <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.PreviousPage.get_instance">(PreviousPage class method)</a>
+</li>
+        <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.get_instance">(ResourcesConfig class method)</a>
+</li>
+        <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.get_instance">(ScreensConfig class method)</a>
+</li>
+        <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.Singleton.get_instance">(Singleton class method)</a>
+</li>
+        <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.SingletonRegistry.get_instance">(SingletonRegistry class method)</a>
+</li>
+        <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.get_instance">(StylesConfig class method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/actions/resources.html#gallerynpyx.actions.resources.ChangeAnimationSpeed.get_selected">get_selected() (ChangeAnimationSpeed method)</a>
+
+      <ul>
+        <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.ChangeSlide.get_selected">(ChangeSlide method)</a>
+</li>
+        <li><a href="modules/actions/items.html#gallerynpyx.actions.items.ShowItem.get_selected">(ShowItem method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/actions/resources.html#gallerynpyx.actions.resources.ChangeAnimationSpeed.get_sensitive">get_sensitive() (ChangeAnimationSpeed method)</a>
+
+      <ul>
+        <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.ChangeSlide.get_sensitive">(ChangeSlide method)</a>
+</li>
+        <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.NextPage.get_sensitive">(NextPage method)</a>
+</li>
+        <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.PreviousPage.get_sensitive">(PreviousPage method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/anim.html#gallerynpyx.anim.get_statements">get_statements() (in module gallerynpyx.anim)</a>
+</li>
+      <li><a href="modules/actions/items.html#gallerynpyx.actions.items.ShowItem.get_tooltip">get_tooltip() (ShowItem method)</a>
+</li>
+      <li><a href="modules/resources/helpers.html#gallerynpyx.resources.helpers.guess">guess() (in module gallerynpyx.resources.helpers)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler">Handler (class in gallerynpyx.handler)</a>
+</li>
+      <li><a href="modules/actions/base.html#gallerynpyx.actions.base.HandlerInteractive.handler">handler (HandlerInteractive property)</a>
+</li>
+      <li><a href="modules/actions/base.html#gallerynpyx.actions.base.HandlerInteractive">HandlerInteractive (class in gallerynpyx.actions.base)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.has_animation">has_animation (Handler property)</a>
+</li>
+      <li><a href="modules/slides/helpers.html#gallerynpyx.slides.helpers.has_animation">has_animation() (in module gallerynpyx.slides.helpers)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.has_parent">has_parent (SlideBase property)</a>
+</li>
+      <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size.height">height (Size property)</a>
+
+      <ul>
+        <li><a href="modules/sizes/size_int.html#gallerynpyx.sizes.size_int.SizeInt.height">(SizeInt property)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/color.html#gallerynpyx.color.hex2rgb">hex2rgb() (in module gallerynpyx.color)</a>
+</li>
+      <li><a href="modules/color.html#gallerynpyx.color.hex2rgba">hex2rgba() (in module gallerynpyx.color)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.ibuttons">ibuttons (Handler property)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.idle">idle (ResourcesConfig property)</a>
+</li>
+      <li><a href="modules/common/iters.html#gallerynpyx.common.iters.ifilter">ifilter() (in module gallerynpyx.common.iters)</a>
+</li>
+      <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource">ImageResource (class in gallerynpyx.resources.images)</a>
+</li>
+      <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.IMAGES">IMAGES (in module gallerynpyx.resources.resource)</a>
+</li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.images_screen">images_screen (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/common/iters.html#gallerynpyx.common.iters.imap">imap() (in module gallerynpyx.common.iters)</a>
+</li>
+      <li><a href="modules/resources/exceptions.html#gallerynpyx.resources.exceptions.IncompatibleResourceError">IncompatibleResourceError</a>
+</li>
+      <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide.index">index() (Slide method)</a>
+</li>
+      <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide.insert">insert() (Slide method)</a>
+</li>
+      <li><a href="modules/actions/base.html#gallerynpyx.actions.base.Interactive">Interactive (class in gallerynpyx.actions.base)</a>
+</li>
+      <li><a href="modules/slides/exceptions.html#gallerynpyx.slides.exceptions.InvalidRouteError">InvalidRouteError</a>
+</li>
+      <li><a href="modules/common/iters.html#gallerynpyx.common.iters.irange">irange() (in module gallerynpyx.common.iters)</a>
+</li>
+      <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size.is_empty">is_empty (Size property)</a>
+</li>
+      <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource.is_named">is_named (ImageResource property)</a>
+</li>
+      <li><a href="modules/anim.html#gallerynpyx.anim.is_pause_statement">is_pause_statement() (in module gallerynpyx.anim)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/helpers.html#gallerynpyx.helpers.isanimation">isanimation() (in module gallerynpyx.helpers)</a>
+</li>
+      <li><a href="modules/common/helpers.html#gallerynpyx.common.helpers.isdefine">isdefine() (in module gallerynpyx.common.helpers)</a>
+</li>
+      <li><a href="modules/helpers.html#gallerynpyx.helpers.isdisplayable">isdisplayable() (in module gallerynpyx.helpers)</a>
+</li>
+      <li><a href="modules/color.html#gallerynpyx.color.ishex">ishex() (in module gallerynpyx.color)</a>
+</li>
+      <li><a href="modules/helpers.html#gallerynpyx.helpers.isimage">isimage() (in module gallerynpyx.helpers)</a>
+</li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.isitem">isitem() (in module gallerynpyx.slides.items)</a>
+</li>
+      <li><a href="modules/path.html#gallerynpyx.path.isloadable">isloadable() (in module gallerynpyx.path)</a>
+</li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.isslide">isslide() (in module gallerynpyx.slides.base)</a>
+</li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.isslider">isslider() (in module gallerynpyx.slides.base)</a>
+</li>
+      <li><a href="modules/helpers.html#gallerynpyx.helpers.isvideo">isvideo() (in module gallerynpyx.helpers)</a>
+</li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item">Item (class in gallerynpyx.slides.items)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.items">items (Handler property)</a>
+
+      <ul>
+        <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.items">(StylesConfig property)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.SimpleEnum.items">items() (SimpleEnum class method)</a>
+
+      <ul>
+        <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.SimpleEnumMeta.items">(SimpleEnumMeta method)</a>
+</li>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.items">(Slider method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.items_screen">items_screen (ScreensConfig property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/path.html#gallerynpyx.path.join">join() (in module gallerynpyx.path)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.SimpleEnum.keys">keys() (SimpleEnum class method)</a>
+
+      <ul>
+        <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.SimpleEnumMeta.keys">(SimpleEnumMeta method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.label">label (SlideBase property)</a>
+</li>
+      <li><a href="modules/common/iters.html#gallerynpyx.common.iters.last">last() (in module gallerynpyx.common.iters)</a>
+</li>
+      <li><a href="modules/resources/animation.html#gallerynpyx.resources.animation.AnimationResource.load">load() (AnimationResource method)</a>
+
+      <ul>
+        <li><a href="modules/resources/displayable.html#gallerynpyx.resources.displayable.DisplayableResource.load">(DisplayableResource method)</a>
+</li>
+        <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource.load">(ImageResource method)</a>
+</li>
+        <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.Resource.load">(Resource method)</a>
+</li>
+        <li><a href="modules/resources/video.html#gallerynpyx.resources.video.VideoResource.load">(VideoResource method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item.locked">locked (Item property)</a>
+
+      <ul>
+        <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.locked">(ResourcesConfig property)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item.locked_tooltip">locked_tooltip (Item property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/memoized.html#gallerynpyx.common.memoized.Memoized">Memoized (class in gallerynpyx.common.memoized)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="modules/anim.html#module-gallerynpyx.anim">gallerynpyx.anim</a>
+</li>
+        <li><a href="modules/color.html#module-gallerynpyx.color">gallerynpyx.color</a>
+</li>
+        <li><a href="modules/common/classes/exceptions.html#module-gallerynpyx.common.classes.exceptions">gallerynpyx.common.classes.exceptions</a>
+</li>
+        <li><a href="modules/common/classes/helpers.html#module-gallerynpyx.common.classes.helpers">gallerynpyx.common.classes.helpers</a>
+</li>
+        <li><a href="modules/common/classes/meta.html#module-gallerynpyx.common.classes.meta">gallerynpyx.common.classes.meta</a>
+</li>
+        <li><a href="modules/common/compat.html#module-gallerynpyx.common.compat">gallerynpyx.common.compat</a>
+</li>
+        <li><a href="modules/common/exceptions.html#module-gallerynpyx.common.exceptions">gallerynpyx.common.exceptions</a>
+</li>
+        <li><a href="modules/common/helpers.html#module-gallerynpyx.common.helpers">gallerynpyx.common.helpers</a>
+</li>
+        <li><a href="modules/common/iters.html#module-gallerynpyx.common.iters">gallerynpyx.common.iters</a>
+</li>
+        <li><a href="modules/common/memoized.html#module-gallerynpyx.common.memoized">gallerynpyx.common.memoized</a>
+</li>
+        <li><a href="modules/exports.html#module-gallerynpyx.exports">gallerynpyx.exports</a>
+</li>
+        <li><a href="modules/helpers.html#module-gallerynpyx.helpers">gallerynpyx.helpers</a>
+</li>
+        <li><a href="modules/path.html#module-gallerynpyx.path">gallerynpyx.path</a>
+</li>
+        <li><a href="modules/resources/exceptions.html#module-gallerynpyx.resources.exceptions">gallerynpyx.resources.exceptions</a>
+</li>
+        <li><a href="modules/sizes/size.html#module-gallerynpyx.sizes.size">gallerynpyx.sizes.size</a>
+</li>
+        <li><a href="modules/slides/base.html#module-gallerynpyx.slides.base">gallerynpyx.slides.base</a>
+</li>
+        <li><a href="modules/slides/exceptions.html#module-gallerynpyx.slides.exceptions">gallerynpyx.slides.exceptions</a>
+</li>
+        <li><a href="modules/slides/helpers.html#module-gallerynpyx.slides.helpers">gallerynpyx.slides.helpers</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.name">name (SlideBase property)</a>
+</li>
+      <li><a href="modules/slides/exceptions.html#gallerynpyx.slides.exceptions.NameAlreadyExistsError">NameAlreadyExistsError</a>
+</li>
+      <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.names">names() (Slider method)</a>
+</li>
+      <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.navigation">navigation (StylesConfig property)</a>
+</li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.navigation_screen">navigation_screen (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.next">next() (Handler method)</a>
+</li>
+      <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.NextPage">NextPage (class in gallerynpyx.actions.slides)</a>
+</li>
+      <li><a href="modules/common/helpers.html#gallerynpyx.common.helpers.noact">noact() (in module gallerynpyx.common.helpers)</a>
+</li>
+      <li><a href="modules/color.html#gallerynpyx.color.normhex">normhex() (in module gallerynpyx.color)</a>
+</li>
+      <li><a href="modules/path.html#gallerynpyx.path.normpath">normpath() (in module gallerynpyx.path)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.not_found">not_found (ResourcesConfig property)</a>
+</li>
+      <li><a href="modules/common/classes/helpers.html#gallerynpyx.common.classes.helpers.not_implemented">not_implemented() (in module gallerynpyx.common.classes.helpers)</a>
+</li>
+      <li><a href="modules/common/classes/helpers.html#gallerynpyx.common.classes.helpers.not_instantiable">not_instantiable() (in module gallerynpyx.common.classes.helpers)</a>
+</li>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.NotExtensible">NotExtensible (class in gallerynpyx.common.classes.objects)</a>
+</li>
+      <li><a href="modules/common/classes/exceptions.html#gallerynpyx.common.classes.exceptions.NotExtensibleError">NotExtensibleError</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.NotExtensibleMeta">NotExtensibleMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/common/classes/exceptions.html#gallerynpyx.common.classes.exceptions.NotInstanceOfError">NotInstanceOfError</a>
+</li>
+      <li><a href="modules/common/classes/exceptions.html#gallerynpyx.common.classes.exceptions.NotInstantiableError">NotInstantiableError</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.NotInstantiableMeta">NotInstantiableMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/common/classes/exceptions.html#gallerynpyx.common.classes.exceptions.NotSubclassOfError">NotSubclassOfError</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size.of">of() (Size class method)</a>
+
+      <ul>
+        <li><a href="modules/sizes/size_int.html#gallerynpyx.sizes.size_int.SizeInt.of">(SizeInt class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/events.html#gallerynpyx.events.off">off() (in module gallerynpyx.events)</a>
+</li>
+      <li><a href="modules/events.html#gallerynpyx.events.on">on() (in module gallerynpyx.events)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.page">page (Handler property)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.pages">pages (Handler property)</a>
+</li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.parent">parent (SlideBase property)</a>
+</li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.parents">parents (SlideBase property)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.per_page">per_page (Handler property)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.play_hover">play_hover (ResourcesConfig property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.play_idle">play_idle (ResourcesConfig property)</a>
+</li>
+      <li><a href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail.prepare">prepare() (Thumbnail method)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.previous">previous() (Handler method)</a>
+</li>
+      <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.PreviousPage">PreviousPage (class in gallerynpyx.actions.slides)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.put">put() (Handler method)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.put_item">put_item() (Handler method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.ChangeSlide.register">register() (ChangeSlide class method)</a>
+
+      <ul>
+        <li><a href="modules/handler.html#gallerynpyx.handler.Handler.register">(Handler class method)</a>
+</li>
+        <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.Registry.register">(Registry class method)</a>
+</li>
+        <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.RegistryMeta.register">(RegistryMeta method)</a>
+</li>
+        <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.register">(ResourcesConfig class method)</a>
+</li>
+        <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.register">(ScreensConfig class method)</a>
+</li>
+        <li><a href="modules/actions/items.html#gallerynpyx.actions.items.ShowItem.register">(ShowItem class method)</a>
+</li>
+        <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.SingletonRegistry.register">(SingletonRegistry class method)</a>
+</li>
+        <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.SingletonRegistryMeta.register">(SingletonRegistryMeta method)</a>
+</li>
+        <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.register">(StylesConfig class method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.Registry">Registry (class in gallerynpyx.common.classes.objects)</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.RegistryMeta">RegistryMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide.remove">remove() (Slide method)</a>
+
+      <ul>
+        <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.remove">(SlideBase method)</a>
+</li>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.remove">(Slider method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.removeself">removeself() (SlideBase method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/classes/helpers.html#gallerynpyx.common.classes.helpers.representation">representation() (in module gallerynpyx.common.classes.helpers)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.reset">reset() (Handler method)</a>
+</li>
+      <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.Resource">Resource (class in gallerynpyx.resources.resource)</a>
+</li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item.resource">resource (Item property)</a>
+
+      <ul>
+        <li><a href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail.resource">(Thumbnail property)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig">ResourcesConfig (class in gallerynpyx.config.resources)</a>
+</li>
+      <li><a href="modules/actions/slides.html#gallerynpyx.actions.slides.ReturnSlide">ReturnSlide (class in gallerynpyx.actions.slides)</a>
+</li>
+      <li><a href="modules/color.html#gallerynpyx.color.rgb2hex">rgb2hex() (in module gallerynpyx.color)</a>
+</li>
+      <li><a href="modules/color.html#gallerynpyx.color.rgba2hex">rgba2hex() (in module gallerynpyx.color)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.root">root (Handler property)</a>
+
+      <ul>
+        <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.root">(StylesConfig property)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.root_parent">root_parent (SlideBase property)</a>
+</li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.root_screen">root_screen (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.route">route() (in module gallerynpyx.slides.base)</a>
+
+      <ul>
+        <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.route">(SlideBase method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.rows">rows (Handler property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/resources/displayable.html#gallerynpyx.resources.displayable.DisplayableResource.scale">scale() (DisplayableResource method)</a>
+
+      <ul>
+        <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource.scale">(ImageResource method)</a>
+</li>
+        <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size.scale">(Size method)</a>
+</li>
+        <li><a href="modules/sizes/size_int.html#gallerynpyx.sizes.size_int.SizeInt.scale">(SizeInt method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig">ScreensConfig (class in gallerynpyx.config.screens)</a>
+</li>
+      <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.scrollbar">scrollbar (StylesConfig property)</a>
+</li>
+      <li><a href="modules/path.html#gallerynpyx.path.sep">sep (in module gallerynpyx.path)</a>
+</li>
+      <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size.set">set() (Size method)</a>
+
+      <ul>
+        <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide.set">(Slide method)</a>
+</li>
+        <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase.set">(SlideBase method)</a>
+</li>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.set">(Slider method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail.set_custom">set_custom() (Thumbnail method)</a>
+</li>
+      <li><a href="modules/anim.html#gallerynpyx.anim.set_speed">set_speed() (in module gallerynpyx.anim)</a>
+</li>
+      <li><a href="modules/actions/items.html#gallerynpyx.actions.items.ShowItem.show">show() (ShowItem method)</a>
+</li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.show_scrollbar">show_scrollbar (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/actions/items.html#gallerynpyx.actions.items.ShowItem">ShowItem (class in gallerynpyx.actions.items)</a>
+</li>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.SimpleEnum">SimpleEnum (class in gallerynpyx.common.classes.objects)</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.SimpleEnumMeta">SimpleEnumMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.Singleton">Singleton (class in gallerynpyx.common.classes.objects)</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.SingletonMeta">SingletonMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.SingletonRegistry">SingletonRegistry (class in gallerynpyx.common.classes.objects)</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.SingletonRegistryMeta">SingletonRegistryMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size">Size (class in gallerynpyx.sizes.size)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/sizes/size_int.html#gallerynpyx.sizes.size_int.SizeInt">SizeInt (class in gallerynpyx.sizes.size_int)</a>
+</li>
+      <li><a href="modules/slides/slide.html#gallerynpyx.slides.slide.Slide">Slide (class in gallerynpyx.slides.slide)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.slide">slide (Handler property)</a>
+</li>
+      <li><a href="modules/slides/helpers.html#gallerynpyx.slides.helpers.slide">slide() (in module gallerynpyx.slides.helpers)</a>
+
+      <ul>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.slide">(Slider method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.slide_controls">slide_controls (StylesConfig property)</a>
+</li>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.slide_controls_screen">slide_controls_screen (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/slides/base.html#gallerynpyx.slides.base.SlideBase">SlideBase (class in gallerynpyx.slides.base)</a>
+</li>
+      <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider">Slider (class in gallerynpyx.slides.slider)</a>
+</li>
+      <li><a href="modules/slides/helpers.html#gallerynpyx.slides.helpers.slider">slider() (in module gallerynpyx.slides.helpers)</a>
+
+      <ul>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.slider">(Slider method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.slides">slides (Handler property)</a>
+</li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item.song">song (Item property)</a>
+</li>
+      <li><a href="modules/resources/animation.html#gallerynpyx.resources.animation.AnimationResource.source">source (AnimationResource property)</a>
+
+      <ul>
+        <li><a href="modules/resources/displayable.html#gallerynpyx.resources.displayable.DisplayableResource.source">(DisplayableResource property)</a>
+</li>
+        <li><a href="modules/resources/images.html#gallerynpyx.resources.images.ImageResource.source">(ImageResource property)</a>
+</li>
+        <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.Resource.source">(Resource property)</a>
+</li>
+        <li><a href="modules/resources/video.html#gallerynpyx.resources.video.VideoResource.source">(VideoResource property)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/anim.html#gallerynpyx.anim.SPEED_ATTRIBUTE">SPEED_ATTRIBUTE (in module gallerynpyx.anim)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.start">start (Handler property)</a>
+</li>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.Statics">Statics (class in gallerynpyx.common.classes.objects)</a>
+</li>
+      <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.StaticsMeta">StaticsMeta (class in gallerynpyx.common.classes.meta)</a>
+</li>
+      <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig">StylesConfig (class in gallerynpyx.config.styles)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail">Thumbnail (class in gallerynpyx.resources.thumbnail)</a>
+</li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item.thumbnail">thumbnail (Item property)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.thumbnail_size">thumbnail_size (Handler property)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.to_first">to_first() (Handler method)</a>
+</li>
+      <li><a href="modules/slides/items.html#gallerynpyx.slides.items.Item.tooltip">tooltip (Item property)</a>
+
+      <ul>
+        <li><a href="modules/config/styles.html#gallerynpyx.config.styles.StylesConfig.tooltip">(StylesConfig property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/config/screens.html#gallerynpyx.config.screens.ScreensConfig.tooltip_screen">tooltip_screen (ScreensConfig property)</a>
+</li>
+      <li><a href="modules/common/helpers.html#gallerynpyx.common.helpers.tostring">tostring() (in module gallerynpyx.common.helpers)</a>
+</li>
+      <li><a href="modules/handler.html#gallerynpyx.handler.Handler.total">total (Handler property)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.transition">transition (ResourcesConfig property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/resources/exceptions.html#gallerynpyx.resources.exceptions.UnloadableSourceError">UnloadableSourceError</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/resources/exceptions.html#gallerynpyx.resources.exceptions.UnsupportedSourceError">UnsupportedSourceError</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/classes/objects.html#gallerynpyx.common.classes.objects.SimpleEnum.values">values() (SimpleEnum class method)</a>
+
+      <ul>
+        <li><a href="modules/common/classes/meta.html#gallerynpyx.common.classes.meta.SimpleEnumMeta.values">(SimpleEnumMeta method)</a>
+</li>
+        <li><a href="modules/slides/slider.html#gallerynpyx.slides.slider.Slider.values">(Slider method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/exports.html#gallerynpyx.exports.version">version (in module gallerynpyx.exports)</a>
+</li>
+      <li><a href="modules/config/resources.html#gallerynpyx.config.resources.ResourcesConfig.video_thumbnails_folder">video_thumbnails_folder (ResourcesConfig property)</a>
+</li>
+      <li><a href="modules/resources/video.html#gallerynpyx.resources.video.VideoResource">VideoResource (class in gallerynpyx.resources.video)</a>
+</li>
+      <li><a href="modules/resources/resource.html#gallerynpyx.resources.resource.VIDEOS">VIDEOS (in module gallerynpyx.resources.resource)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/sizes/size.html#gallerynpyx.sizes.size.Size.width">width (Size property)</a>
+
+      <ul>
+        <li><a href="modules/sizes/size_int.html#gallerynpyx.sizes.size_int.SizeInt.width">(SizeInt property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/common/classes/helpers.html#gallerynpyx.common.classes.helpers.with_metaclass">with_metaclass() (in module gallerynpyx.common.classes.helpers)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024-2025, Yoimer Davila.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

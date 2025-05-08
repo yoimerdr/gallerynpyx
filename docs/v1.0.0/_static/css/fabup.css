@@ -1,0 +1,22 @@
+* {
+  --font-color: #fffd;
+  --bg-color: #27282c;
+}
+
+
+.fab-up {
+  color: var(--font-color);
+  background: var(--bg-color);
+  position: fixed;
+  bottom: 1.4em;
+  right: 1.6em;
+  border: none;
+  font-size: 20px;
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  z-index: 3;
+  -webkit-box-shadow: 0 3px 14px 4px rgba(0, 0, 0, 0.62);
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 3px 14px 4px rgba(0, 0, 0, 0.62);
+}

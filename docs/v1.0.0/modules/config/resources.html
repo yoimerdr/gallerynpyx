@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>resources &mdash; Gallerynpyx Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/lunr-searchbox.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/fabup.css?v=592a04eb" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/code-syntax.css?v=c2901138" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/font-jb-sans.css?v=e3b0d0c7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/index.css?v=4ade695c" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://unpkg.com/lunr/lunr.min.js"></script>
+        <script src="../../_static/js/lunr-searchbox.js"></script>
+        <script src="../../_static/js/lunr-search-data.js"></script>
+        <script src="../../_static/js/fabup.js?v=0808abf6"></script>
+        <script src="../../_static/js/code-syntax.js?v=063008fa"></script>
+        <script src="../../_static/js/index.js?v=e210afa2"></script>
+        <script src="../../_static/js/icon-fixer.js?v=afd91005"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="events" href="../events.html" />
+    <link rel="prev" title="styles" href="styles.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            gallerynpyx
+              <img src="../../_static/navbar-logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0.0 Documentation
+              </div><form class="search" id="ls_search-form" action="javascript:;" onsubmit="onSubmitSearch(this)">
+  <div class="search-field-container">
+    <input class="search-field"
+           type="text" autocomplete="off" id="ls_search-field" name="q" placeholder="Search">
+
+
+    <button type="reset" class="search-reset-button" id="search-reset-button">
+      <svg class="search-reset-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+           width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18 17.94 6M18 18 6.06 6"/>
+      </svg>
+    </button>
+
+    <button type="submit" class="search-button">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+           viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+           width="512px" height="512px">
+            <path
+              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path>
+          </svg>
+    </button>
+  </div>
+
+  <ul class="search-results" id="ls_search-results"></ul>
+</form>
+
+
+<script>
+  var onSubmitSearch = (function () {
+    var field = $("#ls_search-field").first();
+    var results = $("#ls_search-results");
+    function listener(form) {
+      if (!field.val())
+        return;
+
+      var targetUrl = "search.html?q=" + field.val();
+
+      var relative = LunrDataSearch.relativeUrl
+
+      if (relative)
+        targetUrl = relative + targetUrl;
+
+      var selected = results.find(".search-result-ref.selected")
+        .first();
+      if (selected)
+        targetUrl = selected.attr('href');
+
+      location.replace(targetUrl)
+    }
+
+    return listener
+  })()
+</script>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../customizing.html">Customizing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Stored Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../anim.html">anim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../actions/index.html">actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../color.html">color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/index.html">common</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">config</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="screens.html">screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styles.html">styles</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.get_instance"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.get_instance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.register"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.register</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.allow_animation_size"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.allow_animation_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.allow_animation_speeds"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.allow_animation_speeds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.allow_animation_thumbnail"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.allow_animation_thumbnail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.animation_speed"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.animation_speed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.idle"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.idle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.locked"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.locked</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.not_found"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.not_found</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.play_hover"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.play_hover</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.play_idle"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.play_idle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.transition"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.transition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig.video_thumbnails_folder"><code class="docutils literal notranslate"><span class="pre">ResourcesConfig.video_thumbnails_folder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exports.html">exports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers.html">helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../path.html">path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/index.html">resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slides/index.html">slides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sizes/index.html">sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler.html">handler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">gallerynpyx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">config</a></li>
+      <li class="breadcrumb-item active">resources</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="resources">
+<h1>resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ResourcesConfig</span></span><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../common/classes/objects.html#gallerynpyx.common.classes.objects.SingletonRegistry" title="gallerynpyx.common.classes.objects.SingletonRegistry"><code class="xref py py-class docutils literal notranslate"><span class="pre">SingletonRegistry</span></code></a></p>
+<p>Common configuration for resource-related properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Notes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>There will be only one instance</p></li>
+<li><p>You can register a custom configuration by using the <code class="docutils literal notranslate"><span class="pre">register</span></code> class method before the first use of the class.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.get_instance">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig" title="gallerynpyx.config.resources.ResourcesConfig"><span class="pre">ResourcesConfig</span></a></span></span><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.get_instance" title="Link to this definition"></a></dt>
+<dd><p>Creates or returns the singleton instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Init class arguments.</p></li>
+<li><p><strong>kwargs</strong> – Init class keyword arguments.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.register">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#gallerynpyx.config.resources.ResourcesConfig" title="gallerynpyx.config.resources.ResourcesConfig"><span class="pre">ResourcesConfig</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.register" title="Link to this definition"></a></dt>
+<dd><p>Registers a target class in the registry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> – The class to register.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.allow_animation_size">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">allow_animation_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.allow_animation_size" title="Link to this definition"></a></dt>
+<dd><p>Whether to allow the dynamic changes of size in animation objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the value.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.allow_animation_speeds">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">allow_animation_speeds</span></span><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.allow_animation_speeds" title="Link to this definition"></a></dt>
+<dd><p>Whether to allow the dynamic changes of speeds in animation objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the value.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.allow_animation_thumbnail">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">allow_animation_thumbnail</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.allow_animation_thumbnail" title="Link to this definition"></a></dt>
+<dd><p>Whether to allow the search of an image for a thumbnail in animation objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the value.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.animation_speed">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">animation_speed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.animation_speed" title="Link to this definition"></a></dt>
+<dd><p>The animation speed for animation objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the current speed.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new speed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.idle">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">idle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail" title="gallerynpyx.resources.thumbnail.Thumbnail"><span class="pre">Thumbnail</span></a></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.idle" title="Link to this definition"></a></dt>
+<dd><p>Thumbnail for idle status in resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the thumbnail for idle.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new resource for the idle thumbnail.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.locked">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locked</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail" title="gallerynpyx.resources.thumbnail.Thumbnail"><span class="pre">Thumbnail</span></a></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.locked" title="Link to this definition"></a></dt>
+<dd><p>Thumbnail for locked resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the thumbnail for idle.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new resource for the idle thumbnail.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.not_found">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">not_found</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail" title="gallerynpyx.resources.thumbnail.Thumbnail"><span class="pre">Thumbnail</span></a></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.not_found" title="Link to this definition"></a></dt>
+<dd><p>Thumbnail for not found resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the thumbnail for not found.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new resource for the not found thumbnail.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.play_hover">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">play_hover</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail" title="gallerynpyx.resources.thumbnail.Thumbnail"><span class="pre">Thumbnail</span></a></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.play_hover" title="Link to this definition"></a></dt>
+<dd><p>Thumbnail for hover status in playable resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the thumbnail for idle.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new resource for the idle thumbnail.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.play_idle">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">play_idle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../resources/thumbnail.html#gallerynpyx.resources.thumbnail.Thumbnail" title="gallerynpyx.resources.thumbnail.Thumbnail"><span class="pre">Thumbnail</span></a></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.play_idle" title="Link to this definition"></a></dt>
+<dd><p>Thumbnail for hover status in playable resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the thumbnail for idle.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new resource for the idle thumbnail.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.transition">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.transition" title="Link to this definition"></a></dt>
+<dd><p>Transition for show resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the current transition.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new transition.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gallerynpyx.config.resources.ResourcesConfig.video_thumbnails_folder">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">video_thumbnails_folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#gallerynpyx.config.resources.ResourcesConfig.video_thumbnails_folder" title="Link to this definition"></a></dt>
+<dd><p>The folder where video thumbnails are stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Getter<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gets the folder path.</p>
+</dd>
+<dt class="field-even">Setter<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sets a new folder path.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="styles.html" class="btn btn-neutral float-left" title="styles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../events.html" class="btn btn-neutral float-right" title="events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024-2025, Yoimer Davila.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
