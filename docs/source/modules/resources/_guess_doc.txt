@@ -1,0 +1,6 @@
+Guess the resource type from the source.
+
+:notes: If the source is named and a None object is retrieved, is assumed to be an image source.
+:param source: Any valid source for the defined resources.
+:param allow_same: Whether to return the same source if it's already a resource.
+:return: The guessed resource.

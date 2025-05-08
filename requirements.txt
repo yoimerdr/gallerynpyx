@@ -1,1 +1,6 @@
 py2ren~=1.1.0
+Sphinx~=8.3.0
+docutils~=0.21.2
+Pygments~=2.19.1
+six~=1.16.0
+sphinx-autoapi~=3.6.0

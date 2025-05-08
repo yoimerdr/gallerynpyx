@@ -1,0 +1,4 @@
+Adds a listener for the given event.
+
+:param event: The event's name.
+:param callback: A listener function.

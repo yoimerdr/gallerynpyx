@@ -1,0 +1,146 @@
+* {
+  --anchor-color: #349ae0;
+  --anchor-hover-color: #349ae0;
+  --anchor-visited-color: #349ae0;
+}
+
+.highlight button.copybtn:hover {
+  background: var(--code-bg);
+  border: 1px solid var(--bg-color);
+}
+
+.rst-content .warning,
+button.copybtn {
+  color: var(--font-color);
+}
+
+.fancybox__container a:visited {
+  color: var(--font-color);
+}
+
+button.copybtn {
+  background: var(--bg-color);
+  border: 1px solid var(--code-bg);
+}
+
+.rst-content .code-block-caption {
+  padding: 0.25em 0 1em 0;
+}
+
+
+.rst-content .note {
+  background: #002c4d;
+}
+
+.rst-content .note .admonition-title {
+  background: #004a7b;
+}
+
+.rst-content .warning .admonition-title {
+  background: #803b00;
+}
+
+.rst-content .warning {
+  background: #533500;
+}
+
+
+.icon::after,
+.icon::before {
+  display: none;
+}
+
+a.icon:hover {
+  color: var(--font-color);
+}
+
+a.icon:visited {
+  color: var(--font-color);
+}
+
+a.icon > :where(small, img) {
+  display: block;
+}
+
+a.icon > img {
+  margin: 0 auto;
+}
+
+
+.wy-nav-top {
+  line-height: 0;
+}
+
+.wy-side-nav-search {
+  text-align: center;
+}
+
+.wy-menu-vertical a,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .headerlink,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .headerlink,
+.toctree-wrapper ul li code.docutils,
+a {
+  color: var(--anchor-color);
+}
+
+a:visited {
+  color: var(--anchor-visited-color);
+}
+
+.toctree-wrapper ul li code.docutils span:hover,
+a:hover {
+  color: var(--anchor-color);
+  border-bottom: 1px solid var(--anchor-hover-color);
+}
+
+a.icon.icon-home {
+  padding: 4px 6px;
+  transition: all 200ms ease-in-out;
+}
+
+a.icon.icon-home:hover {
+  border-bottom: none;
+  background: hsla(0, 0%, 100%, .1);
+}
+
+.field-list dd .reference:hover strong {
+  border-bottom: 1px solid var(--anchor-hover-color);
+}
+
+dl .reference:hover {
+  border-bottom: none;
+}
+
+.wy-side-nav-search .wy-dropdown > a img.logo,
+.wy-side-nav-search > a img.logo {
+  max-width: 80px;
+}
+
+.wy-side-nav-search .wy-dropdown > a.icon img.logo,
+.wy-side-nav-search > a.icon img.logo {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-nav-top {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wy-nav-side,
+  .wy-nav-side .wy-side-nav-search,
+  .wy-nav-side .wy-menu-vertical {
+    width: 22.5rem;
+  }
+
+  .wy-side-scroll {
+    width: 24rem;
+  }
+
+  .wy-nav-content-wrap {
+    margin: 0 0 0 22.5rem;
+  }
+}
