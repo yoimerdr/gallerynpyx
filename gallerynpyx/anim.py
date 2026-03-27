@@ -10,10 +10,21 @@ def is_pause_statement(statement):
     return getattr(statement, 'warper', None) == "pause"
 
 
+def _deep_statements(statements):
+    for statement in statements:
+        blocks = getattr(statement, 'blocks', None)
+        if blocks is not None:
+            for block in blocks:
+                for it in _deep_statements(getattr(block, 'statements', ())):
+                    yield it
+        else:
+            yield statement
+
+
 def get_statements(animation, raw=True):
     atl = getattr(animation, 'atl' if raw else 'block', None)
     statements = getattr(atl, 'statements', ())
-    return (it for it in statements)
+    return _deep_statements(statements)
 
 
 def set_speed(animation, speed=None):
