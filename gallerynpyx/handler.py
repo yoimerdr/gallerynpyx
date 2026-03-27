@@ -1,6 +1,6 @@
 from math import ceil
 
-from renpy.config import screen_width, screen_height
+from renpy import config
 from renpy.display.layout import Null
 from .common.classes.objects import SingletonRegistry
 from .common.helpers import isdefine
@@ -134,10 +134,10 @@ class Handler(SingletonRegistry):
         self._rows, self._cols = rows, cols
         mx = max(rows, cols)
 
-        width = screen_width * 0.782 - 20 * mx
+        width = config.screen_width * 0.782 - 20 * mx
         width = width / mx
 
-        size = (width, width / (screen_width / screen_height))
+        size = (width, width / (config.screen_width / float(config.screen_height)))
 
         if self._sz is None:
             self._sz = SizeInt.of(size)
