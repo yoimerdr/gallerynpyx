@@ -1,8 +1,10 @@
 import os
 
+import renpy
 from renpy.display import im
 from renpy.display.im import Image, Composite, Scale
 from renpy.display.image import get_registered_image
+from renpy.display.motion import Transform
 from .displayable import DisplayableResource
 from .exceptions import UnsupportedSourceError, UnloadableSourceError
 from .resource import IMAGES
@@ -46,10 +48,6 @@ class ImageResource(DisplayableResource):
         self._ext = ext
         super(ImageResource, self)._init_from_raw(source)
 
-    def _init(self, source):
-        self._cmem.dispose()
-        super(ImageResource, self)._init(source)
-
     def _load(self, force):
         source = self.source
         if isinstance(source, Image):
@@ -79,9 +77,16 @@ class ImageResource(DisplayableResource):
 
     def _scales(self, size):
         image = self.load(True)
-        surfer = im.cache.get(image)
+        source_size = None
 
-        source = SizeInt.of(surfer.get_size())
+        if hasattr(renpy, "image_size"):
+            source_size = renpy.image_size(image)
+
+        if not source_size or source_size is None:
+            surfer = im.cache.get(image)
+            source_size = surfer.get_size()
+
+        source = SizeInt.of(source_size)
         xsize = size.scale(source.aspect_ratio)
 
         return Scale(image, xsize.width, xsize.height), xsize, size
@@ -90,6 +95,9 @@ class ImageResource(DisplayableResource):
         return self._scales(SizeInt.of(size))[0]
 
     def _composite(self, size, *args):
+        if getattr(renpy, "version_tuple", (0, 0, 0)) >= (7, 4, 0):
+            return Transform(self.load(True), fit="contain", align=(0.5, 0.5), xysize=tuple(size))
+
         image, xsize, size = self._scales(size)
         x = int(size.width / 2.0 - xsize.width / 2.0)
         y = int(size.height / 2.0 - xsize.height / 2.0)

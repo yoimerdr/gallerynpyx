@@ -2,6 +2,8 @@ from .exceptions import UnsupportedSourceError, IncompatibleResourceError
 from ..common.classes.helpers import not_implemented, representation
 from ..common.classes.objects import AbstractClass
 from ..common.helpers import noact
+from ..common.memoized import Memoized
+from ..sizes.size_int import SizeInt
 
 __all__ = ('Resource', 'IMAGES', 'VIDEOS', 'AUDIO')
 
@@ -15,12 +17,15 @@ AUDIO = ('.mp3', '.ogg', '.opus', ".mp2")
 class Resource(AbstractClass):
     __slots__ = (
         '_src',
+        '_dmem'
     )
 
     def __init__(self, source):
+        self._dmem = Memoized(self._displayable)
         self._init(source)
 
     def _init(self, source):
+        self.dispose()
         if isinstance(source, Resource):
             if source.__class__ is self.__class__:
                 self._init_from_self(source)
@@ -52,6 +57,12 @@ class Resource(AbstractClass):
     def source(self, value):
         self._init(value)
 
+    def displayable(self, size=None):
+        return self._dmem.evaluate(size if size is None else SizeInt.of(size), self.source)
+
+    def dispose(self):
+        self._dmem.dispose()
+
     def __repr__(self):
         return representation(self, source=self.source)
 
@@ -61,8 +72,7 @@ class Resource(AbstractClass):
             return None
         return cls(resource.source)
 
-    dispose = noact
-    _load = displayable = not_implemented
+    _load = _displayable = not_implemented
     _force_load_init = noact
     _init_from_self = _init_from_res
     _is_supported_source = _is_compatible_resource = bool

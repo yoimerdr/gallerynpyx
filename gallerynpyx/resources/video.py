@@ -6,6 +6,7 @@ from ..common.helpers import isdefine
 from ..common.compat import basestring
 from ..common.memoized import Memoized
 from ..path import isloadable, normpath
+from ..sizes.size_int import SizeInt
 
 __all__ = ('VideoResource',)
 
@@ -13,12 +14,11 @@ __all__ = ('VideoResource',)
 class VideoResource(Resource):
     __slots__ = (
         '_ext',
-        '_dmem',
     )
 
-    def __init__(self, source):
-        self._dmem = Memoized(self._displayable)
-        super(VideoResource, self).__init__(source)
+    @property
+    def ext(self):
+        return self._ext
 
     def _is_supported_source(self, source):
         if not source:
@@ -45,12 +45,6 @@ class VideoResource(Resource):
         source = self.source
         return getattr(source, '_original_play', source)
 
-    def _displayable(self, source):
-        return source if not isinstance(source, basestring) else Movie(play=source)
-
-    def displayable(self, *args):
-        return self._dmem.evaluate(self.source)
-
-    @property
-    def ext(self):
-        return self._ext
+    def _displayable(self, size, *args):
+        source = self.load(True)
+        return Movie(play=source, size=size)
