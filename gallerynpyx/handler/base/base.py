@@ -21,7 +21,7 @@ class BaseHandler(object):
     __slots__ = (
         '_rt', '_crt', '_sld',
         '_pg', '_rows', '_cols',
-        '_sz', '_bmem',
+        '_sz', '_bmem', '_sg_btns',
     )
 
     def __init__(self):
@@ -29,6 +29,7 @@ class BaseHandler(object):
         self._sld = self._sz = self._cols = self._rows = None
         self._bmem = Memoized(self._buttons)
         self._pg = 0
+        self._sg_btns = {}
         self.change_distribution(4, 4)
 
     @property
@@ -123,10 +124,12 @@ class BaseHandler(object):
             for button in create_buttons(
                     items=self._sld[start:end],
                     size=self.thumbnail_size,
-                    config=self.resources_config
+                    resources_config=self.resources_config
             ):
                 yield button
                 start += 1
+
+            self._sg_btns[self.page] = self._sld[start:end]
 
         for _ in range(start, end):
             yield Null()
@@ -229,8 +232,11 @@ class BaseHandler(object):
 
     def reset(self):
         self._bmem.dispose()
-        for item in eachitem(self.root):
-            item.resource.dispose()
+        for items in self._sg_btns.values():
+            for item in items:
+                item.resource.dispose()
+                item.thumbnail.resource.dispose()
+
         self._pg, self._sld = 0, None
         self._crt = self.root
         self.to_first()
