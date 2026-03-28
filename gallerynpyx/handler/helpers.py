@@ -6,7 +6,7 @@ __all__ = (
 )
 
 
-def coerce(manager=None, name=None, cls=BaseHandler):
+def coerce(name=None, manager=None, cls=BaseHandler):
     if isinstance(name, cls):
         return name
 
