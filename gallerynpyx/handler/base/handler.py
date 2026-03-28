@@ -19,24 +19,24 @@ class Handler(BaseHandler):
 
     @property
     def resources_config(self):
-        return self._rs_cfg
+        return coerce_resources(self._rs_cfg)
 
     @resources_config.setter
     def resources_config(self, value):
-        self._rs_cfg = coerce_resources(value)
+        self._rs_cfg = value
 
     @property
     def styles_config(self):
-        return self._sty_cfg
+        return coerce_styles(self._sty_cfg)
 
     @styles_config.setter
     def styles_config(self, value):
-        self._sty_cfg = coerce_styles(value)
+        self._sty_cfg = value
 
     @property
     def screens_config(self):
-        return self._res_cfg
+        return coerce_screens(self._res_cfg)
 
     @screens_config.setter
     def screens_config(self, value):
-        self._res_cfg = coerce_screens(value)
+        self._res_cfg = value
