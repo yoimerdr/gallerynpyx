@@ -1,4 +1,5 @@
-from .base import ScreensConfig as BaseScreensConfig, ConfigManager
+from .base.screens import ScreensConfig as BaseScreensConfig
+from .base.manager import ConfigManager
 from ..common.classes import add_metaclass, SingletonRegistryMeta
 
 __all__ = (

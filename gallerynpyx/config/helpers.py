@@ -1,4 +1,8 @@
-from .base import BaseConfig, ResourcesConfig, ScreensConfig, StylesConfig
+from .base.base import BaseConfig
+from .base.resources import ResourcesConfig
+from .base.screens import ScreensConfig
+from .base.styles import StylesConfig
+
 from . import resources, screens, styles
 
 __all__ = (
