@@ -1,4 +1,4 @@
-from .handler import Handler as get_handler
+from .handler import get_handler
 from .resources.helpers import guess as guess_resource
 from .slides.items import Item as create_item, isitem
 from .slides.helpers import slide as create_slide, slider as create_slider

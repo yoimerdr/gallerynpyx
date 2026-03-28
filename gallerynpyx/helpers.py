@@ -8,6 +8,7 @@ from .resources.images import ImageResource
 from .resources.thumbnail import creates
 from .resources.video import VideoResource
 from .sizes.size_int import SizeInt
+from .handler.base.helpers import create_items_overlay
 
 __all__ = (
     'create_buttons', 'isvideo',
@@ -52,13 +53,11 @@ def create_buttons(items, size):
         except IncompatibleResourceError:
             dis = not_found
 
-        if isinstance(item.resource, (VideoResource, AnimationResource)):
-            idle = play_idle
-            hover = play_hover
-
+def create_buttons(items, size, resources_config=None, screens_config=None):
+    for ((item, displayable), (idle, hover, locked)) in create_items_overlay(items, size, resources_config):
         yield Button(
-            child=dis, selected_child=locked,
-            action=ShowItem(item),
+            child=displayable, selected_child=locked,
+            action=ShowItem(item, resources_config=resources_config, screens_config=screens_config),
             idle_foreground=idle, hover_foreground=hover,
             yalign=0.5, xalign=0.5,
             xysize=size, padding=(0, 0)
