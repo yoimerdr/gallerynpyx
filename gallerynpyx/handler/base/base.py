@@ -1,23 +1,23 @@
 from math import ceil
 
-from renpy.config import screen_width, screen_height
+from renpy import config
 from renpy.display.layout import Null
-from .common.classes.objects import SingletonRegistry
-from .common.helpers import isdefine
-from .common.iters import first
-from .common.memoized import Memoized
-from .helpers import create_buttons
-from .sizes.size_int import SizeInt
-from .slides.base import route, isslide
-from .slides.helpers import has_animation, eachitem
-from .slides.items import Item
-from .slides.slider import Slider
-from ._internal import _events
+from ...common.classes import not_implemented
+from ...common.helpers import isdefine
+from ...common.iters import first
+from ...common.memoized import Memoized
+from ...helpers import create_buttons
+from ...sizes.size_int import SizeInt
+from ...slides.base import route, isslide
+from ...slides.helpers import has_animation, eachitem
+from ...slides.items import Item
+from ...slides.slider import Slider
+from ..._internal import _events
 
-__all__ = ('Handler',)
+__all__ = ('BaseHandler',)
 
 
-class Handler(SingletonRegistry):
+class BaseHandler(object):
     __slots__ = (
         '_rt', '_crt', '_sld',
         '_pg', '_rows', '_cols',
@@ -30,6 +30,18 @@ class Handler(SingletonRegistry):
         self._bmem = Memoized(self._buttons)
         self._pg = 0
         self.change_distribution(4, 4)
+
+    @property
+    def resources_config(self):
+        return not_implemented(self)
+
+    @property
+    def styles_config(self):
+        return not_implemented(self)
+
+    @property
+    def screens_config(self):
+        return not_implemented(self)
 
     @property
     def rows(self):
@@ -53,7 +65,7 @@ class Handler(SingletonRegistry):
 
     @property
     def pages(self):
-        return ceil(self.total / self.per_page)
+        return ceil(self.total / float(self.per_page))
 
     @property
     def page(self):
@@ -108,7 +120,11 @@ class Handler(SingletonRegistry):
         start, end = self.start, self.end
 
         if self._sld:
-            for button in create_buttons(self._sld[start:end], self.thumbnail_size):
+            for button in create_buttons(
+                    items=self._sld[start:end],
+                    size=self.thumbnail_size,
+                    config=self.resources_config
+            ):
                 yield button
                 start += 1
 
@@ -134,10 +150,10 @@ class Handler(SingletonRegistry):
         self._rows, self._cols = rows, cols
         mx = max(rows, cols)
 
-        width = screen_width * 0.782 - 20 * mx
+        width = config.screen_width * 0.782 - 20 * mx
         width = width / mx
 
-        size = (width, width / (screen_width / screen_height))
+        size = (width, width / (config.screen_width / float(config.screen_height)))
 
         if self._sz is None:
             self._sz = SizeInt.of(size)
@@ -167,11 +183,11 @@ class Handler(SingletonRegistry):
         elif isslide(target):
             self._sld, self._pg = target, 0
             self._crt = target.parent
-            _events._emit("gx-slide-change", "slide", target)
+            _events._emit("gx-slide-change", "slide", target, self)
             return
 
         if target is not self._crt:
-            _events._emit("gx-slide-change", "slider", target)
+            _events._emit("gx-slide-change", "slider", target, self)
 
         self._crt = target
         self.to_first()
@@ -181,7 +197,7 @@ class Handler(SingletonRegistry):
         if self.has_animation:
             self._sld = None
         else:
-            _events._emit("gx-slide-change", "slide", self._sld)
+            _events._emit("gx-slide-change", "slide", self._sld, self)
         self._pg = 0
         self._bmem.dispose()
 
@@ -193,7 +209,7 @@ class Handler(SingletonRegistry):
             return False
 
         nxt = self._pg + 1
-        _events._emit("gx-page-change", nxt, self._pg, )
+        _events._emit("gx-page-change", nxt, self._pg, self)
         self._pg = nxt
         return True
 
@@ -207,7 +223,7 @@ class Handler(SingletonRegistry):
             return False
 
         prev = self._pg - 1
-        _events._emit("gx-page-change", prev, self._pg, )
+        _events._emit("gx-page-change", prev, self._pg, self)
         self._pg = prev
         return True
 
