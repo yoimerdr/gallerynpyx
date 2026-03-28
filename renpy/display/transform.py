@@ -1,3 +1,7 @@
+class Transform:
+    def __init__(self, *args, **kwargs): pass
+
+
 class TransformState:
     size = (None, None)
 
@@ -5,5 +9,5 @@ class TransformState:
         pass
 
 
-class ATLTransform:
+class ATLTransform(Transform):
     state = TransformState()
