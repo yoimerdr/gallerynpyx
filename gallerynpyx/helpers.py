@@ -1,13 +1,14 @@
 from renpy.display.behavior import Button
 from .actions.items import ShowItem
-from .config import coerce_resources
+from .common.helpers import cast
+from .config.helpers import coerce_resources
 from .resources.animation import AnimationResource
 from .resources.exceptions import IncompatibleResourceError
 from .resources.thumbnail import creates
 from .resources.video import VideoResource
 from .sizes.size_int import SizeInt
 
-__all__ = ('create_buttons',)
+__all__ = ('create_buttons', "create_page")
 
 
 def create_buttons(items, size, resources_config=None, screens_config=None):
@@ -46,3 +47,19 @@ def create_buttons(items, size, resources_config=None, screens_config=None):
             yalign=0.5, xalign=0.5,
             xysize=size, padding=(0, 0)
         )
+
+
+def create_page(
+        items,
+        page,
+        per_page,
+        size,
+        resources_config=None,
+        screens_config=None
+):
+    page = max(cast(page, int, default=0), 0)
+
+    start = per_page * page
+    end = start + per_page
+
+    return create_buttons(items[start:end], size=size, resources_config=resources_config, screens_config=screens_config)
