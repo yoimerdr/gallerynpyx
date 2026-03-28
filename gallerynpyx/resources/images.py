@@ -78,7 +78,11 @@ class ImageResource(DisplayableResource):
     def _load_size(self, *args):
         image = self.load(True)
 
-        surfer = im.cache.get(image)
+        try:
+            surfer = im.cache.get(image)
+        except:
+            surfer = image.load()
+
         source_size = surfer.get_size()
 
         return SizeInt.of(source_size)
