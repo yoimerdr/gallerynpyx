@@ -53,7 +53,7 @@ class Handler(SingletonRegistry):
 
     @property
     def pages(self):
-        return ceil(self.total / self.per_page)
+        return ceil(self.total / float(self.per_page))
 
     @property
     def page(self):
