@@ -1,4 +1,7 @@
-from .base import HandlerManager, BaseHandler, Handler as LocalHandler
+from .base.base import BaseHandler
+from .base.handler import Handler as LocalHandler
+from .base.manager import HandlerManager
+
 from ..common.classes import add_metaclass, SingletonRegistryMeta
 from ..config import ResourcesConfig, StylesConfig, ScreensConfig
 
