@@ -9,8 +9,7 @@ __all__ = (
 
 @add_metaclass(SingletonRegistryMeta)
 class ResourcesConfig(BaseResourcesConfig):
-    pass
-
+    __slots__ = ()
 
 manager = ConfigManager(ResourcesConfig, BaseResourcesConfig)
 

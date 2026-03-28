@@ -9,7 +9,7 @@ __all__ = (
 
 @add_metaclass(SingletonRegistryMeta)
 class ScreensConfig(BaseScreensConfig):
-    pass
+    __slots__ = ()
 
 
 manager = ConfigManager(ScreensConfig, BaseScreensConfig)

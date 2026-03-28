@@ -1,2 +1,2 @@
 class BaseConfig(object):
-    pass
+    __slots__ = ()
