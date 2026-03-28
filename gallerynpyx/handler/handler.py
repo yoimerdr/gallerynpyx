@@ -3,7 +3,7 @@ from .base.handler import Handler as LocalHandler
 from .base.manager import HandlerManager
 
 from ..common.classes import add_metaclass, SingletonRegistryMeta
-from ..config import ResourcesConfig, StylesConfig, ScreensConfig
+from ..config import resources as resources_config, styles as styles_config, screens as screens_config
 
 __all__ = (
     "Handler",
@@ -20,15 +20,15 @@ class Handler(BaseHandler):
 
     @property
     def resources_config(self):
-        return ResourcesConfig.get_instance()
+        return resources_config.manager.get()
 
     @property
     def styles_config(self):
-        return StylesConfig.get_instance()
+        return styles_config.manager.get()
 
     @property
     def screens_config(self):
-        return ScreensConfig.get_instance()
+        return screens_config.manager.get()
 
 
 def _create_local_handler(name):
