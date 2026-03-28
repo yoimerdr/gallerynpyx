@@ -12,84 +12,81 @@
   ],
   "modules": {
     "anim.py": {
-      "initLevel": -11
+      "initLevel": -19
     },
     "color.py": {
-      "initLevel": -16
+      "initLevel": -23
     },
     "events.py": {
-      "initLevel": -17
+      "initLevel": -25
     },
     "exports.py": {
-      "initLevel": -2
-    },
-    "handler.py": {
-      "initLevel": -3
-    },
-    "helpers.py": {
       "initLevel": -4
     },
+    "helpers.py": {
+      "initLevel": -10
+    },
     "path.py": {
-      "initLevel": -18
+      "initLevel": -26
     },
     "__init__.py": {
-      "initLevel": -1
+      "initLevel": -3
     },
     "actions": {
       "modules": {
         "base.py": {
-          "initLevel": -18
+          "initLevel": -26
         },
         "items.py": {
-          "initLevel": -5
+          "initLevel": -11
         },
         "resources.py": {
-          "initLevel": -6
+          "initLevel": -11
         },
         "slides.py": {
-          "initLevel": -6
+          "initLevel": -2
         },
         "__init__.py": {
-          "initLevel": -4
+          "initLevel": -1
         }
       }
     },
     "common": {
       "modules": {
         "compat.py": {
-          "initLevel": -18
+          "initLevel": -26
         },
         "exceptions.py": {
-          "initLevel": -18
+          "initLevel": -26
         },
         "helpers.py": {
-          "initLevel": -17
+          "initLevel": -25
         },
         "iters.py": {
-          "initLevel": -18
+          "initLevel": -24
         },
         "memoized.py": {
-          "initLevel": -18
+          "initLevel": -26
         },
         "__init__.py": {
-          "initLevel": -16
+          "initLevel": -23
         },
         "classes": {
           "modules": {
             "exceptions.py": {
-              "initLevel": -15
+              "initLevel": -23
             },
             "helpers.py": {
-              "initLevel": -16
+              "initLevel": -24
             },
             "meta.py": {
-              "initLevel": -14
+              "initLevel": -22
             },
             "objects.py": {
-              "initLevel": -13
+              "initLevel": -21
             },
             "__init__.py": {
-              "initLevel": -12
+              "initLevel": -20
             }
           }
         }
@@ -97,86 +94,143 @@
     },
     "config": {
       "modules": {
+        "helpers.py": {
+          "initLevel": -13
+        },
         "resources.py": {
-          "initLevel": -7
+          "initLevel": -14
         },
         "screens.py": {
-          "initLevel": -7
+          "initLevel": -14
         },
         "styles.py": {
-          "initLevel": -12
+          "initLevel": -19
         },
         "__init__.py": {
+          "initLevel": -12
+        },
+        "base": {
+          "modules": {
+            "base.py": {
+              "initLevel": -26
+            },
+            "manager.py": {
+              "initLevel": -26
+            },
+            "resources.py": {
+              "initLevel": -15
+            },
+            "screens.py": {
+              "initLevel": -15
+            },
+            "styles.py": {
+              "initLevel": -24
+            },
+            "__init__.py": {
+              "initLevel": -14
+            }
+          }
+        }
+      }
+    },
+    "handler": {
+      "modules": {
+        "handler.py": {
+          "initLevel": -7
+        },
+        "helpers.py": {
           "initLevel": -6
+        },
+        "__init__.py": {
+          "initLevel": -5
+        },
+        "base": {
+          "modules": {
+            "base.py": {
+              "initLevel": -9
+            },
+            "handler.py": {
+              "initLevel": -8
+            },
+            "helpers.py": {
+              "initLevel": -12
+            },
+            "manager.py": {
+              "initLevel": -11
+            },
+            "__init__.py": {
+              "initLevel": -7
+            }
+          }
         }
       }
     },
     "resources": {
       "modules": {
         "animation.py": {
-          "initLevel": -11
+          "initLevel": -19
         },
         "displayable.py": {
-          "initLevel": -11
+          "initLevel": -19
         },
         "exceptions.py": {
-          "initLevel": -15
+          "initLevel": -23
         },
         "helpers.py": {
-          "initLevel": -9
+          "initLevel": -17
         },
         "images.py": {
-          "initLevel": -10
+          "initLevel": -18
         },
         "resource.py": {
-          "initLevel": -12
+          "initLevel": -20
         },
         "thumbnail.py": {
-          "initLevel": -8
+          "initLevel": -16
         },
         "video.py": {
-          "initLevel": -11
+          "initLevel": -19
         },
         "__init__.py": {
-          "initLevel": -8
+          "initLevel": -16
         }
       }
     },
     "sizes": {
       "modules": {
         "size.py": {
-          "initLevel": -15
+          "initLevel": -23
         },
         "size_int.py": {
-          "initLevel": -14
+          "initLevel": -22
         },
         "__init__.py": {
-          "initLevel": -13
+          "initLevel": -21
         }
       }
     },
     "slides": {
       "modules": {
         "base.py": {
-          "initLevel": -12
+          "initLevel": -20
         },
         "exceptions.py": {
-          "initLevel": -18
+          "initLevel": -26
         },
         "helpers.py": {
-          "initLevel": -4
+          "initLevel": -12
         },
         "items.py": {
-          "initLevel": -7
+          "initLevel": -15
         },
         "slide.py": {
-          "initLevel": -6
+          "initLevel": -14
         },
         "slider.py": {
-          "initLevel": -5
+          "initLevel": -13
         },
         "__init__.py": {
-          "initLevel": -3
+          "initLevel": -11
         }
       }
     },
@@ -185,10 +239,10 @@
       "modules": {
         "_events.py": {
           "name": "_events",
-          "initLevel": -18
+          "initLevel": -26
         },
         "__init__.py": {
-          "initLevel": -18
+          "initLevel": -26
         }
       }
     }
