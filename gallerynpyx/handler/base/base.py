@@ -123,7 +123,8 @@ class BaseHandler(object):
             for button in create_buttons(
                     items=self._sld[start:end],
                     size=self.thumbnail_size,
-                    config=self.resources_config
+                    resources_config=self.resources_config,
+                    screens_config=self.screens_config
             ):
                 yield button
                 start += 1

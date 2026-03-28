@@ -3,14 +3,13 @@ from .base import HandlerInteractive
 from ..common.helpers import isdefine
 from ..common.classes.helpers import add_metaclass
 from ..common.classes.meta import SingletonMeta, RegistryMeta
-from ..config.resources import ResourcesConfig
 
 __all__ = ('NextPage', 'PreviousPage', 'ChangeSlide', 'ReturnSlide')
 
 @add_metaclass(SingletonMeta)
 class NextPage(HandlerInteractive):
-    def __init__(self, ):
-        super(NextPage, self).__init__()
+    def __init__(self, handler=None):
+        super(NextPage, self).__init__(handler)
 
     def get_sensitive(self):
         handler = self.handler
@@ -23,8 +22,8 @@ class NextPage(HandlerInteractive):
 
 @add_metaclass(SingletonMeta)
 class PreviousPage(HandlerInteractive):
-    def __init__(self):
-        super(PreviousPage, self).__init__()
+    def __init__(self, handler=None):
+        super(PreviousPage, self).__init__(handler)
 
     def get_sensitive(self):
         return self.handler.start > 0
@@ -35,8 +34,8 @@ class PreviousPage(HandlerInteractive):
 
 @add_metaclass(RegistryMeta)
 class ChangeSlide(HandlerInteractive):
-    def __init__(self, slide):
-        super(ChangeSlide, self).__init__()
+    def __init__(self, slide, handler=None):
+        super(ChangeSlide, self).__init__(handler)
         self.__slide = slide
 
     def get_selected(self):
@@ -55,8 +54,8 @@ class ChangeSlide(HandlerInteractive):
 
 @add_metaclass(RegistryMeta)
 class ReturnSlide(HandlerInteractive):
-    def __init__(self, has_animations=False):
-        super(ReturnSlide, self).__init__()
+    def __init__(self, has_animations=False, handler=None):
+        super(ReturnSlide, self).__init__(handler)
         self._has_animations = has_animations
 
     def __call__(self, *args, **kwargs):
@@ -79,7 +78,7 @@ class ReturnSlide(HandlerInteractive):
         if not self._has_animations:
             target = target.parent
         else:
-            ResourcesConfig.get_instance().animation_speed = 1
+            handler.resources_config.animation_speed = 1
 
         if isdefine(target):
             route = target.route()

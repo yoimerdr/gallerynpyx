@@ -10,24 +10,24 @@ from .sizes.size_int import SizeInt
 __all__ = ('create_buttons',)
 
 
-def create_buttons(items, size, config=None):
+def create_buttons(items, size, resources_config=None, screens_config=None):
     size = tuple(SizeInt.of(size))
-    res = coerce_resources(config)
+    res_cfg = coerce_resources(resources_config)
 
-    idle, not_found = res.idle.create(size), res.not_found.create(size)
-    play_idle, play_hover = res.play_idle.create(size), res.play_hover.create(size)
-    locked, hover = res.locked.create(size), None
+    idle, not_found = res_cfg.idle.create(size), res_cfg.not_found.create(size)
+    play_idle, play_hover = res_cfg.play_idle.create(size), res_cfg.play_hover.create(size)
+    locked, hover = res_cfg.locked.create(size), None
 
-    allow_anim, video_fol = res.allow_animation_thumbnail, res.video_thumbnails_folder
+    allow_anim, video_fol = res_cfg.allow_animation_thumbnail, res_cfg.video_thumbnails_folder
     thumbnails = {}
 
     for item in items:
         try:
-            res = item.thumbnail.prepare(allow_anim, video_fol)
-            key = (res.source,)
+            res_cfg = item.thumbnail.prepare(allow_anim, video_fol)
+            key = (res_cfg.source,)
             dis = thumbnails.get(key, None)
             if dis is None:
-                dis = thumbnails[key] = creates(res, size)
+                dis = thumbnails[key] = creates(res_cfg, size)
         except IncompatibleResourceError:
             dis = not_found
 
@@ -37,7 +37,11 @@ def create_buttons(items, size, config=None):
 
         yield Button(
             child=dis, selected_child=locked,
-            action=ShowItem(item, ),
+            action=ShowItem(
+                item,
+                resources_config=res_cfg,
+                screens_config=screens_config
+            ),
             idle_foreground=idle, hover_foreground=hover,
             yalign=0.5, xalign=0.5,
             xysize=size, padding=(0, 0)
