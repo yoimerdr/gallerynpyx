@@ -1,7 +1,3 @@
-from .resources import *
-from .screens import *
-from .styles import *
-
-get_resources = ResourcesConfig
-get_screens = ScreensConfig
-get_styles = StylesConfig
+from .resources import ResourcesConfig, get_resources
+from .screens import ScreensConfig, get_screens
+from .styles import StylesConfig, get_styles
