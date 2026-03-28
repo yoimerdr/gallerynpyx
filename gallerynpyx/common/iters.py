@@ -1,5 +1,7 @@
 import sys
 
+from .helpers import cast
+
 if sys.version_info[0] < 3:
     def imap(fn, iterable):
         return (fn(it) for it in iterable)
@@ -35,3 +37,11 @@ def last(iterable, default=None, key=None):
         first(reversed(iterable), default, key)
     except TypeError:
         return last(tuple(iterable), default, key)
+
+def paginate(items, page, per_page):
+    page = max(1, cast(page, int, default=1))
+
+    start = (page - 1) * per_page
+    end = start + per_page
+
+    return items[start:end]
