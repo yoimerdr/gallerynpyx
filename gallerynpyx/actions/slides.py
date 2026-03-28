@@ -5,7 +5,8 @@ from .. import isslide
 from ..common.classes.helpers import add_metaclass
 from ..common.classes.meta import RegistryMeta
 from ..common.helpers import isdefine
-from ..helpers import create_page
+from ..common.iters import paginate
+from ..handler.base.helpers import create_items_thumbnail
 
 __all__ = ('NextPage', 'PreviousPage', 'ChangeSlide', 'ReturnSlide')
 
@@ -27,13 +28,16 @@ class NextPage(HandlerInteractive):
         if not self.get_sensitive():
             return
 
-        for button in create_page(
-                page=self.handler.page + 1,
-                per_page=self.handler.per_page,
-                items=self.handler.slide,
-                size=self.handler.thumbnail_size
+        for (_, displayable) in create_items_thumbnail(
+                items=paginate(
+                    items=self.handler.slide,
+                    page=self.handler.page + 1,
+                    per_page=self.handler.per_page
+                ),
+                size=self.handler.thumbnail_size,
+                resources_config=self.handler.resources_config,
         ):
-            predict.displayable(button)
+            predict.displayable(displayable)
 
 
 @add_metaclass(RegistryMeta)
@@ -56,13 +60,16 @@ class PreviousPage(HandlerInteractive):
         if index < 0:
             return
 
-        for button in create_page(
-                page=self.handler.page - 1,
-                per_page=self.handler.per_page,
-                items=self.handler.slide,
-                size=self.handler.thumbnail_size
+        for (_, displayable) in create_items_thumbnail(
+                items=paginate(
+                    items=self.handler.slide,
+                    page=self.handler.page - 1,
+                    per_page=self.handler.per_page
+                ),
+                size=self.handler.thumbnail_size,
+                resources_config=self.handler.resources_config,
         ):
-            predict.displayable(button)
+            predict.displayable(displayable)
 
 
 @add_metaclass(RegistryMeta)
@@ -87,13 +94,16 @@ class ChangeSlide(HandlerInteractive):
     def predict(self):
         slide = self.__slide
         if isslide(slide):
-            for button in create_page(
-                    page=0,
-                    per_page=self.handler.per_page,
-                    items=slide,
-                    size=self.handler.thumbnail_size
+            for (_, displayable) in create_items_thumbnail(
+                    items=paginate(
+                        items=slide,
+                        page=1,
+                        per_page=self.handler.per_page
+                    ),
+                    size=self.handler.thumbnail_size,
+                    resources_config=self.handler.resources_config,
             ):
-                predict.displayable(button)
+                predict.displayable(displayable)
 
 
 @add_metaclass(RegistryMeta)
