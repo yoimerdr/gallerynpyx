@@ -1,10 +1,8 @@
 import os
 
-import renpy
 from renpy.display import im
 from renpy.display.im import Image, Composite, Scale
 from renpy.display.image import get_registered_image
-from renpy.display.motion import Transform
 from .displayable import DisplayableResource
 from .exceptions import UnsupportedSourceError, UnloadableSourceError
 from .resource import IMAGES
@@ -18,11 +16,13 @@ __all__ = ('ImageResource',)
 
 class ImageResource(DisplayableResource):
     __slots__ = (
-        '_ext', '_cmem'
+        '_ext', '_cmem',
+        '_szmem'
     )
 
     def __init__(self, source):
         self._cmem = Memoized(self._composite)
+        self._szmem = Memoized(self._load_size)
         super(ImageResource, self).__init__(source)
 
     def _is_supported_source(self, source):
@@ -75,18 +75,17 @@ class ImageResource(DisplayableResource):
     def is_named(self):
         return not self.ext and isinstance(self.source, basestring)
 
+    def _load_size(self, *args):
+        image = self.load(True)
+
+        surfer = im.cache.get(image)
+        source_size = surfer.get_size()
+
+        return SizeInt.of(source_size)
+
     def _scales(self, size):
         image = self.load(True)
-        source_size = None
-
-        if hasattr(renpy, "image_size"):
-            source_size = renpy.image_size(image)
-
-        if not source_size or source_size is None:
-            surfer = im.cache.get(image)
-            source_size = surfer.get_size()
-
-        source = SizeInt.of(source_size)
+        source = self._szmem.evaluate(self.source)
         xsize = size.scale(source.aspect_ratio)
 
         return Scale(image, xsize.width, xsize.height), xsize, size
@@ -95,9 +94,6 @@ class ImageResource(DisplayableResource):
         return self._scales(SizeInt.of(size))[0]
 
     def _composite(self, size, *args):
-        if getattr(renpy, "version_tuple", (0, 0, 0)) >= (7, 4, 0):
-            return Transform(self.load(True), fit="contain", align=(0.5, 0.5), xysize=tuple(size))
-
         image, xsize, size = self._scales(size)
         x = int(size.width / 2.0 - xsize.width / 2.0)
         y = int(size.height / 2.0 - xsize.height / 2.0)
@@ -108,6 +104,7 @@ class ImageResource(DisplayableResource):
 
     def dispose(self):
         self._cmem.dispose()
+        self._szmem.dispose()
         super(ImageResource, self).dispose()
 
     def composite(self, size):
