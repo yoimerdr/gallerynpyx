@@ -1,4 +1,4 @@
-from ... import config
+from ...config import resources, screens, styles
 from ..._internal import _events
 
 
@@ -29,9 +29,9 @@ class HandlerManager(object):
 
     def _flush(self, name):
         self._hdls.pop(name)
-        config.resources.manager.flush(name)
-        config.screens.manager.flush(name)
-        config.styles.manager.flush(name)
+        resources.manager.flush(name)
+        screens.manager.flush(name)
+        styles.manager.flush(name)
 
     def flush(self, name=None):
         _events._emit("gx-handler-flush", name)
