@@ -1,0 +1,127 @@
+name: Module Release
+
+on:
+  push:
+    tags:
+      - "*@*"
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: Extract Tag Info
+        id: extract
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          TAG_NAME="${GITHUB_REF_NAME}"
+          MODULE_NAME="${TAG_NAME%@*}"
+          VERSION="${TAG_NAME##*@}"
+
+          if [[ "${MODULE_NAME}" == "${TAG_NAME}" || -z "${MODULE_NAME}" || -z "${VERSION}" ]]; then
+            echo "Invalid tag '${TAG_NAME}'. Expected format: <module>@<version>" >&2
+            exit 1
+          fi
+
+          echo "Processing module: ${MODULE_NAME}"
+          echo "Version: ${VERSION}"
+
+          echo "module=${MODULE_NAME}" >> "${GITHUB_OUTPUT}"
+          echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
+          echo "full_tag=${TAG_NAME}" >> "${GITHUB_OUTPUT}"
+
+      - name: Install Build Dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+          if [[ -f ".build/requirements.txt" ]]; then
+            pip install -r .build/requirements.txt
+          fi
+
+      - name: Build Module
+        shell: bash
+        env:
+          MODULE_NAME: ${{ steps.extract.outputs.module }}
+          MODULE_VERSION: ${{ steps.extract.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          BUILD_SCRIPT=".build/${MODULE_NAME}.build.py"
+
+          if [[ ! -f "${BUILD_SCRIPT}" ]]; then
+            echo "Build script not found: ${BUILD_SCRIPT}" >&2
+            exit 1
+          fi
+
+          python "${BUILD_SCRIPT}" --version "${MODULE_VERSION}"
+
+      - name: Zip Artifacts
+        shell: bash
+        env:
+          MODULE_NAME: ${{ steps.extract.outputs.module }}
+          MODULE_VERSION: ${{ steps.extract.outputs.version }}
+        run: |
+          set -euo pipefail
+          ZIP_NAME="${MODULE_NAME}-v${MODULE_VERSION}.zip"
+
+          if [[ ! -d "dist/${MODULE_NAME}" ]]; then
+            echo "Expected build output at dist/${MODULE_NAME}, but it was not produced." >&2
+            exit 1
+          fi
+
+          echo "Creating zip file: ${ZIP_NAME}"
+
+          cd dist
+          zip -r "../${ZIP_NAME}" "${MODULE_NAME}"
+
+          echo "ZIP_FILE=${ZIP_NAME}" >> "${GITHUB_ENV}"
+
+      - name: Create Version Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.extract.outputs.full_tag }}
+          name: ${{ steps.extract.outputs.module }} v${{ steps.extract.outputs.version }}
+          files: ${{ env.ZIP_FILE }}
+          overwrite_files: true
+          fail_on_unmatched_files: true
+          draft: false
+          prerelease: false
+          body: |
+            **Module:** `${{ steps.extract.outputs.module }}`
+            **Version:** `${{ steps.extract.outputs.version }}`
+            **Commit:** `${{ github.sha }}`
+
+            Built with `.build/${{ steps.extract.outputs.module }}.build.py`.
+
+      - name: Create Latest Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.extract.outputs.module }}-latest
+          name: ${{ steps.extract.outputs.module }} (Latest)
+          files: ${{ env.ZIP_FILE }}
+          overwrite_files: true
+          fail_on_unmatched_files: true
+          draft: false
+          prerelease: false
+          body: |
+            This release tracks the latest published artifact for `${{ steps.extract.outputs.module }}`.
+
+            - Source tag: `${{ steps.extract.outputs.full_tag }}`
+            - Commit: `${{ github.sha }}`
