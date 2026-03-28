@@ -32,6 +32,9 @@ class SingletonMeta(type):
 
         return instance
 
+    def get_instance(cls, *args, **kwargs):
+        return cls.__call__(*args, **kwargs)
+
 
 class RegistryMeta(type):
     def __init__(cls, name, bases=None, dict=None):
