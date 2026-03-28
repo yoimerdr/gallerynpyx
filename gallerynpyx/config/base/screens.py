@@ -1,3 +1,4 @@
+from .base import BaseConfig
 from ...common.helpers import tostring
 from ...path import join
 from ...resources.thumbnail import Thumbnail
@@ -5,7 +6,7 @@ from ...resources.thumbnail import Thumbnail
 __all__ = ('ScreensConfig',)
 
 
-class ScreensConfig(object):
+class ScreensConfig(BaseConfig):
     __slots__ = (
         '_s_img', '_fg', '_bg',
         '_sw_sv', '_s_rt',

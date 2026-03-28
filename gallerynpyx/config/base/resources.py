@@ -1,4 +1,5 @@
 from store import dissolve
+from .base import BaseConfig
 from ...common.helpers import coerce, cast
 from ...path import join
 from ...resources.thumbnail import Thumbnail
@@ -6,7 +7,7 @@ from ...resources.thumbnail import Thumbnail
 __all__ = ('ResourcesConfig',)
 
 
-class ResourcesConfig(object):
+class ResourcesConfig(BaseConfig):
     __slots__ = (
         '_not_found', '_idle',
         '_play_hover', '_play_idle',

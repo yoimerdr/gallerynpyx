@@ -1,3 +1,4 @@
+from .base import BaseConfig
 from ...common.helpers import tostring
 
 __all__ = (
@@ -5,7 +6,7 @@ __all__ = (
 )
 
 
-class StylesConfig(object):
+class StylesConfig(BaseConfig):
     __slots__ = (
         '_root', '_tip',
         '_nav', '_vs', '_it',
