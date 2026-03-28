@@ -33,7 +33,7 @@ def create_items_overlay(items, size, resources_config=None, ):
     size = tuple(SizeInt.of(size))
     resources_config = coerce_resources(resources_config)
 
-    locked = resources_config.locked.create(size), resources_config.not_found.create(size)
+    locked = resources_config.locked.create(size)
     play_idle, play_hover = resources_config.play_idle.create(size), resources_config.play_hover.create(size)
     idle, hover = resources_config.idle.create(size), None
 
