@@ -9,7 +9,7 @@ __all__ = (
 
 @add_metaclass(SingletonRegistryMeta)
 class StylesConfig(BaseStylesConfig):
-    pass
+    __slots__ = ()
 
 
 manager = ConfigManager(StylesConfig, BaseStylesConfig)

@@ -1,20 +1,7 @@
 from .base import BaseHandler
-from ...config.base import ResourcesConfig, ScreensConfig, StylesConfig
-from ...config import coerce as coerce_config, resources as resources_cfg
-from ...config import screens as screens_cfg, styles as styles_cfg
+from ...config import coerce_screens, coerce_styles, coerce_resources
 
 __all__ = ('Handler',)
-
-
-def _create_config(value, module, coerce_cls, ):
-    if value is not None:
-        module.manager.flush(value)
-
-    return coerce_config(
-        manager=module.manager,
-        name=value,
-        cls=coerce_cls
-    )
 
 
 class Handler(BaseHandler):
@@ -36,11 +23,7 @@ class Handler(BaseHandler):
 
     @resources_config.setter
     def resources_config(self, value):
-        self._rs_cfg = _create_config(
-            value=value,
-            module=resources_cfg,
-            coerce_cls=ResourcesConfig
-        )
+        self._rs_cfg = coerce_resources(value)
 
     @property
     def styles_config(self):
@@ -48,11 +31,7 @@ class Handler(BaseHandler):
 
     @styles_config.setter
     def styles_config(self, value):
-        self._sty_cfg = _create_config(
-            value=value,
-            module=styles_cfg,
-            coerce_cls=StylesConfig
-        )
+        self._sty_cfg = coerce_styles(value)
 
     @property
     def screens_config(self):
@@ -60,8 +39,4 @@ class Handler(BaseHandler):
 
     @screens_config.setter
     def screens_config(self, value):
-        self._res_cfg = _create_config(
-            value=value,
-            module=screens_cfg,
-            coerce_cls=ScreensConfig
-        )
+        self._res_cfg = coerce_screens(value)

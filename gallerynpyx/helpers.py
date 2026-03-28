@@ -1,7 +1,6 @@
 from renpy.display.behavior import Button
 from .actions.items import ShowItem
-from .config.base import ResourcesConfig
-from .config import coerce as coerce_config, resources as resources_config
+from .config import coerce_resources
 from .resources.animation import AnimationResource
 from .resources.exceptions import IncompatibleResourceError
 from .resources.thumbnail import creates
@@ -13,11 +12,7 @@ __all__ = ('create_buttons',)
 
 def create_buttons(items, size, config=None):
     size = tuple(SizeInt.of(size))
-    res = coerce_config(
-        manager=resources_config.manager,
-        name=config,
-        cls=ResourcesConfig
-    )
+    res = coerce_resources(config)
 
     idle, not_found = res.idle.create(size), res.not_found.create(size)
     play_idle, play_hover = res.play_idle.create(size), res.play_hover.create(size)
