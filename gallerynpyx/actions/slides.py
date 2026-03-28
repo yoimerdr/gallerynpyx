@@ -6,7 +6,7 @@ from ..common.classes.meta import SingletonMeta, RegistryMeta
 
 __all__ = ('NextPage', 'PreviousPage', 'ChangeSlide', 'ReturnSlide')
 
-@add_metaclass(SingletonMeta)
+@add_metaclass(RegistryMeta)
 class NextPage(HandlerInteractive):
     def __init__(self, handler=None):
         super(NextPage, self).__init__(handler)
@@ -20,7 +20,7 @@ class NextPage(HandlerInteractive):
         super(NextPage, self).__call__(*args, **kwargs)
 
 
-@add_metaclass(SingletonMeta)
+@add_metaclass(RegistryMeta)
 class PreviousPage(HandlerInteractive):
     def __init__(self, handler=None):
         super(PreviousPage, self).__init__(handler)

@@ -4,7 +4,7 @@ screen gallerynpyx(gx_handler=None, gx_size=None):
     python:
         gx_size = gx_size if gx_size is not None else (config.screen_width, config.screen_height)
         gx_handler = gallerynpyx.handler.coerce(name=gx_handler)
-        gx_config = handler.screens_config
+        gx_config = gx_handler.screens_config
 
     add gx_config.background.resource.displayable(gx_size)
     add gx_config.foreground.resource.displayable(gx_size)
@@ -50,7 +50,7 @@ screen gx_navigation(gx_handler=None):
             use expression gx_config.animation_controls_screen pass (gx_handler,)
             use expression gx_config.controls_screen pass (True, gx_handler)
         else:
-            $ gx_config = gallerynpyx.screens_config
+            $ gx_config = gx_handler.screens_config
             use expression gx_config.slide_controls_screen pass (gx_handler,)
             use expression gx_config.controls_screen pass (False, gx_handler)
 
