@@ -57,3 +57,9 @@ class DisplayableResource(Resource):
         """
         ...
 
+    def dispose(self: Any) -> None:
+        """
+        Clears any cached scaled displayables held by this resource.
+        """
+        ...
+

@@ -72,6 +72,16 @@ class SingletonRegistry(Singleton, Registry):
     """
     __slots__ = ()
 
+    @classmethod
+    def get_instance(cls: type[_T], *args, **kwargs) -> _T:
+        """
+        Creates or returns the singleton registered instance.
+
+        :param args: Init class arguments.
+        :param kwargs: Init class keyword arguments.
+        """
+        ...
+
 
 class NotInstantiable(object):
     """

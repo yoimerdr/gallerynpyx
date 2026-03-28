@@ -1,22 +1,32 @@
-from typing import Any, TypeVar
+from typing import Any
 
+from renpy.display.transform import ATLTransform
 from renpy.ui import Action
-from ..common.classes.objects import Registry
+
+from ..config.base.resources import ResourcesConfig
+from ..config.base.screens import ScreensConfig
 from ..resources.resource import Resource
 from ..slides.items import Item
 
-_R = TypeVar('_R', bound=Resource)
 
-
-def prepare_resource(resource: _R) -> _R:
+def prepare_resource(resource: Resource,
+                     resources_config: str | ResourcesConfig | None = None) -> Any:
     """
     Prepares the resource for display.
 
-    :notes:
-        * For non-animation resources, create a displayable with the same size as the screen.
-        * For animation resources, assign the animation speed if it's allowed.
-    :param resource: Any resource
-    :return: The prepared resource.
+    :param resource: Any resource.
+    :param resources_config: Optional resources configuration or gallery name.
+    """
+    ...
+
+
+def reset_resource(resource: Resource,
+                   resources_config: str | ResourcesConfig | None = None) -> None:
+    """
+    Resets any temporary animation state applied during display.
+
+    :param resource: Resource to reset.
+    :param resources_config: Optional resources configuration or gallery name.
     """
     ...
 
@@ -26,9 +36,23 @@ class ShowItem(Action):
     An action to display the resource of an item.
     """
 
-    def __init__(self: Any, item: Item):
+    def __init__(self: Any,
+                 item: Item,
+                 resources_config: str | ResourcesConfig | None = None,
+                 screens_config: str | ScreensConfig | None = None) -> None:
         """
         :param item: The item instance.
+        :param resources_config: Optional resources configuration or gallery name.
+        :param screens_config: Optional screens configuration or gallery name.
+        """
+        ...
+
+    @classmethod
+    def register(cls, target: type[ShowItem]) -> None:
+        """
+        Registers the subclass that should be instantiated for this action.
+
+        :param target: Class that inherits from ``ShowItem`` and should replace it when instantiated.
         """
         ...
 
@@ -38,17 +62,21 @@ class ShowItem(Action):
         """
         ...
 
-    def get_tooltip(self: Any) -> bool:
+    def get_tooltip(self: Any) -> str | None:
         """
         Method used internally by renpy
         """
         ...
 
-    def show(self: Any):
+    def show(self: Any) -> None:
         """
         Shows the resource of the item.
         """
         ...
 
-    def __call__(self: Any, *args, **kwargs):
+    def __call__(self: Any, *args, **kwargs) -> None:
+        """
+        :param args: Positional arguments forwarded by Ren'Py.
+        :param kwargs: Keyword arguments forwarded by Ren'Py.
+        """
         ...

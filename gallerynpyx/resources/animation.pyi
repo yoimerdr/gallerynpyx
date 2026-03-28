@@ -48,3 +48,9 @@ class AnimationResource(Resource):
         :return: The loaded animation object.
         """
         ...
+
+    def dispose(self: Any) -> None:
+        """
+        Restores any temporary animation size changes and clears cached state.
+        """
+        ...

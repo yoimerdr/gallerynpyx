@@ -90,3 +90,9 @@ class ImageResource(DisplayableResource):
         """
 
         ...
+
+    def dispose(self: Any) -> None:
+        """
+        Clears cached image composites and remembered source sizes.
+        """
+        ...
