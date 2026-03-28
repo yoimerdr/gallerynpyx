@@ -1,4 +1,5 @@
-from .base import ResourcesConfig as BaseResourcesConfig, ConfigManager
+from .base.resources import ResourcesConfig as BaseResourcesConfig
+from .base.manager import ConfigManager
 from ..common.classes import add_metaclass, SingletonRegistryMeta
 
 __all__ = (

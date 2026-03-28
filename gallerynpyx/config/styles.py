@@ -1,4 +1,5 @@
-from .base import StylesConfig as BaseStylesConfig, ConfigManager
+from .base.styles import StylesConfig as BaseStylesConfig
+from .base.manager import ConfigManager
 from ..common.classes import add_metaclass, SingletonRegistryMeta
 
 __all__ = (
