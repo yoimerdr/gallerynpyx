@@ -13,7 +13,7 @@ The gallerynpyx scripts
 Before you start creating the gallery,
 you need to download the files necessary for the correct functioning of gallerynpyx.
 To get started you must download the
-`latest release <https://www.github.com/yoimerdr/gallerynpyx/releases/latest>`_ of gallerynpyx.
+`latest release <https://www.github.com/yoimerdr/gallerynpyx/releases/tag/gallerynpyx-latest>`_ of gallerynpyx.
 
 Once you have downloaded ``gallerynpyx``, you must extract it into the ``game`` folder of the game.
 

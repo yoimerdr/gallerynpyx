@@ -9,6 +9,7 @@
 import sys
 import os
 import datetime
+import json
 
 sys.path.append(os.path.abspath(''))
 sys.path.append(os.path.abspath('../../'))
@@ -54,7 +55,7 @@ html_css_files = [
 ] + ["https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"]
 html_js_files = [
     "js/{}.js".format(name)
-    for name in ("fabup", "code-syntax", "index", 'icon-fixer')
+    for name in ("fabup", "code-syntax", "index", "icon-fixer", "version-selector")
 ] + ["https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"]
 
 templates_path = [
@@ -73,6 +74,7 @@ html_static_path = ['_static']
 
 html_theme_options = {
     'sticky_navigation': False,
+    'version_selector': True,
 }
 
 master_doc = 'index'
@@ -119,3 +121,15 @@ tyasutype_navigation_mode = 'infinite'
 tyasutype_max_results = 8
 tyasutype_relative_url = "gallerynpyx/docs/v{}".format(release)
 add_function_parentheses = False
+
+
+def setup(app):
+    app.add_js_file(
+        None,
+        body="window.GALLERYNPYX_DOCS = {};".format(
+            json.dumps({
+                "current_version": "v{}".format(release),
+                "versions_path": "/gallerynpyx/docs",
+            })
+        ),
+    )

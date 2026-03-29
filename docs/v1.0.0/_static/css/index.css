@@ -36,6 +36,67 @@ button.copybtn {
   background: #004a7b;
 }
 
+.rst-content .important {
+  --important-fg: #163522;
+  --important-accent: #2d7d46;
+  --important-link: #215f39;
+  --important-link-hover: #163f27;
+  --important-code-bg: rgba(22, 53, 34, 0.08);
+  --important-code-border: rgba(45, 125, 70, 0.18);
+  background: #edf8f0;
+  border-left: 4px solid var(--important-accent);
+  color: var(--important-fg);
+}
+
+.rst-content .important .admonition-title {
+  background: var(--important-accent);
+  color: #fff;
+}
+
+.rst-content .important > :not(.admonition-title),
+.rst-content .important > :not(.admonition-title) :is(p, li, strong, em, span) {
+  color: var(--important-fg);
+}
+
+.rst-content .important :is(a, a:visited, .reference, .reference:visited) {
+  color: var(--important-link);
+}
+
+.rst-content .important :is(a:hover, .reference:hover) {
+  color: var(--important-link-hover);
+  border-bottom-color: currentColor;
+}
+
+.rst-content .important :is(
+  code,
+  tt,
+  code.docutils,
+  tt.docutils,
+  code.literal,
+  tt.literal,
+  code.xref,
+  .reference code,
+  .reference tt
+) {
+  color: var(--important-fg);
+  background: var(--important-code-bg);
+  border: 1px solid var(--important-code-border);
+}
+
+.rst-content .important :is(
+  code,
+  tt,
+  code.docutils,
+  tt.docutils,
+  code.literal,
+  tt.literal,
+  code.xref,
+  .reference code,
+  .reference tt
+) .pre {
+  color: inherit;
+}
+
 .rst-content .warning .admonition-title {
   background: #803b00;
 }
@@ -73,6 +134,29 @@ a.icon > img {
 
 .wy-side-nav-search {
   text-align: center;
+}
+
+.wy-side-nav-search .local-switch-menus {
+  margin: 0.85rem 0 0.35rem;
+}
+
+.wy-side-nav-search .local-switch-menus .version-switch {
+  width: 100%;
+}
+
+.wy-side-nav-search .local-switch-menus .version-switch select {
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  color: var(--font-color);
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.wy-side-nav-search .local-switch-menus .version-switch select:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 1px;
 }
 
 .wy-menu-vertical a,
