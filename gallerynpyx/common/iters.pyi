@@ -55,3 +55,15 @@ def last(iterable, default=None, key: Callable[[_T], bool] = None) -> Union[_T, 
     :return: Last matching element or default if none found
     """
     ...
+
+
+def paginate(items: Iterable[_T], page: SupportsIndex, per_page: SupportsIndex) -> Iterable[_T]:
+    """
+    Returns the slice of items that belongs to the requested 1-based page.
+
+    :param items: Input sequence or sliceable iterable.
+    :param page: Target page number.
+    :param per_page: Number of items per page.
+    :return: Slice of items for the requested page.
+    """
+    ...

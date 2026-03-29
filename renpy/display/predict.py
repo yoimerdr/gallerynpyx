@@ -1,0 +1,2 @@
+def displayable(displayable):
+    pass

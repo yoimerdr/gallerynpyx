@@ -1,36 +1,14 @@
-import pathlib
-import shutil
-from py2ren import create_config
-from py2ren.cli import main, Args
-from py2ren.config.config import dump_config
+from __future__ import annotations
 
-# checking paths
-root = pathlib.Path(__file__).parent
-path = root.joinpath("gallerynpyx")
-out = root.joinpath("dist", path.name)
+import runpy
+import sys
+from pathlib import Path
 
-shutil.rmtree(out, ignore_errors=True)
 
-# Init config
-cfg = create_config(path, level=-1, store_modules=["gallerynpyx"], analyze_dependencies=True)
+ROOT = Path(__file__).resolve().parent
+BUILD_SCRIPT = ROOT / ".build" / "gallerynpyx.build.py"
 
-## Internal module name checking. Exists an unexpected behavior with underscore names
-internal = cfg.modules["_internal"]
-internal._name = "_internal"
 
-events = internal.modules["_events.py"]
-events._name = "_events"
-
-# Build
-dump_config(root, cfg)
-main(
-    Args(
-        "./gallerynpyx",
-        "./dist/gallerynpyx",
-        config=cfg
-    )
-)
-
-# copy files
-shutil.copytree(root.joinpath("images"), out.joinpath("images"), dirs_exist_ok=True)
-shutil.copytree(root.joinpath("scripts"), out.joinpath("scripts"), dirs_exist_ok=True)
+if __name__ == "__main__":
+    sys.argv = [str(BUILD_SCRIPT), *sys.argv[1:]]
+    runpy.run_path(str(BUILD_SCRIPT), run_name="__main__")

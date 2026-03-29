@@ -1,4 +1,4 @@
-from renpy.config import screen_width, screen_height
+from renpy import config
 from renpy.display.transform import ATLTransform
 from renpy.exports import music_start, show_screen, music_stop, invoke_in_new_context, transition
 from renpy.ui import Action, saybehavior, interact
@@ -6,7 +6,7 @@ from ..anim import set_speed
 from ..common.classes.helpers import add_metaclass
 from ..common.classes.meta import RegistryMeta
 from ..common.exceptions import AssignmentError
-from ..config import ScreensConfig, ResourcesConfig
+from ..config import coerce_resources, coerce_screens
 from ..resources import AnimationResource
 from ..resources.displayable import DisplayableResource
 from ..resources.video import VideoResource
@@ -16,13 +16,15 @@ from .._internal import _events
 __all__ = ('ShowItem', 'prepare_resource', 'reset_resource')
 
 
-def prepare_resource(resource):
-    cfg = ResourcesConfig.get_instance()
+def prepare_resource(resource, resources_config=None):
+    cfg = coerce_resources(resources_config)
+
+    size = (config.screen_width, config.screen_height)
     if isinstance(resource, (DisplayableResource, VideoResource)):
-        return resource.displayable((screen_width, screen_height))
+        return resource.displayable(size)
 
     if isinstance(resource, AnimationResource) and cfg.allow_animation_size:
-        res = resource.displayable((screen_width, screen_height))
+        res = resource.displayable(size)
     else:
         res = resource.load(True)
 
@@ -31,8 +33,8 @@ def prepare_resource(resource):
     return res
 
 
-def reset_resource(resource):
-    cfg = ResourcesConfig.get_instance()
+def reset_resource(resource, resources_config=None):
+    cfg = coerce_resources(resources_config)
 
     if cfg.allow_animation_speeds:
         res = resource.load(True)
@@ -43,11 +45,13 @@ def reset_resource(resource):
 @add_metaclass(RegistryMeta)
 class ShowItem(Action):
 
-    def __init__(self, item):
+    def __init__(self, item, resources_config=None, screens_config=None):
         super(ShowItem, self).__init__()
         if not isitem(item):
             raise AssignmentError("The argument must be an 'Item' instance.")
         self._item = item
+        self._resources_config = resources_config
+        self._screens_config = screens_config
 
     def get_selected(self):
         return self._item.locked
@@ -58,20 +62,21 @@ class ShowItem(Action):
 
     def _show_displayable(self, resource, ):
         item = self._item
-        cfg = ResourcesConfig.get_instance()
+        cfg = coerce_resources(self._resources_config)
+        screens_config = coerce_screens(self._screens_config)
 
         saybehavior()
         transition(cfg.transition)
 
-        res = prepare_resource(resource)
-        show_screen(ScreensConfig.get_instance().images_screen, res, item)
+        res = prepare_resource(resource, cfg)
+        show_screen(screens_config.images_screen, res, item)
         interact()
 
-        reset_resource(resource)
+        reset_resource(resource, cfg)
 
         other = item.resource
         if other is not resource:
-            reset_resource(other)
+            reset_resource(other, cfg)
             resource = other
 
         if not isinstance(resource, VideoResource):

@@ -25,6 +25,15 @@ class SingletonMeta(type):
         """
         ...
 
+    def get_instance(cls: type[_T], *args, **kwargs) -> _T:
+        """
+        Creates or returns the singleton instance.
+
+        :param args: Init class arguments.
+        :param kwargs: Init class keyword arguments.
+        """
+        ...
+
 
 class RegistryMeta(type):
     """

@@ -16,11 +16,13 @@ __all__ = ('ImageResource',)
 
 class ImageResource(DisplayableResource):
     __slots__ = (
-        '_ext', '_cmem'
+        '_ext', '_cmem',
+        '_szmem'
     )
 
     def __init__(self, source):
         self._cmem = Memoized(self._composite)
+        self._szmem = Memoized(self._load_size)
         super(ImageResource, self).__init__(source)
 
     def _is_supported_source(self, source):
@@ -73,11 +75,21 @@ class ImageResource(DisplayableResource):
     def is_named(self):
         return not self.ext and isinstance(self.source, basestring)
 
+    def _load_size(self, *args):
+        image = self.load(True)
+
+        try:
+            surfer = im.cache.get(image)
+        except:
+            surfer = image.load()
+
+        source_size = surfer.get_size()
+
+        return SizeInt.of(source_size)
+
     def _scales(self, size):
         image = self.load(True)
-        surfer = im.cache.get(image)
-
-        source = SizeInt.of(surfer.get_size())
+        source = self._szmem.evaluate(self.source)
         xsize = size.scale(source.aspect_ratio)
 
         return Scale(image, xsize.width, xsize.height), xsize, size
@@ -96,6 +108,7 @@ class ImageResource(DisplayableResource):
 
     def dispose(self):
         self._cmem.dispose()
+        self._szmem.dispose()
         super(ImageResource, self).dispose()
 
     def composite(self, size):
