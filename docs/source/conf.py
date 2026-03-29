@@ -17,7 +17,7 @@ sys.path.append(os.path.abspath('../../'))
 project = 'gallerynpyx'
 copyright = '2024-{}, Yoimer Davila'.format(datetime.date.today().year)
 author = 'Yoimer Davila'
-release = '1.0.0'
+release = '2.0.0'
 version = release + " Documentation"
 
 html_title = project.capitalize() + " Documentation"
